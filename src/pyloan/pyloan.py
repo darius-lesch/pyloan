@@ -16,7 +16,7 @@ from ._validators import (
     validate_loan_type
 )
 from ._enums import LoanType, CompoundingMethod
-
+from ._day_count import DAY_COUNT_METHODS
 from ._models import Payment, SpecialPayment, LoanSummary
 
 class Loan(object):
@@ -89,83 +89,9 @@ class Loan(object):
         return Decimal(str(amount)).quantize(Decimal(str(0.01)))
 
     @staticmethod
-    def _get_day_count(dt1,dt2,method,eom=False):
-
-        def get_julian_day_number(y,m,d):
-            julian_day_count = (1461 * (y + 4800 + (m - 14)/12))/4 +(367 * (m - 2 - 12 * ((m - 14)/12)))/12 - (3 * ((y + 4900 + (m - 14)/12)/100))/4 + d - 32075
-            return julian_day_count
-
-        y1, m1, d1 = dt1.year, dt1.month, dt1.day
-        y2, m2, d2 = dt2.year, dt2.month, dt2.day
-        dt1_eom_day=cal.monthrange(y1,m1)[1]
-        dt2_eom_day=cal.monthrange(y2,m2)[1]
-
-        if method in {'30A/360','30U/360','30E/360','30E/360 ISDA'}:
-            if method=='30A/360':
-                d1 = min(d1,30)
-                d2 = min(d2,30) if d1 == 30 else d2
-            if method=='30U/360':
-                if eom and m1 == 2 and d1==dt1_eom_day and m2==2 and d2==dt2_eom_day:
-                    d2=30
-                if eom and m1 == 2 and d1==dt1_eom_day:
-                    d1=30
-                if d2 == 31 and d1 >= 30:
-                    d2=30
-                if d1==31:
-                    d1=30
-            if method=='30E/360':
-                if d1 == 31:
-                    d1=30
-                if d2 == 31:
-                    d2=30
-            if method=='30E/360 ISDA':
-                if d1==dt1_eom_day:
-                    d1=30
-                if d2==dt2_eom_day and m2 != 2:
-                    d2=30
-
-            day_count = (360*(y2-y1)+30*(m2-m1)+(d2-d1))
-            year_days = 360
-
-        if method=='A/365F':
-            day_count=(dt2-dt1).days
-            year_days=365
-
-        if method=='A/360':
-            day_count=(dt2-dt1).days
-            year_days=360
-
-        if method in {'A/A ISDA','A/A AFB'}:
-            djn_dt1= get_julian_day_number(y1,m1,d1)
-            djn_dt2= get_julian_day_number(y2,m2,d2)
-            if y1==y2:
-                day_count=djn_dt2-djn_dt1
-                if method=='A/A ISDA':
-                    year_days=366 if cal.isleap(y2) else 365
-                if method=='A/A AFB':
-                    year_days=366 if cal.isleap(y1) and (m1<3) else 365
-            if y1 < y2:
-                djn_dt1_eoy= get_julian_day_number(y1,12,31)
-                day_count_dt1=djn_dt1_eoy-djn_dt1
-                if method=='A/A ISDA':
-                    year_days_dt1=366 if cal.isleap(y1) else 365
-                if method=='A/A AFB':
-                    year_days_dt1=366 if cal.isleap(y1) and (m1<3) else 365
-
-                djn_dt2_boy= get_julian_day_number(y2,1,1)
-                day_count_dt2=djn_dt2-djn_dt2_boy
-                if method=='A/A ISDA':
-                    year_days_dt2=366 if cal.isleap(y2) else 365
-                if method=='A/A AFB':
-                    year_days_dt2=366 if cal.isleap(y2) and (m2>=3) else 365
-
-                diff=y2-y1-1
-
-                day_count=(day_count_dt1*year_days_dt2)+(day_count_dt2*year_days_dt1)+(diff*year_days_dt1*year_days_dt2)
-                year_days=year_days_dt1*year_days_dt2
-
-        factor = day_count / year_days
-        return factor
+    def _get_day_count(dt1, dt2, method, eom=False):
+        day_count, year_days = DAY_COUNT_METHODS[method](dt1, dt2, eom)
+        return day_count / year_days
 
     @staticmethod
     def _get_special_payment_schedule(self,special_payment):
