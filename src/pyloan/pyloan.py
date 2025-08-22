@@ -4,232 +4,81 @@ import calendar as cal
 import collections
 from decimal import Decimal
 from dateutil.relativedelta import relativedelta
+from ._validators import (
+    validate_positive_numeric,
+    validate_positive_integer,
+    validate_date_string,
+    validate_optional_date_string,
+    validate_boolean,
+    validate_annual_payments,
+    validate_interest_only_period,
+    validate_compounding_method,
+    validate_loan_type
+)
+from ._enums import LoanType, CompoundingMethod
 
-Payment=collections.namedtuple('Payment',['date','payment_amount','interest_amount','principal_amount','special_principal_amount','total_principal_amount','loan_balance_amount'])
-
-Special_Payment=collections.namedtuple('Special_Payment',['payment_amount','first_payment_date','special_payment_term','annual_payments'])
-Loan_Summary=collections.namedtuple('Loan_Summary',['loan_amount','total_payment_amount','total_principal_amount','total_interest_amount','residual_loan_balance','repayment_to_principal'])
+from ._models import Payment, SpecialPayment, LoanSummary
 
 class Loan(object):
+    """
+    The Loan class is the main class of the pyloan package. It is used to create a loan object and to perform loan calculations.
 
-    def __init__(self,loan_amount,interest_rate,loan_term,start_date,payment_amount=None,first_payment_date=None,payment_end_of_month=True,annual_payments=12,interest_only_period=0,compounding_method='30E/360',loan_type='annuity'):
+    :param loan_amount: The loan amount.
+    :param interest_rate: The annual interest rate.
+    :param loan_term: The loan term in years.
+    :param start_date: The start date of the loan.
+    :param payment_amount: The payment amount. If not provided, it will be calculated automatically.
+    :param first_payment_date: The first payment date.
+    :param payment_end_of_month: Whether the payment is at the end of the month.
+    :param annual_payments: The number of annual payments.
+    :param interest_only_period: The interest only period in months.
+    :param compounding_method: The compounding method.
+    :param loan_type: The loan type.
+    """
+
+    def __init__(self,loan_amount,interest_rate,loan_term,start_date,payment_amount=None,first_payment_date=None,payment_end_of_month=True,annual_payments=12,interest_only_period=0,compounding_method=CompoundingMethod.THIRTY_E_360.value,loan_type=LoanType.ANNUITY.value):
         
-        '''
-        Input validtion for attribute loan_amount
-        '''
-        try:
-            if type(loan_amount) == int or type(loan_amount) == float:
-                if loan_amount < 0:
-                    raise ValueError('Variable LOAN_AMMOUNT can only be non-negative.')
-            else:
-                raise TypeError('Variable LOAN_AMOUNT can only be of type integer or float, both non-negative.')
+        validate_positive_numeric(loan_amount, "LOAN_AMOUNT")
+        self.loan_amount = Decimal(str(loan_amount))
 
-        # handle exceptions for loan_amount
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
+        validate_positive_numeric(interest_rate, "INTEREST_RATE")
+        self.interest_rate = Decimal(str(interest_rate / 100)).quantize(Decimal('0.0001'))
 
+        validate_positive_integer(loan_term, "LOAN_TERM")
+        self.loan_term = loan_term
+
+        if payment_amount is not None:
+            validate_positive_numeric(payment_amount, "PAYMENT_AMOUNT")
+        self.payment_amount = payment_amount
+
+        validate_date_string(start_date, "START_DATE")
+        self.start_date = dt.datetime.strptime(start_date, '%Y-%m-%d')
+
+        validate_optional_date_string(first_payment_date, "FIRST_PAYMENT_DATE")
+        if first_payment_date:
+            self.first_payment_date = dt.datetime.strptime(first_payment_date, '%Y-%m-%d')
+            if self.start_date > self.first_payment_date:
+                raise ValueError('FIRST_PAYMENT_DATE cannot be before START_DATE')
         else:
-            self.loan_amount=Decimal(str(loan_amount))
+            self.first_payment_date = None
 
-        '''
-        Input validation for attribute interet_rate
-        '''
-        try:
-            if type(interest_rate) == int or type(interest_rate) == float:
-                if interest_rate < 0:
-                    raise ValueError('Variable INTEREST_RATE can only be non-negative.')
-            else:
-                raise TypeError('Variable INTEREST_RATE can only be of type integer or float, both non-negative.')
+        validate_boolean(payment_end_of_month, "PAYMENT_END_OF_MONTH")
+        self.payment_end_of_month = payment_end_of_month
 
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        
-        else:
-            self.interest_rate=Decimal(str(interest_rate/100)).quantize(Decimal(str(0.0001)))
-        
-        '''
-        Input validation for attribute loan_term
-        '''
-        try:
-            if type(loan_term) == int:
-                if loan_term < 1:
-                    raise ValueError('Variable LOAN_TERM can only be integers greater or equal to 1.')
-            else:
-                raise TypeError('Variable LOAN_TERM can only be of type integer.')
+        validate_annual_payments(annual_payments, "ANNUAL_PAYMENTS")
+        self.annual_payments = annual_payments
 
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
+        self.no_of_payments = self.loan_term * self.annual_payments
+        self.delta_dt = Decimal(str(12 / self.annual_payments))
 
-        else:
-            self.loan_term=loan_term
-            
-        '''
-        Input validation for attribute payment_amount
-        '''
-        try:
-            if payment_amount is None:
-                pass
-            elif payment_amount is not None and (type(payment_amount) == int or type(payment_amount) == float):
-                if payment_amount < 0:
-                    raise ValueError('Variable PAYMENT_AMOUNT can only be non-negative.')
-            else:
-                raise TypeError('Variable PAYMENT_AMOUNT can only be of type integer or float, both non-negative.')
-            
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
+        validate_interest_only_period(interest_only_period, "INTEREST_ONLY_PERIOD", self.no_of_payments)
+        self.interest_only_period = interest_only_period
 
-        else:
-            self.payment_amount=payment_amount
-            
-        '''
-        Input validation for attribute start_date
-        '''
-        try:
-            if start_date is None:
-                raise TypeError('Varable START_DATE must by of type date with format YYYY-MM-DD')
-            elif bool(dt.datetime.strptime(start_date,'%Y-%m-%d')) is False:
-                raise ValueError 
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.start_date=dt.datetime.strptime(start_date,'%Y-%m-%d')
-            
-        '''
-        Input validation for attribute first_paymnt_date
-        '''
-        try:
-            if first_payment_date is None:
-                pass
-            elif bool(dt.datetime.strptime(first_payment_date,'%Y-%m-%d')) is False:
-                raise ValueError
+        validate_compounding_method(compounding_method, "COMPOUNDING_METHOD")
+        self.compounding_method = CompoundingMethod(compounding_method)
 
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.first_payment_date=dt.datetime.strptime(first_payment_date,'%Y-%m-%d') if first_payment_date is not None else None
-
-            try:
-                if self.first_payment_date is None:
-                    pass
-                elif self.start_date > self.first_payment_date:
-                    raise ValueError('FIRST_PAYMENT_DATE cannot be before START_DATE')
-
-            except ValueError as val_e:
-                print(val_e)
-
-        '''
-        Input validation for attribute payment_end_of_month
-        '''
-        try:
-            if type(payment_end_of_month) is not bool:
-                raise TypeError('Variable PAYMENT_END_OF_MONTH can only be of type boolean (either True or False)')
-
-        except TypeError as typ_e:
-            print(typ_e)
-
-        else:
-            self.payment_end_of_month = payment_end_of_month
-        
-        '''
-        Input validation for attribute annual_payments
-        '''
-        try:
-            if type(annual_payments) == int:
-                if annual_payments not in [12,4,2,1]:
-                    raise ValueError('Attribute ANNUAL_PAYMENTS must be either set to 12, 4, 2 or 1.')
-            else:
-                raise TypeError('Attribute ANNUAL_PAYMENTS must be of type integer.')
-        
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.annual_payments=annual_payments
-
-        '''
-        Setting of no_of_payments and delta_dt if loan_term and annual_payments are set.
-        '''
-        try:
-            if hasattr(self,'loan_term') is False or hasattr(self,'annual_payments') is False:
-                print(self.loan_term)
-                print(self.annual_payments)
-                raise ValueError('Please make sure that LOAN_TERM and/or ANNUAL_PAYMENTS were correctly defined.11')
-
-        except ValueError as val_e:
-            print(val_e)
-        
-        else:
-            self.no_of_payments=self.loan_term * self.annual_payments
-            self.delta_dt=Decimal(str(12/self.annual_payments))
-
-
-        '''
-        Input validation for attribute interest_only_period
-        '''
-        try:
-            if type(interest_only_period) == int:
-                if interest_only_period < 0:
-                    raise ValueError('Attribute INTEREST_ONLY_PERIOD must be greater or equal to 0.')
-                elif hasattr(self,'no_of_payments') is False:
-                    raise ValueError('Please make sure that LOAN_TERM and/or ANNUAL_PAYMENTS were correctly defined.')
-                elif hasattr(self,'no_of_payments') is True and self.no_of_payments - interest_only_period < 0:
-                    raise ValueError('Attribute INTEREST_ONLY_PERIOD is greater than product of LOAN_TERM and ANNUAL_PAYMENTS.')
-            else:
-                raise TypeError('Attribute INTEREST_ONLY_PERIOD must be of type integer.')
-
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.interest_only_period=interest_only_period
-
-        '''
-        Input validation for attribute compounding_method
-        '''
-        try:
-            if type(compounding_method) == str:
-                if compounding_method not in ['30A/360','30U/360','30E/360','30E/360 ISDA','A/360','A/365F','A/A ISDA', 'A/A AFB']:
-                    raise ValueError('Attribute COMPOUNDING_METHOD must be set to one of the following: 30A/360, 30U/360, 30E/360, 30E/360 ISDA, A/360, A/365F, A/A ISDA, A/A AFB.')
-            else:
-                raise TypeError('Attribute COMPOUNDING_METHOD must be of type string')
-
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.compounding_method=compounding_method
-
-        '''
-        Input validation for attribute loan_type
-        '''
-        try:
-            if type(loan_type) == str:
-                if loan_type not in ['annuity','linear','interest-only']:
-                    raise ValueError('Attribute LOAN_TYPE must be either set to annuity or linear or interest-only.')
-            else:
-                raise TypeError('Attribute LOAN_TYPE must be of type string')
-
-        except ValueError as val_e:
-            print(val_e)
-        except TypeError as typ_e:
-            print(typ_e)
-        else:
-            self.loan_type=loan_type
+        validate_loan_type(loan_type, "LOAN_TYPE")
+        self.loan_type = LoanType(loan_type)
 
         # define non-input variables
         self.special_payments=[]
@@ -335,129 +184,139 @@ class Loan(object):
 
         return special_payment_schedule
 
-    '''
-    Define method that calculates payment schedule
-    '''
-    def get_payment_schedule(self):
+    def _calculate_regular_payment_amount(self):
+        """Calculates the regular payment amount based on the loan type."""
+        if self.loan_type == LoanType.ANNUITY:
+            if self.payment_amount is None:
+                # Standard formula for annuity payment
+                return self.loan_amount * ((self.interest_rate / self.annual_payments) * (1 + (self.interest_rate / self.annual_payments)) ** ((self.no_of_payments - self.interest_only_period))) / ((1 + (self.interest_rate / self.annual_payments)) ** ((self.no_of_payments - self.interest_only_period)) - 1)
+            return self.payment_amount
+        if self.loan_type == LoanType.LINEAR:
+            if self.payment_amount is None:
+                # For linear loans, the principal payment is constant
+                return self.loan_amount / (self.no_of_payments - self.interest_only_period)
+            return self.payment_amount
+        if self.loan_type == LoanType.INTEREST_ONLY:
+            # For interest-only loans, there is no principal payment
+            return 0
 
-        attributes = ['loan_amount','interest_rate','loan_term','payment_amount','start_date','first_payment_date','payment_end_of_month','annual_payments','no_of_payments','delta_dt','interest_only_period','compounding_method','special_payments','special_payments_schedule']
-        raise_error_flag = 0
-        for attribute in attributes:
-            if hasattr(self,attribute) is False:
-                raise_error_flag = raise_error_flag + 1
-        
-        try:
-            if raise_error_flag != 0:
-                raise ValueError('Necessary attributes are not well defined, please review your inputs')
+    def _get_payment_start_date(self):
+        """Determines the start date for the payment schedule calculation."""
+        if self.first_payment_date is None:
+            if self.payment_end_of_month:
+                # If payment is at the end of the month, adjust the start date accordingly
+                if self.start_date.day == cal.monthrange(self.start_date.year, self.start_date.month)[1]:
+                    return self.start_date
+                return dt.datetime(self.start_date.year, self.start_date.month, cal.monthrange(self.start_date.year, self.start_date.month)[1], 0, 0) + relativedelta(months=-12 / self.annual_payments)
+            return self.start_date
+        return max(self.first_payment_date, self.start_date) + relativedelta(months=-12 / self.annual_payments)
 
-        except ValueError as val_e:
-            print(val_e)
-        else:
-            initial_payment=Payment(date=self.start_date,payment_amount=self._quantize(0),interest_amount=self._quantize(0),principal_amount=self._quantize(0),special_principal_amount=self._quantize(0),total_principal_amount=self._quantize(0),loan_balance_amount=self._quantize(self.loan_amount))
-            payment_schedule=[initial_payment]
-            interest_only_period = self.interest_only_period
+    def _consolidate_special_payments(self):
+        """Consolidates all special payments into a single schedule."""
+        special_payments_schedule_raw = []
+        if len(self.special_payments_schedule) > 0:
+            for schedule in self.special_payments_schedule:
+                for payment in schedule:
+                    special_payments_schedule_raw.append([payment.date, payment.special_principal_amount])
 
-            # take care of loan type
-            if self.loan_type == 'annuity':
-                if self.payment_amount is None:
-                    regular_principal_payment_amount= self.loan_amount*((self.interest_rate/self.annual_payments)*(1+(self.interest_rate/self.annual_payments))**((self.no_of_payments-interest_only_period)))/((1+(self.interest_rate/self.annual_payments))**((self.no_of_payments-interest_only_period))-1)
-                else:
-                    regular_principal_payment_amount=self.payment_amount
+        # Get unique dates and sort them
+        special_payments_dates = sorted(list(set([item[0] for item in special_payments_schedule_raw])))
 
-            if self.loan_type == 'linear':
-                if self.payment_amount is None:
-                    regular_principal_payment_amount= self.loan_amount / (self.no_of_payments-self.interest_only_period)
-                else:
-                    regular_principal_payment_amount=self.payment_amount
+        consolidated_schedule = []
+        for date in special_payments_dates:
+            # Sum all payments for the same date
+            amount = self._quantize(sum(item[1] for item in special_payments_schedule_raw if item[0] == date))
+            consolidated_schedule.append([date, amount])
 
-            if self.loan_type == 'interest-only':
-                    regular_principal_payment_amount=0
-                    interest_only_period = self.no_of_payments
+        return consolidated_schedule
 
+    def _handle_interim_special_payments(self, bop_date, date, balance_bop, special_payments, payment_schedule, m):
+        """Handles special payments that occur between regular payment dates."""
+        for sp_date, sp_amount in special_payments:
+            if bop_date < sp_date < date:
+                # Calculate interest for the period until the special payment
+                compounding_factor = Decimal(str(self._get_day_count(bop_date, sp_date, self.compounding_method.value, eom=self.payment_end_of_month)))
+                interest_amount = self._quantize(balance_bop * self.interest_rate * compounding_factor)
 
-            if self.first_payment_date is None:
-                if self.payment_end_of_month==True:
-                    if self.start_date.day == cal.monthrange(self.start_date.year,self.start_date.month)[1]:
-                        dt0 = self.start_date
-                    else:
-                        dt0 = dt.datetime(self.start_date.year,self.start_date.month,cal.monthrange(self.start_date.year,self.start_date.month)[1],0,0)+relativedelta(months=-12/self.annual_payments)
-                else:
-                    dt0 = self.start_date
-            else:
-                dt0=max(self.first_payment_date,self.start_date)+relativedelta(months=-12/self.annual_payments)
+                principal_amount = self._quantize(0)
+                special_principal_amount = self._quantize(0) if balance_bop == Decimal('0') else min(sp_amount - interest_amount, balance_bop)
+                total_principal_amount = min(principal_amount + special_principal_amount, balance_bop)
+                total_payment_amount = total_principal_amount + interest_amount
+                balance_eop = max(balance_bop - total_principal_amount, self._quantize(0))
 
-            # take care of special payments
-            special_payments_schedule_raw=[]
-            special_payments_schedule=[]
-            special_payments_dates=[]
-            if len(self.special_payments_schedule)>0:
-                for i in range(len(self.special_payments_schedule)):
-                    for j in range(len(self.special_payments_schedule[i])):
-                        special_payments_schedule_raw.append([self.special_payments_schedule[i][j].date,self.special_payments_schedule[i][j].special_principal_amount])
-                        if self.special_payments_schedule[i][j].date not in special_payments_dates:
-                            special_payments_dates.append(self.special_payments_schedule[i][j].date)
-
-            for i in range(len(special_payments_dates)):
-                amt=self._quantize(str(0))
-                for j in range(len(special_payments_schedule_raw)):
-                    if special_payments_schedule_raw[j][0]==special_payments_dates[i]:
-                        amt+=special_payments_schedule_raw[j][1]
-                special_payments_schedule.append([special_payments_dates[i],amt])
-
-            # calculate payment schedule
-            m=0
-            for i in range(1,self.no_of_payments+1):
-
-                date=dt0+relativedelta(months=i*12/self.annual_payments)
-                if self.payment_end_of_month==True and self.first_payment_date is None:
-                    eom_day=cal.monthrange(date.year,date.month)[1]
-                    date=date.replace(day=eom_day)#dt.datetime(date.year,date.month,eom_day)
-
-                special_principal_amount= self._quantize(0)
-                bop_date = payment_schedule[(i+m)-1].date
-                compounding_factor=Decimal(str(self._get_day_count(bop_date,date,self.compounding_method,eom=self.payment_end_of_month)))
-                balance_bop=self._quantize(payment_schedule[(i+m)-1].loan_balance_amount)
-
-                for j in range(len(special_payments_schedule)):
-                    if date == special_payments_schedule[j][0]:
-                        special_principal_amount = special_payments_schedule[j][1]
-                    if (bop_date < special_payments_schedule[j][0] and special_payments_schedule[j][0] < date):
-                        # handle special payment inserts
-                        compounding_factor= Decimal(str(self._get_day_count(bop_date,special_payments_schedule[j][0],self.compounding_method,eom=self.payment_end_of_month)))
-                        interest_amount = self._quantize(0) if balance_bop == Decimal(str(0)) else self._quantize(balance_bop*self.interest_rate*compounding_factor)
-                        principal_amount= self._quantize(0)
-                        special_principal_amount = self._quantize(0) if balance_bop == Decimal(str(0)) else min(special_payments_schedule[j][1]-interest_amount,balance_bop)
-                        total_principal_amount=min(principal_amount+special_principal_amount,balance_bop)
-                        total_payment_amount=total_principal_amount+interest_amount
-                        balance_eop = max(balance_bop-total_principal_amount,self._quantize(0))
-                        payment = Payment(date=special_payments_schedule[j][0], payment_amount=total_payment_amount,interest_amount=interest_amount,principal_amount=principal_amount,special_principal_amount=special_principal_amount,total_principal_amount=special_principal_amount,loan_balance_amount=balance_eop)
-                        payment_schedule.append(payment)
-                        m+=1
-                        # handle regular payment inserts : update bop_date and bop_date, and special_principal_amount
-                        bop_date=special_payments_schedule[j][0]
-                        balance_bop=balance_eop
-                        special_principal_amount=self._quantize(0)
-                        compounding_factor=Decimal(str(self._get_day_count(bop_date,date,self.compounding_method,eom=self.payment_end_of_month)))
-
-                interest_amount= self._quantize(0) if balance_bop == Decimal(str(0)) else self._quantize(balance_bop*self.interest_rate*compounding_factor)
-
-                principal_amount = self._quantize(0) if balance_bop == Decimal(str(0)) or interest_only_period >= i else min(self._quantize(regular_principal_payment_amount)-(interest_amount if self.loan_type == 'annuity' else 0),balance_bop)
-                special_principal_amount=min(balance_bop-principal_amount,special_principal_amount) if interest_only_period < i else self._quantize(0)
-                total_principal_amount= min(principal_amount+special_principal_amount,balance_bop)
-                total_payment_amount=total_principal_amount+interest_amount
-                balance_eop = max(balance_bop-total_principal_amount,self._quantize(0))
-
-                payment=Payment(date=date,payment_amount=total_payment_amount,interest_amount=interest_amount,principal_amount=principal_amount,special_principal_amount=special_principal_amount,total_principal_amount=total_principal_amount,loan_balance_amount=balance_eop)
+                payment = Payment(date=sp_date, payment_amount=total_payment_amount, interest_amount=interest_amount, principal_amount=principal_amount, special_principal_amount=special_principal_amount, total_principal_amount=total_principal_amount, loan_balance_amount=balance_eop)
                 payment_schedule.append(payment)
 
-            return payment_schedule
+                # Update loop variables
+                m += 1
+                bop_date = sp_date
+                balance_bop = balance_eop
+        return bop_date, balance_bop, m
+
+    def get_payment_schedule(self):
+        """
+        Calculates the payment schedule for the loan.
+
+        :return: A list of Payment objects.
+        """
+        initial_payment = Payment(date=self.start_date, payment_amount=self._quantize(0), interest_amount=self._quantize(0), principal_amount=self._quantize(0), special_principal_amount=self._quantize(0), total_principal_amount=self._quantize(0), loan_balance_amount=self._quantize(self.loan_amount))
+        payment_schedule = [initial_payment]
+
+        interest_only_period = self.interest_only_period
+        if self.loan_type == LoanType.INTEREST_ONLY:
+            interest_only_period = self.no_of_payments
+
+        regular_principal_payment_amount = self._calculate_regular_payment_amount()
+        dt0 = self._get_payment_start_date()
+        consolidated_special_payments = self._consolidate_special_payments()
+
+        m = 0
+        for i in range(1, self.no_of_payments + 1):
+            date = dt0 + relativedelta(months=i * 12 / self.annual_payments)
+            if self.payment_end_of_month and self.first_payment_date is None:
+                eom_day = cal.monthrange(date.year, date.month)[1]
+                date = date.replace(day=eom_day)
+
+            bop_date = payment_schedule[(i + m) - 1].date
+            balance_bop = self._quantize(payment_schedule[(i + m) - 1].loan_balance_amount)
+
+            bop_date, balance_bop, m = self._handle_interim_special_payments(bop_date, date, balance_bop, consolidated_special_payments, payment_schedule, m)
+
+            special_principal_amount_for_date = self._quantize(sum(item[1] for item in consolidated_special_payments if item[0] == date))
+
+            compounding_factor = Decimal(str(self._get_day_count(bop_date, date, self.compounding_method.value, eom=self.payment_end_of_month)))
+            interest_amount = self._quantize(0) if balance_bop == Decimal('0') else self._quantize(balance_bop * self.interest_rate * compounding_factor)
+
+            principal_amount = self._quantize(0) if balance_bop == Decimal('0') or interest_only_period >= i else min(self._quantize(regular_principal_payment_amount) - (interest_amount if self.loan_type == LoanType.ANNUITY else 0), balance_bop)
+            special_principal_amount = min(balance_bop - principal_amount, special_principal_amount_for_date) if interest_only_period < i else self._quantize(0)
+            total_principal_amount = min(principal_amount + special_principal_amount, balance_bop)
+            total_payment_amount = total_principal_amount + interest_amount
+            balance_eop = max(balance_bop - total_principal_amount, self._quantize(0))
+
+            payment = Payment(date=date, payment_amount=total_payment_amount, interest_amount=interest_amount, principal_amount=principal_amount, special_principal_amount=special_principal_amount, total_principal_amount=total_principal_amount, loan_balance_amount=balance_eop)
+            payment_schedule.append(payment)
+
+        return payment_schedule
 
     def add_special_payment(self,payment_amount,first_payment_date,special_payment_term,annual_payments):
-        special_payment=Special_Payment(payment_amount=payment_amount,first_payment_date=first_payment_date,special_payment_term=special_payment_term,annual_payments=annual_payments)
+        """
+        Adds a special payment to the loan.
+
+        :param payment_amount: The amount of the special payment.
+        :param first_payment_date: The date of the first special payment.
+        :param special_payment_term: The term of the special payment in years.
+        :param annual_payments: The number of special payments per year.
+        """
+        special_payment=SpecialPayment(payment_amount=payment_amount,first_payment_date=first_payment_date,special_payment_term=special_payment_term,annual_payments=annual_payments)
         self.special_payments.append(special_payment)
         self.special_payments_schedule.append(self._get_special_payment_schedule(self,special_payment))
 
     def get_loan_summary(self):
+        """
+        Calculates the loan summary.
+
+        :return: A LoanSummary object.
+        """
         payment_schedule=self.get_payment_schedule()
         total_payment_amount=0
         total_interest_amount=0
@@ -470,6 +329,6 @@ class Loan(object):
             total_principal_amount +=payment.total_principal_amount
 
         repayment_to_principal=self._quantize(total_payment_amount/total_principal_amount)
-        loan_summary=Loan_Summary(loan_amount=self._quantize(self.loan_amount),total_payment_amount=total_payment_amount,total_principal_amount=total_principal_amount,total_interest_amount=total_interest_amount,residual_loan_balance=self._quantize(self.loan_amount-total_principal_amount),repayment_to_principal=repayment_to_principal)
+        loan_summary=LoanSummary(loan_amount=self._quantize(self.loan_amount),total_payment_amount=total_payment_amount,total_principal_amount=total_principal_amount,total_interest_amount=total_interest_amount,residual_loan_balance=self._quantize(self.loan_amount-total_principal_amount),repayment_to_principal=repayment_to_principal)
 
         return loan_summary
