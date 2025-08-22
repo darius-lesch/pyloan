@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: pyloan
 Version: 0.4.5
 Summary: A package for mortgage/loan calculations.
@@ -12,8 +12,6 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/x-rst
 License-File: LICENSE
-Requires-Dist: python-dateutil
-Dynamic: license-file
 
 ==================
 Welcome to PyLoan!
