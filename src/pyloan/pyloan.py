@@ -126,16 +126,38 @@ class Loan(object):
             # For interest-only loans, there is no principal payment
             return 0
 
-    def _get_payment_start_date(self):
-        """Determines the start date for the payment schedule calculation."""
-        if self.first_payment_date is None:
-            if self.payment_end_of_month:
-                # If payment is at the end of the month, adjust the start date accordingly
-                if self.start_date.day == cal.monthrange(self.start_date.year, self.start_date.month)[1]:
-                    return self.start_date
-                return dt.datetime(self.start_date.year, self.start_date.month, cal.monthrange(self.start_date.year, self.start_date.month)[1], 0, 0) + relativedelta(months=-12 / self.annual_payments)
+    def _get_schedule_base_date(self):
+        """
+        Determines the base date for the payment schedule calculation.
+
+        This date is a reference point from which all payment dates are calculated.
+        It's effectively the "zeroth" payment date, with the first actual payment
+        occurring one payment period after this date.
+        """
+        payment_period_months = 12 / self.annual_payments
+        payment_period = relativedelta(months=payment_period_months)
+
+        if self.first_payment_date:
+            # If a specific first payment date is given, the base date is one period before it.
+            # We use the later of the loan start date and the first payment date.
+            effective_first_payment = max(self.first_payment_date, self.start_date)
+            return effective_first_payment - payment_period
+
+        if not self.payment_end_of_month:
+            # If payments are not tied to month-end, the schedule is based on the loan start date.
             return self.start_date
-        return max(self.first_payment_date, self.start_date) + relativedelta(months=-12 / self.annual_payments)
+
+        # --- Logic for month-end payments ---
+        is_start_date_eom = self.start_date.day == cal.monthrange(self.start_date.year, self.start_date.month)[1]
+
+        if is_start_date_eom:
+            # If the loan starts at the end of a month, base the schedule on that date.
+            return self.start_date
+        else:
+            # If the loan starts mid-month, the first payment is at the end of that same month.
+            # So, the base date is one period before that month-end date.
+            first_payment_month_end = dt.datetime(self.start_date.year, self.start_date.month, cal.monthrange(self.start_date.year, self.start_date.month)[1])
+            return first_payment_month_end - payment_period
 
     def _consolidate_special_payments(self):
         """Consolidates all special payments into a single schedule."""
@@ -193,7 +215,7 @@ class Loan(object):
             interest_only_period = self.no_of_payments
 
         regular_principal_payment_amount = self._calculate_regular_payment_amount()
-        dt0 = self._get_payment_start_date()
+        dt0 = self._get_schedule_base_date()
         consolidated_special_payments = self._consolidate_special_payments()
 
         m = 0
