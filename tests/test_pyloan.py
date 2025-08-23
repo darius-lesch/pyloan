@@ -1,5 +1,6 @@
 import unittest
 from decimal import Decimal
+import datetime as dt
 from src.pyloan.pyloan import Loan
 
 class TestLoan(unittest.TestCase):
@@ -53,7 +54,9 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         zero_balance_payments = [p for p in schedule if p.loan_balance_amount == Decimal('0.00')]
-        self.assertTrue(len(zero_balance_payments) > 1)
+        # After refactoring, the schedule generation stops once the balance is zero.
+        # Therefore, there should be exactly one payment that results in a zero balance.
+        self.assertEqual(len(zero_balance_payments), 1)
         total_special_payments = sum([p.special_principal_amount for p in schedule])
         self.assertAlmostEqual(total_special_payments, Decimal('10000'), delta=100)
 
@@ -68,6 +71,19 @@ class TestLoan(unittest.TestCase):
         schedule = loan.get_payment_schedule()
         # During interest only period, principal should not decrease
         self.assertAlmostEqual(schedule[1].loan_balance_amount, loan.loan_amount - schedule[1].principal_amount, places=2)
+
+    def test_get_schedule_base_date(self):
+        loan = Loan(
+            loan_amount=100000,
+            interest_rate=5.0,
+            loan_term=10,
+            start_date='2023-01-15',
+            payment_end_of_month=True,
+            annual_payments=12
+        )
+        # Last day of Jan 2023 is 31. Subtract 1 month (12/12).
+        expected_date = dt.datetime(2022, 12, 31)
+        self.assertEqual(loan._get_schedule_base_date(), expected_date)
 
 if __name__ == '__main__':
     unittest.main()
