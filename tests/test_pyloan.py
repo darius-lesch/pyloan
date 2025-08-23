@@ -1,5 +1,6 @@
 import unittest
 from decimal import Decimal
+import datetime as dt
 from src.pyloan.pyloan import Loan
 
 class TestLoan(unittest.TestCase):
@@ -68,6 +69,19 @@ class TestLoan(unittest.TestCase):
         schedule = loan.get_payment_schedule()
         # During interest only period, principal should not decrease
         self.assertAlmostEqual(schedule[1].loan_balance_amount, loan.loan_amount - schedule[1].principal_amount, places=2)
+
+    def test_get_schedule_base_date(self):
+        loan = Loan(
+            loan_amount=100000,
+            interest_rate=5.0,
+            loan_term=10,
+            start_date='2023-01-15',
+            payment_end_of_month=True,
+            annual_payments=12
+        )
+        # Last day of Jan 2023 is 31. Subtract 1 month (12/12).
+        expected_date = dt.datetime(2022, 12, 31)
+        self.assertEqual(loan._get_schedule_base_date(), expected_date)
 
 if __name__ == '__main__':
     unittest.main()
