@@ -54,7 +54,9 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         zero_balance_payments = [p for p in schedule if p.loan_balance_amount == Decimal('0.00')]
-        self.assertTrue(len(zero_balance_payments) > 1)
+        # After refactoring, the schedule generation stops once the balance is zero.
+        # Therefore, there should be exactly one payment that results in a zero balance.
+        self.assertEqual(len(zero_balance_payments), 1)
         total_special_payments = sum([p.special_principal_amount for p in schedule])
         self.assertAlmostEqual(total_special_payments, Decimal('10000'), delta=100)
 
