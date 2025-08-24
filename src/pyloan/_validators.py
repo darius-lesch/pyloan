@@ -74,3 +74,10 @@ def validate_loan_type(value, name):
     except ValueError:
         valid_types = [item.value for item in LoanType]
         raise ValueError(f"Attribute {name} must be either set to {', '.join(valid_types)}.")
+
+def validate_loan_term_period(value, name):
+    """Validate that a value is a valid loan term period."""
+    if not isinstance(value, str):
+        raise TypeError(f"Attribute {name} must be of type string")
+    if value.upper() not in ['Y', 'M']:
+        raise ValueError(f"Attribute {name} must be either set to 'Y' or 'M'.")

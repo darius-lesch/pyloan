@@ -13,7 +13,8 @@ from ._validators import (
     validate_annual_payments,
     validate_interest_only_period,
     validate_compounding_method,
-    validate_loan_type
+    validate_loan_type,
+    validate_loan_term_period
 )
 from ._enums import LoanType, CompoundingMethod
 from ._day_count import DAY_COUNT_METHODS
@@ -36,7 +37,7 @@ class Loan(object):
     :param loan_type: The loan type.
     """
 
-    def __init__(self,loan_amount,interest_rate,loan_term,start_date,payment_amount=None,first_payment_date=None,payment_end_of_month=True,annual_payments=12,interest_only_period=0,compounding_method=CompoundingMethod.THIRTY_E_360.value,loan_type=LoanType.ANNUITY.value):
+    def __init__(self,loan_amount,interest_rate,loan_term,start_date,loan_term_period='Y',payment_amount=None,first_payment_date=None,payment_end_of_month=True,annual_payments=12,interest_only_period=0,compounding_method=CompoundingMethod.THIRTY_E_360.value,loan_type=LoanType.ANNUITY.value):
         
         validate_positive_numeric(loan_amount, "LOAN_AMOUNT")
         self.loan_amount = Decimal(str(loan_amount))
@@ -45,7 +46,12 @@ class Loan(object):
         self.interest_rate = Decimal(str(interest_rate / 100)).quantize(Decimal('0.0001'))
 
         validate_positive_integer(loan_term, "LOAN_TERM")
-        self.loan_term = loan_term
+        validate_loan_term_period(loan_term_period, "LOAN_TERM_PERIOD")
+
+        if loan_term_period.upper() == 'M':
+            self.loan_term = loan_term / 12
+        else:
+            self.loan_term = loan_term
 
         if payment_amount is not None:
             validate_positive_numeric(payment_amount, "PAYMENT_AMOUNT")
@@ -68,7 +74,7 @@ class Loan(object):
         validate_annual_payments(annual_payments, "ANNUAL_PAYMENTS")
         self.annual_payments = annual_payments
 
-        self.no_of_payments = self.loan_term * self.annual_payments
+        self.no_of_payments = int(self.loan_term * self.annual_payments)
         self.delta_dt = Decimal(str(12 / self.annual_payments))
 
         validate_interest_only_period(interest_only_period, "INTEREST_ONLY_PERIOD", self.no_of_payments)
@@ -95,7 +101,11 @@ class Loan(object):
 
     def _get_special_payment_schedule(self, special_payment):
         """Generates a schedule of dates and amounts for a recurring special payment."""
-        num_payments = special_payment.special_payment_term * special_payment.annual_payments
+        term_in_years = special_payment.special_payment_term
+        if special_payment.special_payment_term_period.upper() == 'M':
+            term_in_years = special_payment.special_payment_term / 12
+
+        num_payments = int(term_in_years * special_payment.annual_payments)
         payment_amount = self._quantize(special_payment.payment_amount)
         first_payment_date = dt.datetime.strptime(special_payment.first_payment_date, '%Y-%m-%d')
         
@@ -103,7 +113,7 @@ class Loan(object):
 
         schedule = []
         for i in range(num_payments):
-            payment_date = first_payment_date + relativedelta(months=i * months_between_payments)
+            payment_date = first_payment_date + relativedelta(months=int(i * months_between_payments))
             # The Payment object is used here just as a data container.
             # Most fields are zero because they are not relevant until the main schedule is built.
             payment = Payment(
@@ -286,7 +296,7 @@ class Loan(object):
 
         return payment_schedule
 
-    def add_special_payment(self,payment_amount,first_payment_date,special_payment_term,annual_payments):
+    def add_special_payment(self,payment_amount,first_payment_date,special_payment_term,annual_payments, special_payment_term_period='Y'):
         """
         Adds a special payment to the loan.
 
@@ -294,8 +304,9 @@ class Loan(object):
         :param first_payment_date: The date of the first special payment.
         :param special_payment_term: The term of the special payment in years.
         :param annual_payments: The number of special payments per year.
+        :param special_payment_term_period: The period of the special payment term, 'Y' for years, 'M' for months.
         """
-        special_payment=SpecialPayment(payment_amount=payment_amount,first_payment_date=first_payment_date,special_payment_term=special_payment_term,annual_payments=annual_payments)
+        special_payment=SpecialPayment(payment_amount=payment_amount,first_payment_date=first_payment_date,special_payment_term=special_payment_term,annual_payments=annual_payments, special_payment_term_period=special_payment_term_period)
         self.special_payments.append(special_payment)
         self.special_payments_schedule.append(self._get_special_payment_schedule(special_payment))
 
