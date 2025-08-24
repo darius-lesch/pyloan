@@ -22,6 +22,7 @@ class SpecialPayment:
     first_payment_date: str
     special_payment_term: int
     annual_payments: int
+    special_payment_term_period: str = 'Y'
 
 @dataclass
 class LoanSummary:

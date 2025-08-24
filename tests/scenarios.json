@@ -38,5 +38,16 @@
         "annual_payments": 1
       }
     ]
+  },
+  {
+    "scenario_name": "annuity_loan_term_in_months",
+    "loan_params": {
+      "loan_amount": 200000,
+      "interest_rate": 6.0,
+      "loan_term": 360,
+      "loan_term_period": "M",
+      "start_date": "2022-01-01",
+      "loan_type": "annuity"
+    }
   }
 ]

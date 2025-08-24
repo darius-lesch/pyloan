@@ -85,5 +85,16 @@ class TestLoan(unittest.TestCase):
         expected_date = dt.datetime(2022, 12, 31)
         self.assertEqual(loan._get_schedule_base_date(), expected_date)
 
+    def test_loan_term_in_months(self):
+        loan = Loan(
+            loan_amount=200000,
+            interest_rate=6.0,
+            loan_term=360,
+            loan_term_period='M',
+            start_date='2022-01-01'
+        )
+        self.assertEqual(loan.loan_term, 30)
+        self.assertEqual(loan.no_of_payments, 360)
+
 if __name__ == '__main__':
     unittest.main()
