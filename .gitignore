@@ -1,2 +1,6 @@
 /.spyproject/
 /.kateproject
+
+# Python
+__pycache__/
+*.pyc
