@@ -1,0 +1,53 @@
+[
+  {
+    "scenario_name": "standard_annuity_loan",
+    "loan_params": {
+      "loan_amount": 200000,
+      "interest_rate": 6.0,
+      "loan_term": 30,
+      "start_date": "2022-01-01",
+      "loan_type": "annuity"
+    }
+  },
+  {
+    "scenario_name": "linear_loan_with_interest_only",
+    "loan_params": {
+      "loan_amount": 150000,
+      "interest_rate": 4.5,
+      "loan_term": 15,
+      "start_date": "2023-06-15",
+      "loan_type": "linear",
+      "annual_payments": 4,
+      "interest_only_period": 4
+    }
+  },
+  {
+    "scenario_name": "annuity_with_special_payment",
+    "loan_params": {
+      "loan_amount": 300000,
+      "interest_rate": 5.0,
+      "loan_term": 20,
+      "start_date": "2024-01-31",
+      "payment_end_of_month": true
+    },
+    "special_payments": [
+      {
+        "payment_amount": 25000,
+        "first_payment_date": "2025-01-31",
+        "special_payment_term": 1,
+        "annual_payments": 1
+      }
+    ]
+  },
+  {
+    "scenario_name": "annuity_loan_term_in_months",
+    "loan_params": {
+      "loan_amount": 200000,
+      "interest_rate": 6.0,
+      "loan_term": 360,
+      "loan_term_period": "M",
+      "start_date": "2022-01-01",
+      "loan_type": "annuity"
+    }
+  }
+]
