@@ -2,5 +2,6 @@
 /.kateproject
 
 # Python
+src/pyloan/__pycache__/
 __pycache__/
 *.pyc
