@@ -6,3 +6,6 @@ __pycache__/
 
 # Distribution files
 /dist/
+
+# Temporary build files
+/build/
