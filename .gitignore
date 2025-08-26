@@ -1,7 +1,5 @@
-/.spyproject/
-/.kateproject
-
-# Python
-src/pyloan/__pycache__/
+# Python cache and temporary files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
