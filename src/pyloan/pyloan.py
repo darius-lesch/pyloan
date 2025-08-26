@@ -28,6 +28,7 @@ class Loan(object):
     :param interest_rate: The annual interest rate.
     :param loan_term: The loan term in years.
     :param start_date: The start date of the loan.
+    :param loan_term_period: Annual loan term (Y) or monthly loan term (M)
     :param payment_amount: The payment amount. If not provided, it will be calculated automatically.
     :param first_payment_date: The first payment date.
     :param payment_end_of_month: Whether the payment is at the end of the month.
