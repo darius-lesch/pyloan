@@ -1,11 +1,32 @@
+# Virtual environment directory
+.venv/
+venv/
+env/
+
+
 # Python cache and temporary files
 __pycache__/
+pycache/
 *.pyc
 *.pyo
 *.pyd
 
 # Distribution files
 /dist/
-
-# Temporary build files
 /build/
+*.egg-info/
+
+# Editor and IDE files
+.spyproject/
+.kateproject/
+.vscode/
+.idea/
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
+
+# Test coverage files
+.coverage
+htmlcov/
+.pytest_cache/
