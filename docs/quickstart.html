@@ -1,20 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quickstart &mdash; PyLoan  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -27,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> PyLoan
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyLoan
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -72,8 +77,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Quickstart</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quickstart</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -84,47 +89,48 @@
            <div itemprop="articleBody">
              
   <section id="quickstart">
-<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline"></a></h1>
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
 <p>Everything you need to know to get started with PyLoan - a mortgage/loan calculation tool.</p>
 <section id="define-a-loan">
-<h2>Define a loan<a class="headerlink" href="#define-a-loan" title="Permalink to this headline"></a></h2>
+<h2>Define a loan<a class="headerlink" href="#define-a-loan" title="Link to this heading"></a></h2>
 <p>Defining a loan with PyLoan is very simple. Begin by importing the PyLoan module:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyloan</span> <span class="kn">import</span> <span class="n">pyloan</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyloan</span><span class="w"> </span><span class="kn">import</span> <span class="n">Loan</span>
 </pre></div>
 </div>
 <p>Next define a loan:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">pyloan</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The above defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month.</p>
 <section id="loan-arguments">
-<h3>Loan arguments<a class="headerlink" href="#loan-arguments" title="Permalink to this headline"></a></h3>
+<h3>Loan arguments<a class="headerlink" href="#loan-arguments" title="Link to this heading"></a></h3>
 <p>The loan has the following <strong>required arguments</strong>:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">loan_amount</span></code>: the amount of money being borrowed. Input must be greater than zero.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">interest_rate</span></code>: the annual interest paid on the loan/mortgage. Input must be greater than zero.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">loan_term</span></code>: the number of years of the loan/mortgage. Input must be an integer greater or equal than 1-year.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loan_term</span></code>: the number of years/months of the loan/mortgage. Input must be an integer greater or equal than 1.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">start_date</span></code>: the date as of which the loan/mortgage begins. Input format must be YYYY-MM-DD.</p></li>
 </ul>
 <p>In addition, the loan has the following <strong>optional argument</strong>:</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">loan_term_period</span></code>: the period of the loan term, ‘Y’ for years or ‘M’ for months. Default value is ‘Y’.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">payment_amount</span></code>: the amount used to repay loan/interest. Default value is None. When the value is set to other than None, the specified amount will be used to cover interest and principal repayments.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code>: the date as at which first payment on the loan/mortget is made. Input format must be YYYY-MM-DD and greater than the start date. Default value is None.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">payment_end_of_month</span></code>: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and <code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code> is None then loan/mortgage payments will fall on the day specified in the <code class="docutils literal notranslate"><span class="pre">start_date</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">annual_payments</span></code>: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">interest_only_period</span></code>: the number of interest-only payments on the loan/mortgage. The default value is 0.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">compounding_method</span></code>: the compounding method used to accrue interest on the loan/mortgage. The default value is ‘30E/360’, otherwise known 30/360 German (or 30E/360 ISDA). For more details on other alternatives, see <a class="reference internal" href="#section-on-interest-rate-compounding"><span class="std std-ref">Interest rate compounding</span></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">loan_type</span></code>: type of laon/mortgage. Default value is annuity. Alternative values are: linear and interest-only.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loan_type</span></code>: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.</p></li>
 </ul>
 </section>
 </section>
 <section id="get-payment-schedule">
-<h2>Get payment schedule<a class="headerlink" href="#get-payment-schedule" title="Permalink to this headline"></a></h2>
+<h2>Get payment schedule<a class="headerlink" href="#get-payment-schedule" title="Link to this heading"></a></h2>
 <p>To view the payment schedule and loan amortization use the <code class="docutils literal notranslate"><span class="pre">get_payment_schedule</span></code> method:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">payment_schedule</span> <span class="o">=</span> <span class="n">loan</span><span class="o">.</span><span class="n">get_payment_schedule</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The above outputs a list of named tuples with the following fields per row:</p>
+<p>The above outputs a list of dataclasses with the following fields per row:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">date</span></code>: date of payment.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">payment_amount</span></code>: periodic payment amount of principal and interest.</p></li>
@@ -137,8 +143,9 @@
 <p>The first row represents the loan start with the ‘loan_balance_column’ equal to the loan amount. Each subsequent row represents loan repayment.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To define payment schedule as <cite>pandas</cite> DataFrame, use the method <cite>from_records</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">loan</span><span class="o">.</span><span class="n">get_payment_schedule</span><span class="p">(),</span><span class="n">columns</span><span class="o">=</span><span class="n">pyloan</span><span class="o">.</span><span class="n">Payment</span><span class="o">.</span><span class="n">_fields</span><span class="p">)</span>
+<p>To define payment schedule as <cite>pandas</cite> DataFrame, covert a list of Payments object into a list of dictionaries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">payment_schedule</span><span class="p">]</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This will generate a familiar DataFrame with named tuple fields as columns.</p>
@@ -146,25 +153,25 @@
 </div>
 </section>
 <section id="specify-payment-amount">
-<span id="section-on-payment-amount"></span><h2>Specify payment amount<a class="headerlink" href="#specify-payment-amount" title="Permalink to this headline"></a></h2>
+<span id="section-on-payment-amount"></span><h2>Specify payment amount<a class="headerlink" href="#specify-payment-amount" title="Link to this heading"></a></h2>
 <p>The example above calculated the payment amount that fully amortized the loan amount over its term. It is possible to specify a payment amount. Depending on the payment amount, the loan may be fully amortized over the loan term of not. To specify the payment amount use <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">payment_amount</span></code>. Using the example above, add payment amount of 888.33 EUR per month:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">pyloan</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">payment_amount</span><span class="o">=</span><span class="mf">888.33</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">payment_amount</span><span class="o">=</span><span class="mf">888.33</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="Pandas DataFrame output of the payment schedule with the specified payment amount." src="_images/specify_payment_amount.png" />
 </section>
 <section id="specify-payment-frequency">
-<h2>Specify payment frequency<a class="headerlink" href="#specify-payment-frequency" title="Permalink to this headline"></a></h2>
+<h2>Specify payment frequency<a class="headerlink" href="#specify-payment-frequency" title="Link to this heading"></a></h2>
 <p>The example above defines a loan with monthly repayment basis. It is possible to change this to quarterly, semi-annual or annual payments by setting value of the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">annual_payments</span></code> to 4, 2 or 1, respectively. Default argument value is 12 (monthly payments).</p>
 <p>In addition, the payment schedule above assumes that payments are made at month end, with the first payment starting on the 30th of June 2020. In case repayments are not made at month end, this can be adjusted by setting the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">payment_end_of_month</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> and setting the argument <code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code> to the date of the first payment date.</p>
 <p>Below is an example of the same loan that is paid on quarterly basis, on the 15th of every month:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">pyloan</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">payment_amount</span><span class="o">=</span><span class="mf">888.33</span><span class="p">,</span><span class="n">annual_payments</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">payment_amount</span><span class="o">=</span><span class="mf">888.33</span><span class="p">,</span><span class="n">annual_payments</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="Pandas DataFrame output of the payment schedule on quarterly basis." src="_images/loan_quarterly_payments.png" />
 </section>
 <section id="specify-payment-date">
-<h2>Specify payment date<a class="headerlink" href="#specify-payment-date" title="Permalink to this headline"></a></h2>
+<h2>Specify payment date<a class="headerlink" href="#specify-payment-date" title="Link to this heading"></a></h2>
 <p>In the examples above, payments were made on month end. It is possible to change this to a particular day of the month by setting of the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code> to a particular date. This will make the first and all subsequent payments fall on the specified day of the <code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code> argument.</p>
 <p>Following the example above, make first payment fall on the 17th of September. Each subsequent payment will fall on the 17th day of the month on which the payment is due.</p>
 <img alt="Specify payment date other than month end date." src="_images/first_payment_date.png" />
@@ -174,9 +181,23 @@
 </div>
 </section>
 <section id="add-special-payments">
-<h2>Add special payments<a class="headerlink" href="#add-special-payments" title="Permalink to this headline"></a></h2>
-<p>To add special payments to the loan, use the <code class="docutils literal notranslate"><span class="pre">add_special_payment</span></code> method. For instance, following the example above, add special payment of 5000 EUR first paid on 2021-03-15 for next 8 years paid annually:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span><span class="o">.</span><span class="n">add_special_payment</span><span class="p">(</span><span class="n">payment_amount</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span><span class="n">first_payment_date</span><span class="o">=</span><span class="s1">&#39;2021-03-17&#39;</span><span class="p">,</span><span class="n">special_payment_term</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">annual_payments</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<h2>Add special payments<a class="headerlink" href="#add-special-payments" title="Link to this heading"></a></h2>
+<p>To add special payments to the loan, use the <code class="docutils literal notranslate"><span class="pre">add_special_payment</span></code> method. This method has the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">payment_amount</span></code>: the amount of the special payment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code>: the date of the first special payment in YYYY-MM-DD format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">special_payment_term</span></code>: the term of the special payment in years or months.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">annual_payments</span></code>: the number of special payments per year.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">special_payment_term_period</span></code>: the period of the special payment term, ‘Y’ for years or ‘M’ for months. Default value is ‘Y’.</p></li>
+</ul>
+<p>For instance, following the example above, add special payment of 5000 EUR first paid on 2021-03-15 for next 8 years paid annually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span><span class="o">.</span><span class="n">add_special_payment</span><span class="p">(</span>
+  <span class="n">payment_amount</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
+  <span class="n">first_payment_date</span><span class="o">=</span><span class="s1">&#39;2021-03-17&#39;</span><span class="p">,</span>
+  <span class="n">special_payment_term</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+  <span class="n">annual_payments</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="n">special_payment_term_period</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span>
+  <span class="p">)</span>
 </pre></div>
 </div>
 <p>Next, recalculate payment schedule considering special payments as defined above:</p>
@@ -189,13 +210,17 @@
 <img alt="Special payments fall on dates other than regular payments." src="_images/special_payments_on_odd_dates.png" />
 </section>
 <section id="interest-only-period">
-<h2>Interest-only period<a class="headerlink" href="#interest-only-period" title="Permalink to this headline"></a></h2>
+<h2>Interest-only period<a class="headerlink" href="#interest-only-period" title="Link to this heading"></a></h2>
 <p>In the examples above, principal and interest payments were made starting with the first payment due. It is possible to specify interest-only period by setting of the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">interest_only_period</span></code> to value greater than 0 (default value).</p>
 <p>Using the initial example presented in this documentation, defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month. However, let’s say interest-only period is 3-months; that is the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">interest_only_period=3</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">pyloan</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">interest_only_period</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">interest_only_period</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The loan defined above resembles the original example presented in this documentation. The only difference is that for the first 3 payments, payment includes interest-only (no principal amount).</p>
+<p>The same loan can be defined with the loan term in months:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan</span> <span class="o">=</span> <span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span><span class="n">loan_term_period</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">interest_only_period</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
 <img alt="Loan with 3-month interest-only period." src="_images/interest_only_period.png" />
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -203,12 +228,12 @@
 </div>
 </section>
 <section id="get-loan-summary">
-<h2>Get loan summary<a class="headerlink" href="#get-loan-summary" title="Permalink to this headline"></a></h2>
+<h2>Get loan summary<a class="headerlink" href="#get-loan-summary" title="Link to this heading"></a></h2>
 <p>To get loan summary, use the <code class="docutils literal notranslate"><span class="pre">get_loan_summary</span></code> method:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">payment_schedule</span> <span class="o">=</span> <span class="n">loan</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The above outputs a list of named tuples with the following fields per row:</p>
+<p>The above outputs a dataclass with the following fields:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">loan_amount</span></code>: original loan amount.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">total_payment_amount</span></code>: total amount paid (principal and interest) over the loan term.</p></li>
@@ -219,16 +244,17 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>To define payment schedule as <cite>pandas</cite> DataFrame, use the method <cite>from_records</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan_summary_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">([</span><span class="n">loan</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()],</span><span class="n">columns</span><span class="o">=</span><span class="n">pyloan</span><span class="o">.</span><span class="n">Loan_Summary</span><span class="o">.</span><span class="n">_fields</span><span class="p">)</span>
+<p>To define loan summary as <cite>pandas</cite> DataFrame, covert the LoanSummary object to a dictionary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">loan_summary</span> <span class="o">=</span> <span class="n">loan</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()</span>
+<span class="n">loan_summary_df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">loan_summary</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>This will generate a familiar DataFrame with named tuple fields as columns.</p>
+<p>This will generate a familiar DataFrame.</p>
 <img alt="Pandas DataFrame output of the loan summary" src="_images/loan_summary.png" />
 </div>
 </section>
 <section id="interest-rate-compounding">
-<span id="section-on-interest-rate-compounding"></span><h2>Interest rate compounding<a class="headerlink" href="#interest-rate-compounding" title="Permalink to this headline"></a></h2>
+<span id="section-on-interest-rate-compounding"></span><h2>Interest rate compounding<a class="headerlink" href="#interest-rate-compounding" title="Link to this heading"></a></h2>
 <p>By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 method. To change the method use the <code class="docutils literal notranslate"><span class="pre">compounding_method</span></code> attribute when defining a loan, which accepts the following day count conventions:</p>
 <ul class="simple">
 <li><p>30A/360.</p></li>
@@ -245,7 +271,7 @@
 <p>Certain day count conventions are more advantageous to the borrower while other day count conventions are more advantageous to the lender. Use the method <code class="docutils literal notranslate"><span class="pre">get_loan_summary</span></code> to compare which day count method is the least expensive and which is the most expensive in terms of total interest amount paid over the lifetime of a mortgage/loan.</p>
 <p>Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">day_count_conventions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;30A/360&#39;</span><span class="p">,</span><span class="s1">&#39;30U/360&#39;</span><span class="p">,</span><span class="s1">&#39;30E/360&#39;</span><span class="p">,</span><span class="s1">&#39;30E/360 ISDA&#39;</span><span class="p">,</span><span class="s1">&#39;A/360&#39;</span><span class="p">,</span><span class="s1">&#39;A/365F&#39;</span><span class="p">,</span><span class="s1">&#39;A/A ISDA&#39;</span><span class="p">,</span><span class="s1">&#39;A/A AFB&#39;</span><span class="p">]</span>
-<span class="n">loan_summary</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:[</span><span class="n">x</span><span class="p">,</span><span class="n">pyloan</span><span class="o">.</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">compounding_method</span><span class="o">=</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()</span><span class="o">.</span><span class="n">total_interest_amount</span><span class="p">],</span><span class="n">day_count_conventions</span><span class="p">))</span>
+<span class="n">loan_summary</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:[</span><span class="n">x</span><span class="p">,</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">compounding_method</span><span class="o">=</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()</span><span class="o">.</span><span class="n">total_interest_amount</span><span class="p">],</span><span class="n">day_count_conventions</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Results can be summarized in the familiar pandas DataFrame:</p>
@@ -257,7 +283,7 @@
 </div>
 </section>
 <section id="loan-mortgage-type">
-<h2>Loan/mortgage type<a class="headerlink" href="#loan-mortgage-type" title="Permalink to this headline"></a></h2>
+<h2>Loan/mortgage type<a class="headerlink" href="#loan-mortgage-type" title="Link to this heading"></a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">Loan</span></code> argument <code class="docutils literal notranslate"><span class="pre">loan_type</span></code> to change the type of the loan/mortgage:</p>
 <ul class="simple">
 <li><p>‘annuity’ (default): gross monthly costs - principal plus interest - remain fixed during the term of the loan/mortgage.</p></li>

@@ -7,11 +7,11 @@ Define a loan
 =============
 Defining a loan with PyLoan is very simple. Begin by importing the PyLoan module::
 
- from pyloan import pyloan
+ from pyloan import Loan
 
 Next define a loan::
 
-  loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15')
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15')
 
 The above defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month.
 
@@ -21,18 +21,19 @@ The loan has the following **required arguments**:
 
 * ``loan_amount``: the amount of money being borrowed. Input must be greater than zero.
 * ``interest_rate``: the annual interest paid on the loan/mortgage. Input must be greater than zero.
-* ``loan_term``: the number of years of the loan/mortgage. Input must be an integer greater or equal than 1-year.
+* ``loan_term``: the number of years/months of the loan/mortgage. Input must be an integer greater or equal than 1.
 * ``start_date``: the date as of which the loan/mortgage begins. Input format must be YYYY-MM-DD.
 
 In addition, the loan has the following **optional argument**:
 
+* ``loan_term_period``: the period of the loan term, 'Y' for years or 'M' for months. Default value is 'Y'.
 * ``payment_amount``: the amount used to repay loan/interest. Default value is None. When the value is set to other than None, the specified amount will be used to cover interest and principal repayments.
 * ``first_payment_date``: the date as at which first payment on the loan/mortget is made. Input format must be YYYY-MM-DD and greater than the start date. Default value is None.
 * ``payment_end_of_month``: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and ``first_payment_date`` is None then loan/mortgage payments will fall on the day specified in the ``start_date``.
 * ``annual_payments``: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).
 * ``interest_only_period``: the number of interest-only payments on the loan/mortgage. The default value is 0.
 * ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360', otherwise known 30/360 German (or 30E/360 ISDA). For more details on other alternatives, see :ref:`Section on interest rate compounding`.
-* ``loan_type``: type of laon/mortgage. Default value is annuity. Alternative values are: linear and interest-only. 
+* ``loan_type``: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.
 
 Get payment schedule
 ====================
@@ -40,7 +41,7 @@ To view the payment schedule and loan amortization use the ``get_payment_schedul
 
   payment_schedule = loan.get_payment_schedule()
 
-The above outputs a list of named tuples with the following fields per row:
+The above outputs a list of dataclasses with the following fields per row:
 
 * ``date``: date of payment.
 * ``payment_amount``: periodic payment amount of principal and interest.
@@ -53,9 +54,10 @@ The above outputs a list of named tuples with the following fields per row:
 The first row represents the loan start with the 'loan_balance_column' equal to the loan amount. Each subsequent row represents loan repayment.
 
 .. tip::
-   To define payment schedule as `pandas` DataFrame, use the method `from_records`::
-
-    df=pd.DataFrame.from_records(loan.get_payment_schedule(),columns=pyloan.Payment._fields)
+   To define payment schedule as `pandas` DataFrame, covert a list of Payments object into a list of dictionaries::
+    
+    data = [p.__dict__ for p in payment_schedule]
+    df=pd.DataFrame.from_records(data)
 
    This will generate a familiar DataFrame with named tuple fields as columns.
 
@@ -68,7 +70,7 @@ Specify payment amount
 ======================
 The example above calculated the payment amount that fully amortized the loan amount over its term. It is possible to specify a payment amount. Depending on the payment amount, the loan may be fully amortized over the loan term of not. To specify the payment amount use ``Loan`` argument ``payment_amount``. Using the example above, add payment amount of 888.33 EUR per month::
 
-  loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)
 
 .. image:: _static/specify_payment_amount.png
    :alt: Pandas DataFrame output of the payment schedule with the specified payment amount.
@@ -81,7 +83,7 @@ In addition, the payment schedule above assumes that payments are made at month 
 
 Below is an example of the same loan that is paid on quarterly basis, on the 15th of every month::
 
- loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33,annual_payments=4)
+ loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33,annual_payments=4)
 
 .. image:: _static/loan_quarterly_payments.png
    :alt: Pandas DataFrame output of the payment schedule on quarterly basis.
@@ -100,9 +102,23 @@ Following the example above, make first payment fall on the 17th of September. E
 
 Add special payments
 ====================
-To add special payments to the loan, use the ``add_special_payment`` method. For instance, following the example above, add special payment of 5000 EUR first paid on 2021-03-15 for next 8 years paid annually::
+To add special payments to the loan, use the ``add_special_payment`` method. This method has the following arguments:
 
-  loan.add_special_payment(payment_amount=5000,first_payment_date='2021-03-17',special_payment_term=8,annual_payments=1)
+* ``payment_amount``: the amount of the special payment.
+* ``first_payment_date``: the date of the first special payment in YYYY-MM-DD format.
+* ``special_payment_term``: the term of the special payment in years or months.
+* ``annual_payments``: the number of special payments per year.
+* ``special_payment_term_period``: the period of the special payment term, 'Y' for years or 'M' for months. Default value is 'Y'.
+
+For instance, following the example above, add special payment of 5000 EUR first paid on 2021-03-15 for next 8 years paid annually::
+
+  loan.add_special_payment(
+    payment_amount=5000,
+    first_payment_date='2021-03-17',
+    special_payment_term=8,
+    annual_payments=1,
+    special_payment_term_period='Y'
+    )
 
 Next, recalculate payment schedule considering special payments as defined above::
 
@@ -124,9 +140,13 @@ In the examples above, principal and interest payments were made starting with t
 
 Using the initial example presented in this documentation, defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month. However, let's say interest-only period is 3-months; that is the ``Loan`` argument ``interest_only_period=3``::
 
-  loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',interest_only_period=3)
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',interest_only_period=3)
 
 The loan defined above resembles the original example presented in this documentation. The only difference is that for the first 3 payments, payment includes interest-only (no principal amount).
+
+The same loan can be defined with the loan term in months::
+
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=120,loan_term_period='M',start_date='2020-06-15',interest_only_period=3)
 
 .. image:: _static/interest_only_period.png
    :alt: Loan with 3-month interest-only period.
@@ -140,7 +160,7 @@ To get loan summary, use the ``get_loan_summary`` method::
 
   payment_schedule = loan.get_loan_summary()
 
-The above outputs a list of named tuples with the following fields per row:
+The above outputs a dataclass with the following fields:
 
 * ``loan_amount``: original loan amount.
 * ``total_payment_amount``: total amount paid (principal and interest) over the loan term.
@@ -151,11 +171,12 @@ The above outputs a list of named tuples with the following fields per row:
 
 
 .. tip::
-   To define payment schedule as `pandas` DataFrame, use the method `from_records`::
+   To define loan summary as `pandas` DataFrame, covert the LoanSummary object to a dictionary::
 
-    loan_summary_df=pd.DataFrame.from_records([loan.get_loan_summary()],columns=pyloan.Loan_Summary._fields)
+    loan_summary = loan.get_loan_summary()
+    loan_summary_df=pd.DataFrame([loan_summary.__dict__])
 
-   This will generate a familiar DataFrame with named tuple fields as columns.
+   This will generate a familiar DataFrame.
 
    .. image:: _static/loan_summary.png
       :alt: Pandas DataFrame output of the loan summary
@@ -181,7 +202,7 @@ By default PyLoan is compounding interest rates based on the 30/360 day count me
    Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020::
 
     day_count_conventions=['30A/360','30U/360','30E/360','30E/360 ISDA','A/360','A/365F','A/A ISDA','A/A AFB']
-    loan_summary=list(map(lambda x:[x,pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
+    loan_summary=list(map(lambda x:[x,Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
 
    Results can be summarized in the familiar pandas DataFrame::
 
