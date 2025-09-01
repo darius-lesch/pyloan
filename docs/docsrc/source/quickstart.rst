@@ -7,11 +7,11 @@ Define a loan
 =============
 Defining a loan with PyLoan is very simple. Begin by importing the PyLoan module::
 
- from pyloan import pyloan
+ from pyloan import Loan
 
 Next define a loan::
 
-  loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15')
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15')
 
 The above defines a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020. By default, monthly payment amount will be calculated to amortize the loan amount fully over the given loan term. Also, by default, monthly payments fall on the last day of the month.
 
@@ -53,9 +53,10 @@ The above outputs a list of named tuples with the following fields per row:
 The first row represents the loan start with the 'loan_balance_column' equal to the loan amount. Each subsequent row represents loan repayment.
 
 .. tip::
-   To define payment schedule as `pandas` DataFrame, use the method `from_records`::
-
-    df=pd.DataFrame.from_records(loan.get_payment_schedule(),columns=pyloan.Payment._fields)
+   To define payment schedule as `pandas` DataFrame, covert a list of Payments object into a list of dictionaries::
+    
+    data = [p.__dict__ for p in payment_schedule]
+    df=pd.DataFrame.from_records(data)
 
    This will generate a familiar DataFrame with named tuple fields as columns.
 
@@ -68,7 +69,7 @@ Specify payment amount
 ======================
 The example above calculated the payment amount that fully amortized the loan amount over its term. It is possible to specify a payment amount. Depending on the payment amount, the loan may be fully amortized over the loan term of not. To specify the payment amount use ``Loan`` argument ``payment_amount``. Using the example above, add payment amount of 888.33 EUR per month::
 
-  loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)
+  loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33)
 
 .. image:: _static/specify_payment_amount.png
    :alt: Pandas DataFrame output of the payment schedule with the specified payment amount.
@@ -81,7 +82,7 @@ In addition, the payment schedule above assumes that payments are made at month 
 
 Below is an example of the same loan that is paid on quarterly basis, on the 15th of every month::
 
- loan = pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33,annual_payments=4)
+ loan = Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',payment_amount=888.33,annual_payments=4)
 
 .. image:: _static/loan_quarterly_payments.png
    :alt: Pandas DataFrame output of the payment schedule on quarterly basis.
@@ -151,11 +152,12 @@ The above outputs a list of named tuples with the following fields per row:
 
 
 .. tip::
-   To define payment schedule as `pandas` DataFrame, use the method `from_records`::
+   To define loan summary as `pandas` DataFrame, covert the LoanSummary object to a dictionary::
 
-    loan_summary_df=pd.DataFrame.from_records([loan.get_loan_summary()],columns=pyloan.Loan_Summary._fields)
+    loan_summary = loan.get_loan_summary()
+    loan_summary_df=pd.DataFrame([loan_summary.__dict__])
 
-   This will generate a familiar DataFrame with named tuple fields as columns.
+   This will generate a familiar DataFrame.
 
    .. image:: _static/loan_summary.png
       :alt: Pandas DataFrame output of the loan summary
@@ -181,7 +183,7 @@ By default PyLoan is compounding interest rates based on the 30/360 day count me
    Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020::
 
     day_count_conventions=['30A/360','30U/360','30E/360','30E/360 ISDA','A/360','A/365F','A/A ISDA','A/A AFB']
-    loan_summary=list(map(lambda x:[x,pyloan.Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
+    loan_summary=list(map(lambda x:[x,Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
 
    Results can be summarized in the familiar pandas DataFrame::
 
