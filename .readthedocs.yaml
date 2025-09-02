@@ -10,3 +10,8 @@ build:
 
 sphinx:
    configuration: docs/docsrc/source/conf.py
+
+# Install documentation dependencies
+python:
+   install:
+     - requirements: docs/docsrc/requirements.txt
