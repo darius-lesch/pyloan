@@ -3,5 +3,15 @@
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 # Build documentation in the docs/ directory with Sphinx
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+
 sphinx:
    configuration: docs/docsrc/source/conf.py
+
+# Install documentation dependencies
+python:
+   install:
+     - requirements: docs/docsrc/requirements.txt
