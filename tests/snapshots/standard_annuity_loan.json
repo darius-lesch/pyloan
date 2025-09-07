@@ -13,7 +13,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "966.67",
     "principal_amount": "232.43",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "232.43",
     "loan_balance_amount": "199767.57"
   },
@@ -22,7 +22,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "932.25",
     "principal_amount": "266.85",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "266.85",
     "loan_balance_amount": "199500.72"
   },
@@ -31,7 +31,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "1064.00",
     "principal_amount": "135.10",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "135.10",
     "loan_balance_amount": "199365.62"
   },
@@ -40,7 +40,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "996.83",
     "principal_amount": "202.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "202.27",
     "loan_balance_amount": "199163.35"
   },
@@ -49,7 +49,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "995.82",
     "principal_amount": "203.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "203.28",
     "loan_balance_amount": "198960.07"
   },
@@ -58,7 +58,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "994.80",
     "principal_amount": "204.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "204.30",
     "loan_balance_amount": "198755.77"
   },
@@ -67,7 +67,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "993.78",
     "principal_amount": "205.32",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "205.32",
     "loan_balance_amount": "198550.45"
   },
@@ -76,7 +76,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "992.75",
     "principal_amount": "206.35",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "206.35",
     "loan_balance_amount": "198344.10"
   },
@@ -85,7 +85,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "991.72",
     "principal_amount": "207.38",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "207.38",
     "loan_balance_amount": "198136.72"
   },
@@ -94,7 +94,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "990.68",
     "principal_amount": "208.42",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "208.42",
     "loan_balance_amount": "197928.30"
   },
@@ -103,7 +103,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "989.64",
     "principal_amount": "209.46",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "209.46",
     "loan_balance_amount": "197718.84"
   },
@@ -112,7 +112,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "988.59",
     "principal_amount": "210.51",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "210.51",
     "loan_balance_amount": "197508.33"
   },
@@ -121,7 +121,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "987.54",
     "principal_amount": "211.56",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "211.56",
     "loan_balance_amount": "197296.77"
   },
@@ -130,7 +130,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "920.72",
     "principal_amount": "278.38",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "278.38",
     "loan_balance_amount": "197018.39"
   },
@@ -139,7 +139,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "1050.76",
     "principal_amount": "148.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "148.34",
     "loan_balance_amount": "196870.05"
   },
@@ -148,7 +148,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "984.35",
     "principal_amount": "214.75",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "214.75",
     "loan_balance_amount": "196655.30"
   },
@@ -157,7 +157,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "983.28",
     "principal_amount": "215.82",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "215.82",
     "loan_balance_amount": "196439.48"
   },
@@ -166,7 +166,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "982.20",
     "principal_amount": "216.90",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "216.90",
     "loan_balance_amount": "196222.58"
   },
@@ -175,7 +175,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "981.11",
     "principal_amount": "217.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "217.99",
     "loan_balance_amount": "196004.59"
   },
@@ -184,7 +184,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "980.02",
     "principal_amount": "219.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "219.08",
     "loan_balance_amount": "195785.51"
   },
@@ -193,7 +193,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "978.93",
     "principal_amount": "220.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "220.17",
     "loan_balance_amount": "195565.34"
   },
@@ -202,7 +202,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "977.83",
     "principal_amount": "221.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "221.27",
     "loan_balance_amount": "195344.07"
   },
@@ -211,7 +211,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "976.72",
     "principal_amount": "222.38",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "222.38",
     "loan_balance_amount": "195121.69"
   },
@@ -220,7 +220,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "975.61",
     "principal_amount": "223.49",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "223.49",
     "loan_balance_amount": "194898.20"
   },
@@ -229,7 +229,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "974.49",
     "principal_amount": "224.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "224.61",
     "loan_balance_amount": "194673.59"
   },
@@ -238,7 +238,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "940.92",
     "principal_amount": "258.18",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "258.18",
     "loan_balance_amount": "194415.41"
   },
@@ -247,7 +247,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "1004.48",
     "principal_amount": "194.62",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "194.62",
     "loan_balance_amount": "194220.79"
   },
@@ -256,7 +256,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "971.10",
     "principal_amount": "228.00",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "228.00",
     "loan_balance_amount": "193992.79"
   },
@@ -265,7 +265,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "969.96",
     "principal_amount": "229.14",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "229.14",
     "loan_balance_amount": "193763.65"
   },
@@ -274,7 +274,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "968.82",
     "principal_amount": "230.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "230.28",
     "loan_balance_amount": "193533.37"
   },
@@ -283,7 +283,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "967.67",
     "principal_amount": "231.43",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "231.43",
     "loan_balance_amount": "193301.94"
   },
@@ -292,7 +292,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "966.51",
     "principal_amount": "232.59",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "232.59",
     "loan_balance_amount": "193069.35"
   },
@@ -301,7 +301,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "965.35",
     "principal_amount": "233.75",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "233.75",
     "loan_balance_amount": "192835.60"
   },
@@ -310,7 +310,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "964.18",
     "principal_amount": "234.92",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "234.92",
     "loan_balance_amount": "192600.68"
   },
@@ -319,7 +319,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "963.00",
     "principal_amount": "236.10",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "236.10",
     "loan_balance_amount": "192364.58"
   },
@@ -328,7 +328,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "961.82",
     "principal_amount": "237.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "237.28",
     "loan_balance_amount": "192127.30"
   },
@@ -337,7 +337,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "960.64",
     "principal_amount": "238.46",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "238.46",
     "loan_balance_amount": "191888.84"
   },
@@ -346,7 +346,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "895.48",
     "principal_amount": "303.62",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "303.62",
     "loan_balance_amount": "191585.22"
   },
@@ -355,7 +355,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "1021.79",
     "principal_amount": "177.31",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "177.31",
     "loan_balance_amount": "191407.91"
   },
@@ -364,7 +364,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "957.04",
     "principal_amount": "242.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "242.06",
     "loan_balance_amount": "191165.85"
   },
@@ -373,7 +373,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "955.83",
     "principal_amount": "243.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "243.27",
     "loan_balance_amount": "190922.58"
   },
@@ -382,7 +382,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "954.61",
     "principal_amount": "244.49",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "244.49",
     "loan_balance_amount": "190678.09"
   },
@@ -391,7 +391,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "953.39",
     "principal_amount": "245.71",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "245.71",
     "loan_balance_amount": "190432.38"
   },
@@ -400,7 +400,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "952.16",
     "principal_amount": "246.94",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "246.94",
     "loan_balance_amount": "190185.44"
   },
@@ -409,7 +409,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "950.93",
     "principal_amount": "248.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "248.17",
     "loan_balance_amount": "189937.27"
   },
@@ -418,7 +418,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "949.69",
     "principal_amount": "249.41",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "249.41",
     "loan_balance_amount": "189687.86"
   },
@@ -427,7 +427,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "948.44",
     "principal_amount": "250.66",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "250.66",
     "loan_balance_amount": "189437.20"
   },
@@ -436,7 +436,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "947.19",
     "principal_amount": "251.91",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "251.91",
     "loan_balance_amount": "189185.29"
   },
@@ -445,7 +445,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "945.93",
     "principal_amount": "253.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "253.17",
     "loan_balance_amount": "188932.12"
   },
@@ -454,7 +454,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "881.68",
     "principal_amount": "317.42",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "317.42",
     "loan_balance_amount": "188614.70"
   },
@@ -463,7 +463,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "1005.95",
     "principal_amount": "193.15",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "193.15",
     "loan_balance_amount": "188421.55"
   },
@@ -472,7 +472,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "942.11",
     "principal_amount": "256.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "256.99",
     "loan_balance_amount": "188164.56"
   },
@@ -481,7 +481,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "940.82",
     "principal_amount": "258.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "258.28",
     "loan_balance_amount": "187906.28"
   },
@@ -490,7 +490,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "939.53",
     "principal_amount": "259.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "259.57",
     "loan_balance_amount": "187646.71"
   },
@@ -499,7 +499,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "938.23",
     "principal_amount": "260.87",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "260.87",
     "loan_balance_amount": "187385.84"
   },
@@ -508,7 +508,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "936.93",
     "principal_amount": "262.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "262.17",
     "loan_balance_amount": "187123.67"
   },
@@ -517,7 +517,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "935.62",
     "principal_amount": "263.48",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "263.48",
     "loan_balance_amount": "186860.19"
   },
@@ -526,7 +526,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "934.30",
     "principal_amount": "264.80",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "264.80",
     "loan_balance_amount": "186595.39"
   },
@@ -535,7 +535,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "932.98",
     "principal_amount": "266.12",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "266.12",
     "loan_balance_amount": "186329.27"
   },
@@ -544,7 +544,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "931.65",
     "principal_amount": "267.45",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "267.45",
     "loan_balance_amount": "186061.82"
   },
@@ -553,7 +553,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "930.31",
     "principal_amount": "268.79",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "268.79",
     "loan_balance_amount": "185793.03"
   },
@@ -562,7 +562,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "867.03",
     "principal_amount": "332.07",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "332.07",
     "loan_balance_amount": "185460.96"
   },
@@ -571,7 +571,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "989.13",
     "principal_amount": "209.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "209.97",
     "loan_balance_amount": "185250.99"
   },
@@ -580,7 +580,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "926.25",
     "principal_amount": "272.85",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "272.85",
     "loan_balance_amount": "184978.14"
   },
@@ -589,7 +589,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "924.89",
     "principal_amount": "274.21",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "274.21",
     "loan_balance_amount": "184703.93"
   },
@@ -598,7 +598,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "923.52",
     "principal_amount": "275.58",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "275.58",
     "loan_balance_amount": "184428.35"
   },
@@ -607,7 +607,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "922.14",
     "principal_amount": "276.96",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "276.96",
     "loan_balance_amount": "184151.39"
   },
@@ -616,7 +616,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "920.76",
     "principal_amount": "278.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "278.34",
     "loan_balance_amount": "183873.05"
   },
@@ -625,7 +625,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "919.37",
     "principal_amount": "279.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "279.73",
     "loan_balance_amount": "183593.32"
   },
@@ -634,7 +634,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "917.97",
     "principal_amount": "281.13",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "281.13",
     "loan_balance_amount": "183312.19"
   },
@@ -643,7 +643,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "916.56",
     "principal_amount": "282.54",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "282.54",
     "loan_balance_amount": "183029.65"
   },
@@ -652,7 +652,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "915.15",
     "principal_amount": "283.95",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "283.95",
     "loan_balance_amount": "182745.70"
   },
@@ -661,7 +661,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "913.73",
     "principal_amount": "285.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "285.37",
     "loan_balance_amount": "182460.33"
   },
@@ -670,7 +670,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "881.89",
     "principal_amount": "317.21",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "317.21",
     "loan_balance_amount": "182143.12"
   },
@@ -679,7 +679,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "941.07",
     "principal_amount": "258.03",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "258.03",
     "loan_balance_amount": "181885.09"
   },
@@ -688,7 +688,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "909.43",
     "principal_amount": "289.67",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "289.67",
     "loan_balance_amount": "181595.42"
   },
@@ -697,7 +697,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "907.98",
     "principal_amount": "291.12",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "291.12",
     "loan_balance_amount": "181304.30"
   },
@@ -706,7 +706,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "906.52",
     "principal_amount": "292.58",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "292.58",
     "loan_balance_amount": "181011.72"
   },
@@ -715,7 +715,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "905.06",
     "principal_amount": "294.04",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "294.04",
     "loan_balance_amount": "180717.68"
   },
@@ -724,7 +724,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "903.59",
     "principal_amount": "295.51",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "295.51",
     "loan_balance_amount": "180422.17"
   },
@@ -733,7 +733,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "902.11",
     "principal_amount": "296.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "296.99",
     "loan_balance_amount": "180125.18"
   },
@@ -742,7 +742,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "900.63",
     "principal_amount": "298.47",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "298.47",
     "loan_balance_amount": "179826.71"
   },
@@ -751,7 +751,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "899.13",
     "principal_amount": "299.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "299.97",
     "loan_balance_amount": "179526.74"
   },
@@ -760,7 +760,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "897.63",
     "principal_amount": "301.47",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "301.47",
     "loan_balance_amount": "179225.27"
   },
@@ -769,7 +769,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "896.13",
     "principal_amount": "302.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "302.97",
     "loan_balance_amount": "178922.30"
   },
@@ -778,7 +778,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "834.97",
     "principal_amount": "364.13",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "364.13",
     "loan_balance_amount": "178558.17"
   },
@@ -787,7 +787,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "952.31",
     "principal_amount": "246.79",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "246.79",
     "loan_balance_amount": "178311.38"
   },
@@ -796,7 +796,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "891.56",
     "principal_amount": "307.54",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "307.54",
     "loan_balance_amount": "178003.84"
   },
@@ -805,7 +805,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "890.02",
     "principal_amount": "309.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "309.08",
     "loan_balance_amount": "177694.76"
   },
@@ -814,7 +814,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "888.47",
     "principal_amount": "310.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "310.63",
     "loan_balance_amount": "177384.13"
   },
@@ -823,7 +823,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "886.92",
     "principal_amount": "312.18",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "312.18",
     "loan_balance_amount": "177071.95"
   },
@@ -832,7 +832,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "885.36",
     "principal_amount": "313.74",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "313.74",
     "loan_balance_amount": "176758.21"
   },
@@ -841,7 +841,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "883.79",
     "principal_amount": "315.31",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "315.31",
     "loan_balance_amount": "176442.90"
   },
@@ -850,7 +850,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "882.21",
     "principal_amount": "316.89",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "316.89",
     "loan_balance_amount": "176126.01"
   },
@@ -859,7 +859,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "880.63",
     "principal_amount": "318.47",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "318.47",
     "loan_balance_amount": "175807.54"
   },
@@ -868,7 +868,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "879.04",
     "principal_amount": "320.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "320.06",
     "loan_balance_amount": "175487.48"
   },
@@ -877,7 +877,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "877.44",
     "principal_amount": "321.66",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "321.66",
     "loan_balance_amount": "175165.82"
   },
@@ -886,7 +886,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "817.44",
     "principal_amount": "381.66",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "381.66",
     "loan_balance_amount": "174784.16"
   },
@@ -895,7 +895,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "932.18",
     "principal_amount": "266.92",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "266.92",
     "loan_balance_amount": "174517.24"
   },
@@ -904,7 +904,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "872.59",
     "principal_amount": "326.51",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "326.51",
     "loan_balance_amount": "174190.73"
   },
@@ -913,7 +913,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "870.95",
     "principal_amount": "328.15",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "328.15",
     "loan_balance_amount": "173862.58"
   },
@@ -922,7 +922,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "869.31",
     "principal_amount": "329.79",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "329.79",
     "loan_balance_amount": "173532.79"
   },
@@ -931,7 +931,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "867.66",
     "principal_amount": "331.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "331.44",
     "loan_balance_amount": "173201.35"
   },
@@ -940,7 +940,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "866.01",
     "principal_amount": "333.09",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "333.09",
     "loan_balance_amount": "172868.26"
   },
@@ -949,7 +949,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "864.34",
     "principal_amount": "334.76",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "334.76",
     "loan_balance_amount": "172533.50"
   },
@@ -958,7 +958,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "862.67",
     "principal_amount": "336.43",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "336.43",
     "loan_balance_amount": "172197.07"
   },
@@ -967,7 +967,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "860.99",
     "principal_amount": "338.11",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "338.11",
     "loan_balance_amount": "171858.96"
   },
@@ -976,7 +976,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "859.29",
     "principal_amount": "339.81",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "339.81",
     "loan_balance_amount": "171519.15"
   },
@@ -985,7 +985,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "857.60",
     "principal_amount": "341.50",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "341.50",
     "loan_balance_amount": "171177.65"
   },
@@ -994,7 +994,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "798.83",
     "principal_amount": "400.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "400.27",
     "loan_balance_amount": "170777.38"
   },
@@ -1003,7 +1003,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "910.81",
     "principal_amount": "288.29",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "288.29",
     "loan_balance_amount": "170489.09"
   },
@@ -1012,7 +1012,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "852.45",
     "principal_amount": "346.65",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "346.65",
     "loan_balance_amount": "170142.44"
   },
@@ -1021,7 +1021,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "850.71",
     "principal_amount": "348.39",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "348.39",
     "loan_balance_amount": "169794.05"
   },
@@ -1030,7 +1030,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "848.97",
     "principal_amount": "350.13",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "350.13",
     "loan_balance_amount": "169443.92"
   },
@@ -1039,7 +1039,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "847.22",
     "principal_amount": "351.88",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "351.88",
     "loan_balance_amount": "169092.04"
   },
@@ -1048,7 +1048,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "845.46",
     "principal_amount": "353.64",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "353.64",
     "loan_balance_amount": "168738.40"
   },
@@ -1057,7 +1057,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "843.69",
     "principal_amount": "355.41",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "355.41",
     "loan_balance_amount": "168382.99"
   },
@@ -1066,7 +1066,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "841.91",
     "principal_amount": "357.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "357.19",
     "loan_balance_amount": "168025.80"
   },
@@ -1075,7 +1075,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "840.13",
     "principal_amount": "358.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "358.97",
     "loan_balance_amount": "167666.83"
   },
@@ -1084,7 +1084,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "838.33",
     "principal_amount": "360.77",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "360.77",
     "loan_balance_amount": "167306.06"
   },
@@ -1093,7 +1093,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "836.53",
     "principal_amount": "362.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "362.57",
     "loan_balance_amount": "166943.49"
   },
@@ -1102,7 +1102,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "806.89",
     "principal_amount": "392.21",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "392.21",
     "loan_balance_amount": "166551.28"
   },
@@ -1111,7 +1111,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "860.51",
     "principal_amount": "338.59",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "338.59",
     "loan_balance_amount": "166212.69"
   },
@@ -1120,7 +1120,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "831.06",
     "principal_amount": "368.04",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "368.04",
     "loan_balance_amount": "165844.65"
   },
@@ -1129,7 +1129,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "829.22",
     "principal_amount": "369.88",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "369.88",
     "loan_balance_amount": "165474.77"
   },
@@ -1138,7 +1138,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "827.37",
     "principal_amount": "371.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "371.73",
     "loan_balance_amount": "165103.04"
   },
@@ -1147,7 +1147,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "825.52",
     "principal_amount": "373.58",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "373.58",
     "loan_balance_amount": "164729.46"
   },
@@ -1156,7 +1156,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "823.65",
     "principal_amount": "375.45",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "375.45",
     "loan_balance_amount": "164354.01"
   },
@@ -1165,7 +1165,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "821.77",
     "principal_amount": "377.33",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "377.33",
     "loan_balance_amount": "163976.68"
   },
@@ -1174,7 +1174,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "819.88",
     "principal_amount": "379.22",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "379.22",
     "loan_balance_amount": "163597.46"
   },
@@ -1183,7 +1183,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "817.99",
     "principal_amount": "381.11",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "381.11",
     "loan_balance_amount": "163216.35"
   },
@@ -1192,7 +1192,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "816.08",
     "principal_amount": "383.02",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "383.02",
     "loan_balance_amount": "162833.33"
   },
@@ -1201,7 +1201,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "814.17",
     "principal_amount": "384.93",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "384.93",
     "loan_balance_amount": "162448.40"
   },
@@ -1210,7 +1210,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "758.09",
     "principal_amount": "441.01",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "441.01",
     "loan_balance_amount": "162007.39"
   },
@@ -1219,7 +1219,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "864.04",
     "principal_amount": "335.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "335.06",
     "loan_balance_amount": "161672.33"
   },
@@ -1228,7 +1228,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "808.36",
     "principal_amount": "390.74",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "390.74",
     "loan_balance_amount": "161281.59"
   },
@@ -1237,7 +1237,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "806.41",
     "principal_amount": "392.69",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "392.69",
     "loan_balance_amount": "160888.90"
   },
@@ -1246,7 +1246,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "804.44",
     "principal_amount": "394.66",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "394.66",
     "loan_balance_amount": "160494.24"
   },
@@ -1255,7 +1255,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "802.47",
     "principal_amount": "396.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "396.63",
     "loan_balance_amount": "160097.61"
   },
@@ -1264,7 +1264,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "800.49",
     "principal_amount": "398.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "398.61",
     "loan_balance_amount": "159699.00"
   },
@@ -1273,7 +1273,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "798.49",
     "principal_amount": "400.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "400.61",
     "loan_balance_amount": "159298.39"
   },
@@ -1282,7 +1282,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "796.49",
     "principal_amount": "402.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "402.61",
     "loan_balance_amount": "158895.78"
   },
@@ -1291,7 +1291,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "794.48",
     "principal_amount": "404.62",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "404.62",
     "loan_balance_amount": "158491.16"
   },
@@ -1300,7 +1300,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "792.46",
     "principal_amount": "406.64",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "406.64",
     "loan_balance_amount": "158084.52"
   },
@@ -1309,7 +1309,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "790.42",
     "principal_amount": "408.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "408.68",
     "loan_balance_amount": "157675.84"
   },
@@ -1318,7 +1318,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "735.82",
     "principal_amount": "463.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "463.28",
     "loan_balance_amount": "157212.56"
   },
@@ -1327,7 +1327,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "838.47",
     "principal_amount": "360.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "360.63",
     "loan_balance_amount": "156851.93"
   },
@@ -1336,7 +1336,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "784.26",
     "principal_amount": "414.84",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "414.84",
     "loan_balance_amount": "156437.09"
   },
@@ -1345,7 +1345,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "782.19",
     "principal_amount": "416.91",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "416.91",
     "loan_balance_amount": "156020.18"
   },
@@ -1354,7 +1354,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "780.10",
     "principal_amount": "419.00",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "419.00",
     "loan_balance_amount": "155601.18"
   },
@@ -1363,7 +1363,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "778.01",
     "principal_amount": "421.09",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "421.09",
     "loan_balance_amount": "155180.09"
   },
@@ -1372,7 +1372,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "775.90",
     "principal_amount": "423.20",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "423.20",
     "loan_balance_amount": "154756.89"
   },
@@ -1381,7 +1381,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "773.78",
     "principal_amount": "425.32",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "425.32",
     "loan_balance_amount": "154331.57"
   },
@@ -1390,7 +1390,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "771.66",
     "principal_amount": "427.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "427.44",
     "loan_balance_amount": "153904.13"
   },
@@ -1399,7 +1399,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "769.52",
     "principal_amount": "429.58",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "429.58",
     "loan_balance_amount": "153474.55"
   },
@@ -1408,7 +1408,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "767.37",
     "principal_amount": "431.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "431.73",
     "loan_balance_amount": "153042.82"
   },
@@ -1417,7 +1417,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "765.21",
     "principal_amount": "433.89",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "433.89",
     "loan_balance_amount": "152608.93"
   },
@@ -1426,7 +1426,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "712.18",
     "principal_amount": "486.92",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "486.92",
     "loan_balance_amount": "152122.01"
   },
@@ -1435,7 +1435,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "811.32",
     "principal_amount": "387.78",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "387.78",
     "loan_balance_amount": "151734.23"
   },
@@ -1444,7 +1444,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "758.67",
     "principal_amount": "440.43",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "440.43",
     "loan_balance_amount": "151293.80"
   },
@@ -1453,7 +1453,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "756.47",
     "principal_amount": "442.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "442.63",
     "loan_balance_amount": "150851.17"
   },
@@ -1462,7 +1462,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "754.26",
     "principal_amount": "444.84",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "444.84",
     "loan_balance_amount": "150406.33"
   },
@@ -1471,7 +1471,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "752.03",
     "principal_amount": "447.07",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "447.07",
     "loan_balance_amount": "149959.26"
   },
@@ -1480,7 +1480,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "749.80",
     "principal_amount": "449.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "449.30",
     "loan_balance_amount": "149509.96"
   },
@@ -1489,7 +1489,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "747.55",
     "principal_amount": "451.55",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "451.55",
     "loan_balance_amount": "149058.41"
   },
@@ -1498,7 +1498,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "745.29",
     "principal_amount": "453.81",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "453.81",
     "loan_balance_amount": "148604.60"
   },
@@ -1507,7 +1507,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "743.02",
     "principal_amount": "456.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "456.08",
     "loan_balance_amount": "148148.52"
   },
@@ -1516,7 +1516,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "740.74",
     "principal_amount": "458.36",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "458.36",
     "loan_balance_amount": "147690.16"
   },
@@ -1525,7 +1525,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "738.45",
     "principal_amount": "460.65",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "460.65",
     "loan_balance_amount": "147229.51"
   },
@@ -1534,7 +1534,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "711.61",
     "principal_amount": "487.49",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "487.49",
     "loan_balance_amount": "146742.02"
   },
@@ -1543,7 +1543,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "758.17",
     "principal_amount": "440.93",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "440.93",
     "loan_balance_amount": "146301.09"
   },
@@ -1552,7 +1552,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "731.51",
     "principal_amount": "467.59",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "467.59",
     "loan_balance_amount": "145833.50"
   },
@@ -1561,7 +1561,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "729.17",
     "principal_amount": "469.93",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "469.93",
     "loan_balance_amount": "145363.57"
   },
@@ -1570,7 +1570,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "726.82",
     "principal_amount": "472.28",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "472.28",
     "loan_balance_amount": "144891.29"
   },
@@ -1579,7 +1579,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "724.46",
     "principal_amount": "474.64",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "474.64",
     "loan_balance_amount": "144416.65"
   },
@@ -1588,7 +1588,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "722.08",
     "principal_amount": "477.02",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "477.02",
     "loan_balance_amount": "143939.63"
   },
@@ -1597,7 +1597,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "719.70",
     "principal_amount": "479.40",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "479.40",
     "loan_balance_amount": "143460.23"
   },
@@ -1606,7 +1606,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "717.30",
     "principal_amount": "481.80",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "481.80",
     "loan_balance_amount": "142978.43"
   },
@@ -1615,7 +1615,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "714.89",
     "principal_amount": "484.21",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "484.21",
     "loan_balance_amount": "142494.22"
   },
@@ -1624,7 +1624,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "712.47",
     "principal_amount": "486.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "486.63",
     "loan_balance_amount": "142007.59"
   },
@@ -1633,7 +1633,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "710.04",
     "principal_amount": "489.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "489.06",
     "loan_balance_amount": "141518.53"
   },
@@ -1642,7 +1642,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "660.42",
     "principal_amount": "538.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "538.68",
     "loan_balance_amount": "140979.85"
   },
@@ -1651,7 +1651,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "751.89",
     "principal_amount": "447.21",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "447.21",
     "loan_balance_amount": "140532.64"
   },
@@ -1660,7 +1660,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "702.66",
     "principal_amount": "496.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "496.44",
     "loan_balance_amount": "140036.20"
   },
@@ -1669,7 +1669,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "700.18",
     "principal_amount": "498.92",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "498.92",
     "loan_balance_amount": "139537.28"
   },
@@ -1678,7 +1678,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "697.69",
     "principal_amount": "501.41",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "501.41",
     "loan_balance_amount": "139035.87"
   },
@@ -1687,7 +1687,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "695.18",
     "principal_amount": "503.92",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "503.92",
     "loan_balance_amount": "138531.95"
   },
@@ -1696,7 +1696,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "692.66",
     "principal_amount": "506.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "506.44",
     "loan_balance_amount": "138025.51"
   },
@@ -1705,7 +1705,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "690.13",
     "principal_amount": "508.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "508.97",
     "loan_balance_amount": "137516.54"
   },
@@ -1714,7 +1714,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "687.58",
     "principal_amount": "511.52",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "511.52",
     "loan_balance_amount": "137005.02"
   },
@@ -1723,7 +1723,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "685.03",
     "principal_amount": "514.07",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "514.07",
     "loan_balance_amount": "136490.95"
   },
@@ -1732,7 +1732,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "682.45",
     "principal_amount": "516.65",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "516.65",
     "loan_balance_amount": "135974.30"
   },
@@ -1741,7 +1741,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "679.87",
     "principal_amount": "519.23",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "519.23",
     "loan_balance_amount": "135455.07"
   },
@@ -1750,7 +1750,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "632.12",
     "principal_amount": "566.98",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "566.98",
     "loan_balance_amount": "134888.09"
   },
@@ -1759,7 +1759,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "719.40",
     "principal_amount": "479.70",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "479.70",
     "loan_balance_amount": "134408.39"
   },
@@ -1768,7 +1768,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "672.04",
     "principal_amount": "527.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "527.06",
     "loan_balance_amount": "133881.33"
   },
@@ -1777,7 +1777,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "669.41",
     "principal_amount": "529.69",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "529.69",
     "loan_balance_amount": "133351.64"
   },
@@ -1786,7 +1786,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "666.76",
     "principal_amount": "532.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "532.34",
     "loan_balance_amount": "132819.30"
   },
@@ -1795,7 +1795,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "664.10",
     "principal_amount": "535.00",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "535.00",
     "loan_balance_amount": "132284.30"
   },
@@ -1804,7 +1804,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "661.42",
     "principal_amount": "537.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "537.68",
     "loan_balance_amount": "131746.62"
   },
@@ -1813,7 +1813,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "658.73",
     "principal_amount": "540.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "540.37",
     "loan_balance_amount": "131206.25"
   },
@@ -1822,7 +1822,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "656.03",
     "principal_amount": "543.07",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "543.07",
     "loan_balance_amount": "130663.18"
   },
@@ -1831,7 +1831,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "653.32",
     "principal_amount": "545.78",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "545.78",
     "loan_balance_amount": "130117.40"
   },
@@ -1840,7 +1840,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "650.59",
     "principal_amount": "548.51",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "548.51",
     "loan_balance_amount": "129568.89"
   },
@@ -1849,7 +1849,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "647.84",
     "principal_amount": "551.26",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "551.26",
     "loan_balance_amount": "129017.63"
   },
@@ -1858,7 +1858,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "602.08",
     "principal_amount": "597.02",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "597.02",
     "loan_balance_amount": "128420.61"
   },
@@ -1867,7 +1867,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "684.91",
     "principal_amount": "514.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "514.19",
     "loan_balance_amount": "127906.42"
   },
@@ -1876,7 +1876,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "639.53",
     "principal_amount": "559.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "559.57",
     "loan_balance_amount": "127346.85"
   },
@@ -1885,7 +1885,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "636.73",
     "principal_amount": "562.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "562.37",
     "loan_balance_amount": "126784.48"
   },
@@ -1894,7 +1894,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "633.92",
     "principal_amount": "565.18",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "565.18",
     "loan_balance_amount": "126219.30"
   },
@@ -1903,7 +1903,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "631.10",
     "principal_amount": "568.00",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "568.00",
     "loan_balance_amount": "125651.30"
   },
@@ -1912,7 +1912,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "628.26",
     "principal_amount": "570.84",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "570.84",
     "loan_balance_amount": "125080.46"
   },
@@ -1921,7 +1921,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "625.40",
     "principal_amount": "573.70",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "573.70",
     "loan_balance_amount": "124506.76"
   },
@@ -1930,7 +1930,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "622.53",
     "principal_amount": "576.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "576.57",
     "loan_balance_amount": "123930.19"
   },
@@ -1939,7 +1939,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "619.65",
     "principal_amount": "579.45",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "579.45",
     "loan_balance_amount": "123350.74"
   },
@@ -1948,7 +1948,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "616.75",
     "principal_amount": "582.35",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "582.35",
     "loan_balance_amount": "122768.39"
   },
@@ -1957,7 +1957,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "613.84",
     "principal_amount": "585.26",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "585.26",
     "loan_balance_amount": "122183.13"
   },
@@ -1966,7 +1966,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "590.55",
     "principal_amount": "608.55",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "608.55",
     "loan_balance_amount": "121574.58"
   },
@@ -1975,7 +1975,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "628.14",
     "principal_amount": "570.96",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "570.96",
     "loan_balance_amount": "121003.62"
   },
@@ -1984,7 +1984,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "605.02",
     "principal_amount": "594.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "594.08",
     "loan_balance_amount": "120409.54"
   },
@@ -1993,7 +1993,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "602.05",
     "principal_amount": "597.05",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "597.05",
     "loan_balance_amount": "119812.49"
   },
@@ -2002,7 +2002,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "599.06",
     "principal_amount": "600.04",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "600.04",
     "loan_balance_amount": "119212.45"
   },
@@ -2011,7 +2011,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "596.06",
     "principal_amount": "603.04",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "603.04",
     "loan_balance_amount": "118609.41"
   },
@@ -2020,7 +2020,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "593.05",
     "principal_amount": "606.05",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "606.05",
     "loan_balance_amount": "118003.36"
   },
@@ -2029,7 +2029,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "590.02",
     "principal_amount": "609.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "609.08",
     "loan_balance_amount": "117394.28"
   },
@@ -2038,7 +2038,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "586.97",
     "principal_amount": "612.13",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "612.13",
     "loan_balance_amount": "116782.15"
   },
@@ -2047,7 +2047,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "583.91",
     "principal_amount": "615.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "615.19",
     "loan_balance_amount": "116166.96"
   },
@@ -2056,7 +2056,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "580.83",
     "principal_amount": "618.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "618.27",
     "loan_balance_amount": "115548.69"
   },
@@ -2065,7 +2065,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "577.74",
     "principal_amount": "621.36",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "621.36",
     "loan_balance_amount": "114927.33"
   },
@@ -2074,7 +2074,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "536.33",
     "principal_amount": "662.77",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "662.77",
     "loan_balance_amount": "114264.56"
   },
@@ -2083,7 +2083,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "609.41",
     "principal_amount": "589.69",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "589.69",
     "loan_balance_amount": "113674.87"
   },
@@ -2092,7 +2092,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "568.37",
     "principal_amount": "630.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "630.73",
     "loan_balance_amount": "113044.14"
   },
@@ -2101,7 +2101,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "565.22",
     "principal_amount": "633.88",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "633.88",
     "loan_balance_amount": "112410.26"
   },
@@ -2110,7 +2110,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "562.05",
     "principal_amount": "637.05",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "637.05",
     "loan_balance_amount": "111773.21"
   },
@@ -2119,7 +2119,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "558.87",
     "principal_amount": "640.23",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "640.23",
     "loan_balance_amount": "111132.98"
   },
@@ -2128,7 +2128,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "555.66",
     "principal_amount": "643.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "643.44",
     "loan_balance_amount": "110489.54"
   },
@@ -2137,7 +2137,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "552.45",
     "principal_amount": "646.65",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "646.65",
     "loan_balance_amount": "109842.89"
   },
@@ -2146,7 +2146,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "549.21",
     "principal_amount": "649.89",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "649.89",
     "loan_balance_amount": "109193.00"
   },
@@ -2155,7 +2155,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "545.96",
     "principal_amount": "653.14",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "653.14",
     "loan_balance_amount": "108539.86"
   },
@@ -2164,7 +2164,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "542.70",
     "principal_amount": "656.40",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "656.40",
     "loan_balance_amount": "107883.46"
   },
@@ -2173,7 +2173,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "539.42",
     "principal_amount": "659.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "659.68",
     "loan_balance_amount": "107223.78"
   },
@@ -2182,7 +2182,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "500.38",
     "principal_amount": "698.72",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "698.72",
     "loan_balance_amount": "106525.06"
   },
@@ -2191,7 +2191,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "568.13",
     "principal_amount": "630.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "630.97",
     "loan_balance_amount": "105894.09"
   },
@@ -2200,7 +2200,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "529.47",
     "principal_amount": "669.63",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "669.63",
     "loan_balance_amount": "105224.46"
   },
@@ -2209,7 +2209,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "526.12",
     "principal_amount": "672.98",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "672.98",
     "loan_balance_amount": "104551.48"
   },
@@ -2218,7 +2218,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "522.76",
     "principal_amount": "676.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "676.34",
     "loan_balance_amount": "103875.14"
   },
@@ -2227,7 +2227,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "519.38",
     "principal_amount": "679.72",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "679.72",
     "loan_balance_amount": "103195.42"
   },
@@ -2236,7 +2236,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "515.98",
     "principal_amount": "683.12",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "683.12",
     "loan_balance_amount": "102512.30"
   },
@@ -2245,7 +2245,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "512.56",
     "principal_amount": "686.54",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "686.54",
     "loan_balance_amount": "101825.76"
   },
@@ -2254,7 +2254,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "509.13",
     "principal_amount": "689.97",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "689.97",
     "loan_balance_amount": "101135.79"
   },
@@ -2263,7 +2263,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "505.68",
     "principal_amount": "693.42",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "693.42",
     "loan_balance_amount": "100442.37"
   },
@@ -2272,7 +2272,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "502.21",
     "principal_amount": "696.89",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "696.89",
     "loan_balance_amount": "99745.48"
   },
@@ -2281,7 +2281,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "498.73",
     "principal_amount": "700.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "700.37",
     "loan_balance_amount": "99045.11"
   },
@@ -2290,7 +2290,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "462.21",
     "principal_amount": "736.89",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "736.89",
     "loan_balance_amount": "98308.22"
   },
@@ -2299,7 +2299,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "524.31",
     "principal_amount": "674.79",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "674.79",
     "loan_balance_amount": "97633.43"
   },
@@ -2308,7 +2308,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "488.17",
     "principal_amount": "710.93",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "710.93",
     "loan_balance_amount": "96922.50"
   },
@@ -2317,7 +2317,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "484.61",
     "principal_amount": "714.49",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "714.49",
     "loan_balance_amount": "96208.01"
   },
@@ -2326,7 +2326,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "481.04",
     "principal_amount": "718.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "718.06",
     "loan_balance_amount": "95489.95"
   },
@@ -2335,7 +2335,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "477.45",
     "principal_amount": "721.65",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "721.65",
     "loan_balance_amount": "94768.30"
   },
@@ -2344,7 +2344,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "473.84",
     "principal_amount": "725.26",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "725.26",
     "loan_balance_amount": "94043.04"
   },
@@ -2353,7 +2353,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "470.22",
     "principal_amount": "728.88",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "728.88",
     "loan_balance_amount": "93314.16"
   },
@@ -2362,7 +2362,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "466.57",
     "principal_amount": "732.53",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "732.53",
     "loan_balance_amount": "92581.63"
   },
@@ -2371,7 +2371,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "462.91",
     "principal_amount": "736.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "736.19",
     "loan_balance_amount": "91845.44"
   },
@@ -2380,7 +2380,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "459.23",
     "principal_amount": "739.87",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "739.87",
     "loan_balance_amount": "91105.57"
   },
@@ -2389,7 +2389,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "455.53",
     "principal_amount": "743.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "743.57",
     "loan_balance_amount": "90362.00"
   },
@@ -2398,7 +2398,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "436.75",
     "principal_amount": "762.35",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "762.35",
     "loan_balance_amount": "89599.65"
   },
@@ -2407,7 +2407,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "462.93",
     "principal_amount": "736.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "736.17",
     "loan_balance_amount": "88863.48"
   },
@@ -2416,7 +2416,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "444.32",
     "principal_amount": "754.78",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "754.78",
     "loan_balance_amount": "88108.70"
   },
@@ -2425,7 +2425,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "440.54",
     "principal_amount": "758.56",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "758.56",
     "loan_balance_amount": "87350.14"
   },
@@ -2434,7 +2434,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "436.75",
     "principal_amount": "762.35",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "762.35",
     "loan_balance_amount": "86587.79"
   },
@@ -2443,7 +2443,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "432.94",
     "principal_amount": "766.16",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "766.16",
     "loan_balance_amount": "85821.63"
   },
@@ -2452,7 +2452,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "429.11",
     "principal_amount": "769.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "769.99",
     "loan_balance_amount": "85051.64"
   },
@@ -2461,7 +2461,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "425.26",
     "principal_amount": "773.84",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "773.84",
     "loan_balance_amount": "84277.80"
   },
@@ -2470,7 +2470,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "421.39",
     "principal_amount": "777.71",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "777.71",
     "loan_balance_amount": "83500.09"
   },
@@ -2479,7 +2479,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "417.50",
     "principal_amount": "781.60",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "781.60",
     "loan_balance_amount": "82718.49"
   },
@@ -2488,7 +2488,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "413.59",
     "principal_amount": "785.51",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "785.51",
     "loan_balance_amount": "81932.98"
   },
@@ -2497,7 +2497,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "409.66",
     "principal_amount": "789.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "789.44",
     "loan_balance_amount": "81143.54"
   },
@@ -2506,7 +2506,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "378.67",
     "principal_amount": "820.43",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "820.43",
     "loan_balance_amount": "80323.11"
   },
@@ -2515,7 +2515,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "428.39",
     "principal_amount": "770.71",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "770.71",
     "loan_balance_amount": "79552.40"
   },
@@ -2524,7 +2524,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "397.76",
     "principal_amount": "801.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "801.34",
     "loan_balance_amount": "78751.06"
   },
@@ -2533,7 +2533,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "393.76",
     "principal_amount": "805.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "805.34",
     "loan_balance_amount": "77945.72"
   },
@@ -2542,7 +2542,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "389.73",
     "principal_amount": "809.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "809.37",
     "loan_balance_amount": "77136.35"
   },
@@ -2551,7 +2551,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "385.68",
     "principal_amount": "813.42",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "813.42",
     "loan_balance_amount": "76322.93"
   },
@@ -2560,7 +2560,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "381.61",
     "principal_amount": "817.49",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "817.49",
     "loan_balance_amount": "75505.44"
   },
@@ -2569,7 +2569,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "377.53",
     "principal_amount": "821.57",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "821.57",
     "loan_balance_amount": "74683.87"
   },
@@ -2578,7 +2578,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "373.42",
     "principal_amount": "825.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "825.68",
     "loan_balance_amount": "73858.19"
   },
@@ -2587,7 +2587,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "369.29",
     "principal_amount": "829.81",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "829.81",
     "loan_balance_amount": "73028.38"
   },
@@ -2596,7 +2596,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "365.14",
     "principal_amount": "833.96",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "833.96",
     "loan_balance_amount": "72194.42"
   },
@@ -2605,7 +2605,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "360.97",
     "principal_amount": "838.13",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "838.13",
     "loan_balance_amount": "71356.29"
   },
@@ -2614,7 +2614,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "333.00",
     "principal_amount": "866.10",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "866.10",
     "loan_balance_amount": "70490.19"
   },
@@ -2623,7 +2623,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "375.95",
     "principal_amount": "823.15",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "823.15",
     "loan_balance_amount": "69667.04"
   },
@@ -2632,7 +2632,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "348.34",
     "principal_amount": "850.76",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "850.76",
     "loan_balance_amount": "68816.28"
   },
@@ -2641,7 +2641,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "344.08",
     "principal_amount": "855.02",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "855.02",
     "loan_balance_amount": "67961.26"
   },
@@ -2650,7 +2650,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "339.81",
     "principal_amount": "859.29",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "859.29",
     "loan_balance_amount": "67101.97"
   },
@@ -2659,7 +2659,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "335.51",
     "principal_amount": "863.59",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "863.59",
     "loan_balance_amount": "66238.38"
   },
@@ -2668,7 +2668,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "331.19",
     "principal_amount": "867.91",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "867.91",
     "loan_balance_amount": "65370.47"
   },
@@ -2677,7 +2677,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "326.85",
     "principal_amount": "872.25",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "872.25",
     "loan_balance_amount": "64498.22"
   },
@@ -2686,7 +2686,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "322.49",
     "principal_amount": "876.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "876.61",
     "loan_balance_amount": "63621.61"
   },
@@ -2695,7 +2695,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "318.11",
     "principal_amount": "880.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "880.99",
     "loan_balance_amount": "62740.62"
   },
@@ -2704,7 +2704,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "313.70",
     "principal_amount": "885.40",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "885.40",
     "loan_balance_amount": "61855.22"
   },
@@ -2713,7 +2713,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "309.28",
     "principal_amount": "889.82",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "889.82",
     "loan_balance_amount": "60965.40"
   },
@@ -2722,7 +2722,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "284.51",
     "principal_amount": "914.59",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "914.59",
     "loan_balance_amount": "60050.81"
   },
@@ -2731,7 +2731,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "320.27",
     "principal_amount": "878.83",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "878.83",
     "loan_balance_amount": "59171.98"
   },
@@ -2740,7 +2740,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "295.86",
     "principal_amount": "903.24",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "903.24",
     "loan_balance_amount": "58268.74"
   },
@@ -2749,7 +2749,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "291.34",
     "principal_amount": "907.76",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "907.76",
     "loan_balance_amount": "57360.98"
   },
@@ -2758,7 +2758,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "286.80",
     "principal_amount": "912.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "912.30",
     "loan_balance_amount": "56448.68"
   },
@@ -2767,7 +2767,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "282.24",
     "principal_amount": "916.86",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "916.86",
     "loan_balance_amount": "55531.82"
   },
@@ -2776,7 +2776,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "277.66",
     "principal_amount": "921.44",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "921.44",
     "loan_balance_amount": "54610.38"
   },
@@ -2785,7 +2785,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "273.05",
     "principal_amount": "926.05",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "926.05",
     "loan_balance_amount": "53684.33"
   },
@@ -2794,7 +2794,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "268.42",
     "principal_amount": "930.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "930.68",
     "loan_balance_amount": "52753.65"
   },
@@ -2803,7 +2803,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "263.77",
     "principal_amount": "935.33",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "935.33",
     "loan_balance_amount": "51818.32"
   },
@@ -2812,7 +2812,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "259.09",
     "principal_amount": "940.01",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "940.01",
     "loan_balance_amount": "50878.31"
   },
@@ -2821,7 +2821,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "254.39",
     "principal_amount": "944.71",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "944.71",
     "loan_balance_amount": "49933.60"
   },
@@ -2830,7 +2830,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "241.35",
     "principal_amount": "957.75",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "957.75",
     "loan_balance_amount": "48975.85"
   },
@@ -2839,7 +2839,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "253.04",
     "principal_amount": "946.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "946.06",
     "loan_balance_amount": "48029.79"
   },
@@ -2848,7 +2848,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "240.15",
     "principal_amount": "958.95",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "958.95",
     "loan_balance_amount": "47070.84"
   },
@@ -2857,7 +2857,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "235.35",
     "principal_amount": "963.75",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "963.75",
     "loan_balance_amount": "46107.09"
   },
@@ -2866,7 +2866,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "230.54",
     "principal_amount": "968.56",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "968.56",
     "loan_balance_amount": "45138.53"
   },
@@ -2875,7 +2875,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "225.69",
     "principal_amount": "973.41",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "973.41",
     "loan_balance_amount": "44165.12"
   },
@@ -2884,7 +2884,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "220.83",
     "principal_amount": "978.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "978.27",
     "loan_balance_amount": "43186.85"
   },
@@ -2893,7 +2893,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "215.93",
     "principal_amount": "983.17",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "983.17",
     "loan_balance_amount": "42203.68"
   },
@@ -2902,7 +2902,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "211.02",
     "principal_amount": "988.08",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "988.08",
     "loan_balance_amount": "41215.60"
   },
@@ -2911,7 +2911,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "206.08",
     "principal_amount": "993.02",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "993.02",
     "loan_balance_amount": "40222.58"
   },
@@ -2920,7 +2920,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "201.11",
     "principal_amount": "997.99",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "997.99",
     "loan_balance_amount": "39224.59"
   },
@@ -2929,7 +2929,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "196.12",
     "principal_amount": "1002.98",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1002.98",
     "loan_balance_amount": "38221.61"
   },
@@ -2938,7 +2938,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "178.37",
     "principal_amount": "1020.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1020.73",
     "loan_balance_amount": "37200.88"
   },
@@ -2947,7 +2947,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "198.40",
     "principal_amount": "1000.70",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1000.70",
     "loan_balance_amount": "36200.18"
   },
@@ -2956,7 +2956,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "181.00",
     "principal_amount": "1018.10",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1018.10",
     "loan_balance_amount": "35182.08"
   },
@@ -2965,7 +2965,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "175.91",
     "principal_amount": "1023.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1023.19",
     "loan_balance_amount": "34158.89"
   },
@@ -2974,7 +2974,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "170.79",
     "principal_amount": "1028.31",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1028.31",
     "loan_balance_amount": "33130.58"
   },
@@ -2983,7 +2983,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "165.65",
     "principal_amount": "1033.45",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1033.45",
     "loan_balance_amount": "32097.13"
   },
@@ -2992,7 +2992,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "160.49",
     "principal_amount": "1038.61",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1038.61",
     "loan_balance_amount": "31058.52"
   },
@@ -3001,7 +3001,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "155.29",
     "principal_amount": "1043.81",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1043.81",
     "loan_balance_amount": "30014.71"
   },
@@ -3010,7 +3010,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "150.07",
     "principal_amount": "1049.03",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1049.03",
     "loan_balance_amount": "28965.68"
   },
@@ -3019,7 +3019,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "144.83",
     "principal_amount": "1054.27",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1054.27",
     "loan_balance_amount": "27911.41"
   },
@@ -3028,7 +3028,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "139.56",
     "principal_amount": "1059.54",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1059.54",
     "loan_balance_amount": "26851.87"
   },
@@ -3037,7 +3037,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "134.26",
     "principal_amount": "1064.84",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1064.84",
     "loan_balance_amount": "25787.03"
   },
@@ -3046,7 +3046,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "120.34",
     "principal_amount": "1078.76",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1078.76",
     "loan_balance_amount": "24708.27"
   },
@@ -3055,7 +3055,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "131.78",
     "principal_amount": "1067.32",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1067.32",
     "loan_balance_amount": "23640.95"
   },
@@ -3064,7 +3064,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "118.20",
     "principal_amount": "1080.90",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1080.90",
     "loan_balance_amount": "22560.05"
   },
@@ -3073,7 +3073,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "112.80",
     "principal_amount": "1086.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1086.30",
     "loan_balance_amount": "21473.75"
   },
@@ -3082,7 +3082,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "107.37",
     "principal_amount": "1091.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1091.73",
     "loan_balance_amount": "20382.02"
   },
@@ -3091,7 +3091,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "101.91",
     "principal_amount": "1097.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1097.19",
     "loan_balance_amount": "19284.83"
   },
@@ -3100,7 +3100,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "96.42",
     "principal_amount": "1102.68",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1102.68",
     "loan_balance_amount": "18182.15"
   },
@@ -3109,7 +3109,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "90.91",
     "principal_amount": "1108.19",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1108.19",
     "loan_balance_amount": "17073.96"
   },
@@ -3118,7 +3118,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "85.37",
     "principal_amount": "1113.73",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1113.73",
     "loan_balance_amount": "15960.23"
   },
@@ -3127,7 +3127,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "79.80",
     "principal_amount": "1119.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1119.30",
     "loan_balance_amount": "14840.93"
   },
@@ -3136,7 +3136,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "74.20",
     "principal_amount": "1124.90",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1124.90",
     "loan_balance_amount": "13716.03"
   },
@@ -3145,7 +3145,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "68.58",
     "principal_amount": "1130.52",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1130.52",
     "loan_balance_amount": "12585.51"
   },
@@ -3154,7 +3154,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "58.73",
     "principal_amount": "1140.37",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1140.37",
     "loan_balance_amount": "11445.14"
   },
@@ -3163,7 +3163,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "61.04",
     "principal_amount": "1138.06",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1138.06",
     "loan_balance_amount": "10307.08"
   },
@@ -3172,7 +3172,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "51.54",
     "principal_amount": "1147.56",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1147.56",
     "loan_balance_amount": "9159.52"
   },
@@ -3181,7 +3181,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "45.80",
     "principal_amount": "1153.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1153.30",
     "loan_balance_amount": "8006.22"
   },
@@ -3190,7 +3190,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "40.03",
     "principal_amount": "1159.07",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1159.07",
     "loan_balance_amount": "6847.15"
   },
@@ -3199,7 +3199,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "34.24",
     "principal_amount": "1164.86",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1164.86",
     "loan_balance_amount": "5682.29"
   },
@@ -3208,7 +3208,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "28.41",
     "principal_amount": "1170.69",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1170.69",
     "loan_balance_amount": "4511.60"
   },
@@ -3217,7 +3217,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "22.56",
     "principal_amount": "1176.54",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1176.54",
     "loan_balance_amount": "3335.06"
   },
@@ -3226,7 +3226,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "16.68",
     "principal_amount": "1182.42",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1182.42",
     "loan_balance_amount": "2152.64"
   },
@@ -3235,7 +3235,7 @@
     "payment_amount": "1199.10",
     "interest_amount": "10.76",
     "principal_amount": "1188.34",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "1188.34",
     "loan_balance_amount": "964.30"
   },
@@ -3244,7 +3244,7 @@
     "payment_amount": "969.12",
     "interest_amount": "4.82",
     "principal_amount": "964.30",
-    "special_principal_amount": "0.00",
+    "special_principal_amount": "0",
     "total_principal_amount": "964.30",
     "loan_balance_amount": "0.00"
   }
