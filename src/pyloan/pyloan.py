@@ -53,7 +53,7 @@ class Loan(object):
                  payment_end_of_month: bool = True,
                  annual_payments: int = 12,
                  interest_only_period: int = 0,
-                 compounding_method: str = CompoundingMethod.THIRTY_E_360.value,
+                 compounding_method: str = CompoundingMethod.THIRTY_E_360_ISDA.value,
                  loan_type: str = LoanType.ANNUITY.value) -> None:
         
         self._validate_inputs(loan_amount, interest_rate, loan_term, start_date, loan_term_period, payment_amount, first_payment_date, payment_end_of_month, annual_payments, interest_only_period, compounding_method, loan_type)
@@ -307,7 +307,8 @@ class Loan(object):
                 continue
 
             bop_date = last_payment.date
-            compounding_factor = Decimal(str(DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date, self.payment_end_of_month)[0] / DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date, self.payment_end_of_month)[1]))
+            days, year = DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date)
+            compounding_factor = Decimal(str(days / year))
             period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)
             accrued_interest += period_interest
 
