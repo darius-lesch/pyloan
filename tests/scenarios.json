@@ -61,7 +61,7 @@
       "payment_end_of_month": true,
       "annual_payments": 12,
       "interest_only_period": 0,
-      "compounding_method": "30E/360",
+      "compounding_method": "30E/360 ISDA",
       "loan_type": "annuity"
     },
     "special_payments": [
