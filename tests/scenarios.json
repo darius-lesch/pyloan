@@ -49,5 +49,29 @@
       "start_date": "2022-01-01",
       "loan_type": "annuity"
     }
+  },
+  {
+    "scenario_name": "bug_special_payment_on_odd_date",
+    "loan_params": {
+      "loan_amount": 300000,
+      "interest_rate": 3.5,
+      "loan_term": 30,
+      "start_date": "2025-09-07",
+      "loan_term_period": "Y",
+      "payment_end_of_month": true,
+      "annual_payments": 12,
+      "interest_only_period": 0,
+      "compounding_method": "30E/360",
+      "loan_type": "annuity"
+    },
+    "special_payments": [
+      {
+        "payment_amount": 1300,
+        "first_payment_date": "2026-01-05",
+        "special_payment_term": 2,
+        "annual_payments": 4,
+        "special_payment_term_period": "Y"
+      }
+    ]
   }
 ]
