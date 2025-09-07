@@ -114,29 +114,29 @@ class TestLoan(unittest.TestCase):
         self.assertEqual(len(schedule), 1)
         self.assertEqual(schedule[0].loan_balance_amount, Decimal('200000'))
 
-    def test_calculate_payment_details(self):
+    def test_interest_calculation_with_special_payment_on_odd_date(self):
         loan = Loan(
-            loan_amount=200000,
-            interest_rate=6.0,
-            loan_term=30,
-            start_date='2022-01-01'
+            loan_amount=1200,
+            interest_rate=10,
+            loan_term=1,
+            start_date="2025-09-30",
+            loan_term_period="Y",
+            payment_end_of_month=True,
+            annual_payments=12,
+            interest_only_period=0,
+            compounding_method="30/360 (US)",
+            loan_type="annuity"
         )
-        last_payment = Payment(
-            date=dt.datetime(2022, 1, 1),
-            payment_amount=Decimal('0'),
-            interest_amount=Decimal('0'),
-            principal_amount=Decimal('0'),
-            special_principal_amount=Decimal('0'),
-            total_principal_amount=Decimal('0'),
-            loan_balance_amount=Decimal('200000')
+        loan.add_special_payment(
+            payment_amount=250,
+            first_payment_date="2026-01-19",
+            special_payment_term=1,
+            annual_payments=1,
+            special_payment_term_period="Y"
         )
-        payment_date = dt.datetime(2022, 2, 1)
-        special_payments = {}
-        regular_payment_amount = loan._calculate_regular_principal_payment()
-        interest_only_payments_left = 0
-        payment, _ = loan._calculate_payment_details(payment_date, last_payment, special_payments, regular_payment_amount, interest_only_payments_left)
-        self.assertAlmostEqual(payment.interest_amount, Decimal('1000.00'), places=2)
-        self.assertAlmostEqual(payment.principal_amount, Decimal('199.10'), places=2)
+        schedule = loan.get_payment_schedule()
+        payment_on_2026_01_31 = next(p for p in schedule if p.date.strftime('%Y-%m-%d') == '2026-01-31')
+        self.assertAlmostEqual(payment_on_2026_01_31.interest_amount, Decimal('6.83'), places=2)
 
     def test_get_loan_summary_zero_division(self):
         loan = Loan(
