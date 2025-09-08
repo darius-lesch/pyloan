@@ -9,7 +9,7 @@ from typing import Dict, Callable, Tuple
 
 def _thirty_360_us(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the number of days between two dates using the 30/360 US convention.
+    Calculates the number of days between two dates using the 30U/360 convention.
     This is used for US mortgages, corporate, and municipal bonds.
     """
     y1, m1, d1 = dt1.year, dt1.month, dt1.day
@@ -25,7 +25,7 @@ def _thirty_360_us(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 def _thirty_e_360_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the number of days using the 30E/360 ISDA (Eurobond Basis) convention.
+    Calculates the number of days using the 30E/360 (Eurobond Basis) convention.
     This is relevant for European loans and bonds.
     """
     y1, m1, d1 = dt1.year, dt1.month, dt1.day
@@ -42,7 +42,7 @@ def _thirty_e_360_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 def _actual_365_fixed(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the day count using the Actual/365 (Fixed) convention.
+    Calculates the day count using the A/365 convention.
     This is a standard for loans in the UK, Australia, and New Zealand.
     """
     return (dt2 - dt1).days, 365
@@ -50,7 +50,7 @@ def _actual_365_fixed(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 def _actual_360(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the day count using the Actual/360 convention.
+    Calculates the day count using the A/360 convention.
     This is common for short-term and floating-rate loans, especially in the US and Europe.
     """
     return (dt2 - dt1).days, 360
@@ -58,7 +58,7 @@ def _actual_360(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 def _actual_actual_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the day count using the Actual/Actual (ISDA) convention.
+    Calculates the day count using the A/A convention.
     This is considered the most accurate method and is sometimes used for
     mortgages and government bonds.
     """
@@ -90,9 +90,9 @@ def _actual_actual_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 # Create a dictionary to map method names to functions
 DAY_COUNT_METHODS: Dict[str, Callable[[datetime, datetime], Tuple[int, int]]] = {
-    '30/360 (US)': _thirty_360_us,
-    '30E/360 ISDA': _thirty_e_360_isda,
-    'Actual/365 (Fixed)': _actual_365_fixed,
-    'Actual/360': _actual_360,
-    'Actual/Actual (ISDA)': _actual_actual_isda,
+    '30U/360': _thirty_360_us,
+    '30E/360': _thirty_e_360_isda,
+    'A/365': _actual_365_fixed,
+    'A/360': _actual_360,
+    'A/A': _actual_actual_isda,
 }

@@ -120,7 +120,7 @@ class TestLoan(unittest.TestCase):
             interest_rate=6.0,
             loan_term=30,
             start_date='2022-01-01',
-            compounding_method='30/360 (US)'
+            compounding_method='30U/360'
         )
         schedule = loan.get_payment_schedule()
         first_payment = schedule[1]
@@ -140,7 +140,7 @@ class TestLoan(unittest.TestCase):
             payment_end_of_month=True,
             annual_payments=12,
             interest_only_period=0,
-            compounding_method="30/360 (US)",
+            compounding_method="30U/360",
             loan_type="annuity"
         )
         loan.add_special_payment(
