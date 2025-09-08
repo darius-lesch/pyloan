@@ -239,17 +239,22 @@ class Loan(object):
         Generates a sorted list of all unique regular payment dates.
         :return: A sorted list of all payment dates.
         """
-        base_date = self._get_schedule_base_date()
         payment_dates = set()
-
         months_between_payments = 12 / self.annual_payments
 
-        for i in range(1, self.no_of_payments + 1):
-            date = base_date + relativedelta(months=int(i * months_between_payments))
-            if self.payment_end_of_month and self.first_payment_date is None:
-                eom_day = cal.monthrange(date.year, date.month)[1]
-                date = date.replace(day=eom_day)
-            payment_dates.add(date)
+        if self.first_payment_date:
+            first_date = max(self.first_payment_date, self.start_date)
+            for i in range(self.no_of_payments):
+                date = first_date + relativedelta(months=int(i * months_between_payments))
+                payment_dates.add(date)
+        else:
+            base_date = self._get_schedule_base_date()
+            for i in range(1, self.no_of_payments + 1):
+                date = base_date + relativedelta(months=int(i * months_between_payments))
+                if self.payment_end_of_month:
+                    eom_day = cal.monthrange(date.year, date.month)[1]
+                    date = date.replace(day=eom_day)
+                payment_dates.add(date)
 
         return sorted(list(payment_dates))
 
