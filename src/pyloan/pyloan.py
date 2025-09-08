@@ -280,10 +280,37 @@ class Loan(object):
         )
         return [initial_payment]
 
+    def _calculate_interest_for_period(self, start_date, end_date, balance_at_start, special_payments_in_period):
+        """
+        Calculates the interest for a given period, considering special payments.
+        """
+        _, year = DAY_COUNT_METHODS[self.compounding_method.value](start_date, end_date)
+
+        period_event_dates = sorted([start_date] + list(special_payments_in_period.keys()))
+
+        interest_amount = Decimal('0')
+        running_balance = balance_at_start
+
+        for i in range(len(period_event_dates)):
+            start_sub = period_event_dates[i]
+            end_sub = period_event_dates[i+1] if i + 1 < len(period_event_dates) else end_date
+
+            days_sub_period_start, _ = DAY_COUNT_METHODS[self.compounding_method.value](start_date, start_sub)
+            days_sub_period_end, _ = DAY_COUNT_METHODS[self.compounding_method.value](start_date, end_sub)
+
+            days_in_sub = days_sub_period_end - days_sub_period_start
+
+            comp_factor = Decimal(str(days_in_sub / year))
+            interest_amount += self._quantize(running_balance * self.interest_rate * comp_factor)
+
+            if end_sub in special_payments_in_period:
+                running_balance -= special_payments_in_period[end_sub]
+
+        return interest_amount
+
     def get_payment_schedule(self) -> List[Payment]:
         """
         Calculates the payment schedule for the loan.
-
         :return: A list of Payment objects.
         """
         payment_schedule = self._initialize_payment_schedule()
@@ -297,8 +324,9 @@ class Loan(object):
         payment_timeline = self._get_payment_timeline(special_payments)
         regular_payment_dates = self._get_regular_payment_dates()
 
-        accrued_interest = Decimal('0')
+        all_regular_dates = [self.start_date] + regular_payment_dates
 
+        accrued_interest = Decimal('0')
         for date in payment_timeline:
             last_payment = payment_schedule[-1]
             balance_bop = self._quantize(last_payment.loan_balance_amount)
@@ -319,44 +347,49 @@ class Loan(object):
             principal_amount = Decimal('0')
             special_principal_amount = Decimal('0')
 
-            if is_regular_day:
-                interest_amount = self._quantize(accrued_interest)
-                accrued_interest = Decimal('0')
+            if date in regular_payment_dates:
+                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)
+
+                special_payments_in_period = {
+                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date
+                }
+
+                balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)
+
+                interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)
 
                 if interest_only_payments_left <= 0:
                     if self.loan_type == LoanType.ANNUITY:
-                        principal_amount = min(self._quantize(regular_payment_amount) - interest_amount, balance_bop)
+                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)
                     else: # LINEAR
-                        principal_amount = min(self._quantize(regular_payment_amount), balance_bop)
-
+                        principal_amount = min(regular_payment_amount, balance_bop)
                 interest_only_payments_left -= 1
 
-            if is_special_day:
+            if date in special_payments:
                 special_principal_amount = min(balance_bop - principal_amount, special_payments[date])
 
-            total_principal_amount = min(principal_amount + special_principal_amount, balance_bop)
-            total_payment_amount = total_principal_amount + interest_amount
-            balance_eop = max(balance_bop - total_principal_amount, self._quantize(0))
+            total_principal_amount = self._quantize(principal_amount + special_principal_amount)
+            total_payment_amount = self._quantize(total_principal_amount + interest_amount)
+            balance_eop = self._quantize(balance_bop - total_principal_amount)
 
-            # The last payment amount should be the remaining balance + interest
-            if balance_eop == 0 and total_principal_amount < balance_bop:
-                total_principal_amount = balance_bop
-                total_payment_amount = total_principal_amount + interest_amount
-
+            if balance_eop < Decimal('0.01') and balance_eop > Decimal('0'):
+                total_principal_amount += balance_eop
+                total_payment_amount += balance_eop
+                balance_eop = Decimal('0')
 
             payment = Payment(
                 date=date,
                 payment_amount=total_payment_amount,
-                interest_amount=interest_amount,
-                principal_amount=principal_amount,
-                special_principal_amount=special_principal_amount,
+                interest_amount=self._quantize(interest_amount),
+                principal_amount=self._quantize(principal_amount),
+                special_principal_amount=self._quantize(special_principal_amount),
                 total_principal_amount=total_principal_amount,
                 loan_balance_amount=balance_eop
             )
-
             payment_schedule.append(payment)
 
         return payment_schedule
+
 
     def add_special_payment(self,
                             payment_amount: Union[int, float],

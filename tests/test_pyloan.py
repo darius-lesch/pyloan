@@ -120,7 +120,7 @@ class TestLoan(unittest.TestCase):
             interest_rate=6.0,
             loan_term=30,
             start_date='2022-01-01',
-            compounding_method='30/360 (US)'
+            compounding_method='30U/360'
         )
         schedule = loan.get_payment_schedule()
         first_payment = schedule[1]
@@ -129,6 +129,30 @@ class TestLoan(unittest.TestCase):
         # The important part is that the interest is correct.
         # The principal is the remainder of the payment.
         self.assertTrue(first_payment.principal_amount > 0)
+
+    def test_interest_calculation_with_special_payment_on_odd_date(self):
+        loan = Loan(
+            loan_amount=1200,
+            interest_rate=10,
+            loan_term=1,
+            start_date="2025-09-30",
+            loan_term_period="Y",
+            payment_end_of_month=True,
+            annual_payments=12,
+            interest_only_period=0,
+            compounding_method="30U/360",
+            loan_type="annuity"
+        )
+        loan.add_special_payment(
+            payment_amount=250,
+            first_payment_date="2026-01-19",
+            special_payment_term=1,
+            annual_payments=1,
+            special_payment_term_period="Y"
+        )
+        schedule = loan.get_payment_schedule()
+        payment_on_2026_01_31 = next(p for p in schedule if p.date.strftime('%Y-%m-%d') == '2026-01-31')
+        self.assertAlmostEqual(payment_on_2026_01_31.interest_amount, Decimal('6.83'), places=2)
 
     def test_get_loan_summary_zero_division(self):
         loan = Loan(
