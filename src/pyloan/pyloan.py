@@ -326,6 +326,7 @@ class Loan(object):
 
         all_regular_dates = [self.start_date] + regular_payment_dates
 
+        accrued_interest = Decimal('0')
         for date in payment_timeline:
             last_payment = payment_schedule[-1]
             balance_bop = self._quantize(last_payment.loan_balance_amount)
