@@ -32,7 +32,7 @@ In addition, the loan has the following **optional argument**:
 * ``payment_end_of_month``: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and ``first_payment_date`` is None then loan/mortgage payments will fall on the day specified in the ``start_date``.
 * ``annual_payments``: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).
 * ``interest_only_period``: the number of interest-only payments on the loan/mortgage. The default value is 0.
-* ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360', otherwise known 30/360 German (or 30E/360 ISDA). For more details on other alternatives, see :ref:`Section on interest rate compounding`.
+* ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360'. For more details on other alternatives, see :ref:`Section on interest rate compounding`.
 * ``loan_type``: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.
 
 Get payment schedule
@@ -187,21 +187,18 @@ Interest rate compounding
 =========================
 By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 method. To change the method use the ``compounding_method`` attribute when defining a loan, which accepts the following day count conventions:
 
-* 30A/360.
-* 30U/360.
-* 30E/360.
-* 30E/360 ISDA.
-* A/360 (short for Actual/360).
-* A/365F (short for Actual/365 Fixed).
-* A/A ISDA (short for Actual/Actual ISDA).
-* A/A AFB (short for Actual/Actual AFB, also known as Actual/Actual Euro).
+* 30U/360
+* 30E/360
+* A/365
+* A/360
+* A/A
 
 .. tip::
    Certain day count conventions are more advantageous to the borrower while other day count conventions are more advantageous to the lender. Use the method ``get_loan_summary`` to compare which day count method is the least expensive and which is the most expensive in terms of total interest amount paid over the lifetime of a mortgage/loan.
 
    Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020::
 
-    day_count_conventions=['30A/360','30U/360','30E/360','30E/360 ISDA','A/360','A/365F','A/A ISDA','A/A AFB']
+    day_count_conventions=['30U/360','30E/360','A/365','A/360','A/A']
     loan_summary=list(map(lambda x:[x,Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
 
    Results can be summarized in the familiar pandas DataFrame::
