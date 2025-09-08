@@ -166,5 +166,49 @@ class TestLoan(unittest.TestCase):
         summary = loan.get_loan_summary()
         self.assertEqual(summary.repayment_to_principal, Decimal('0.00'))
 
+    def test_first_payment_date_on_31st_is_respected_30U360(self):
+        """
+        Tests that a specific first payment date on the 31st is respected,
+        even if the underlying logic shifts it for calculation purposes in 30/360.
+        The schedule should reflect the user's intended date.
+        """
+        loan = Loan(
+            loan_amount=300000,
+            interest_rate=3.5,
+            loan_term=120,
+            loan_term_period='M',
+            start_date='2025-09-15',
+            first_payment_date='2025-10-31',
+            payment_end_of_month=False,
+            annual_payments=12,
+            compounding_method='30U/360',
+            loan_type='annuity'
+        )
+        schedule = loan.get_payment_schedule()
+        first_payment_date = schedule[1].date
+        self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for 30U/360")
+
+    def test_first_payment_date_on_31st_is_respected_AA(self):
+        """
+        Tests that a specific first payment date on the 31st is respected
+        for the Actual/Actual convention, which should never shift dates.
+        """
+        loan = Loan(
+            loan_amount=300000,
+            interest_rate=3.5,
+            loan_term=120,
+            loan_term_period='M',
+            start_date='2025-09-15',
+            first_payment_date='2025-10-31',
+            payment_end_of_month=False,
+            annual_payments=12,
+            compounding_method='A/A',
+            loan_type='annuity'
+        )
+        schedule = loan.get_payment_schedule()
+        first_payment_date = schedule[1].date
+        self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for A/A")
+
+
 if __name__ == '__main__':
     unittest.main()
