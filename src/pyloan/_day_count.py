@@ -26,7 +26,7 @@ def _thirty_e_360_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     return (360 * (y2 - y1) + 30 * (m2 - m1) + (d2 - d1)), 360
 
 
-def _actual_365_fixed(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
+def _actual_365(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
     Calculates the day count using the A/365 convention.
     This is a standard for loans in the UK, Australia, and New Zealand.
@@ -42,7 +42,7 @@ def _actual_360(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     return (dt2 - dt1).days, 360
 
 
-def _actual_actual_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
+def _actual_actual(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
     Calculates the day count using the A/A convention.
     This is considered the most accurate method and is sometimes used for
@@ -76,8 +76,8 @@ def _actual_actual_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 # Create a dictionary to map method names to functions
 DAY_COUNT_METHODS: Dict[str, Callable[[datetime, datetime], Tuple[int, int]]] = {
-    '30E/360': _thirty_e_360_isda,
-    'A/365': _actual_365_fixed,
+    '30E/360 ISDA': _thirty_e_360_isda,
+    'A/365': _actual_365,
     'A/360': _actual_360,
-    'A/A': _actual_actual_isda,
+    'A/A': _actual_actual,
 }
