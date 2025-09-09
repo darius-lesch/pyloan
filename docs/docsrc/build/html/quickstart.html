@@ -119,7 +119,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">payment_end_of_month</span></code>: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and <code class="docutils literal notranslate"><span class="pre">first_payment_date</span></code> is None then loan/mortgage payments will fall on the day specified in the <code class="docutils literal notranslate"><span class="pre">start_date</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">annual_payments</span></code>: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">interest_only_period</span></code>: the number of interest-only payments on the loan/mortgage. The default value is 0.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">compounding_method</span></code>: the compounding method used to accrue interest on the loan/mortgage. The default value is ‘30E/360’. For more details on other alternatives, see <a class="reference internal" href="#section-on-interest-rate-compounding"><span class="std std-ref">Interest rate compounding</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compounding_method</span></code>: the compounding method used to accrue interest on the loan/mortgage. The default value is ‘30E/360 ISDA (a.k.a. 30E/360 German)’. For more details on other alternatives, see <a class="reference internal" href="#section-on-interest-rate-compounding"><span class="std std-ref">Interest rate compounding</span></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">loan_type</span></code>: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.</p></li>
 </ul>
 </section>
@@ -255,19 +255,19 @@
 </section>
 <section id="interest-rate-compounding">
 <span id="section-on-interest-rate-compounding"></span><h2>Interest rate compounding<a class="headerlink" href="#interest-rate-compounding" title="Link to this heading"></a></h2>
-<p>By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 method. To change the method use the <code class="docutils literal notranslate"><span class="pre">compounding_method</span></code> attribute when defining a loan, which accepts the following day count conventions:</p>
+<p>By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 ISDA method. To change the method use the <code class="docutils literal notranslate"><span class="pre">compounding_method</span></code> attribute when defining a loan, which accepts the following day count conventions:</p>
 <ul class="simple">
-<li><p>30U/360</p></li>
-<li><p>30E/360</p></li>
-<li><p>A/365</p></li>
-<li><p>A/360</p></li>
-<li><p>A/A</p></li>
+<li><p>30E/360 ISDA (a.k.a. 30/360 German): every single month is assumed to have 30 days, including February, A year is considered to have 360 days.</p></li>
+<li><p>30E/360: every single month, except February, is assumed to have 30 days. February is not adjusted and is counted with its actual nubmer of days (28 or 29). A year is considered to have 360 days.</p></li>
+<li><p>A/360: every single month is counted with its actual number of days. A year is considered to be 360 days.</p></li>
+<li><p>A/365: every single month is counted with its actual number of days. A year is considered to be 365 days.</p></li>
+<li><p>A/A: every single month is counted with its actual number of days. A year is counted with its actual number of days.</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Certain day count conventions are more advantageous to the borrower while other day count conventions are more advantageous to the lender. Use the method <code class="docutils literal notranslate"><span class="pre">get_loan_summary</span></code> to compare which day count method is the least expensive and which is the most expensive in terms of total interest amount paid over the lifetime of a mortgage/loan.</p>
 <p>Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">day_count_conventions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;30U/360&#39;</span><span class="p">,</span><span class="s1">&#39;30E/360&#39;</span><span class="p">,</span><span class="s1">&#39;A/365&#39;</span><span class="p">,</span><span class="s1">&#39;A/360&#39;</span><span class="p">,</span><span class="s1">&#39;A/A&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">day_count_conventions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;30E/360 ISDA&#39;</span><span class="p">,</span><span class="s1">&#39;30E/360&#39;</span><span class="p">,</span><span class="s1">&#39;A/365&#39;</span><span class="p">,</span><span class="s1">&#39;A/360&#39;</span><span class="p">,</span><span class="s1">&#39;A/A&#39;</span><span class="p">]</span>
 <span class="n">loan_summary</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:[</span><span class="n">x</span><span class="p">,</span><span class="n">Loan</span><span class="p">(</span><span class="n">loan_amount</span><span class="o">=</span><span class="mi">160000</span><span class="p">,</span><span class="n">interest_rate</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span><span class="n">loan_term</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;2020-06-15&#39;</span><span class="p">,</span><span class="n">compounding_method</span><span class="o">=</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">get_loan_summary</span><span class="p">()</span><span class="o">.</span><span class="n">total_interest_amount</span><span class="p">],</span><span class="n">day_count_conventions</span><span class="p">))</span>
 </pre></div>
 </div>
