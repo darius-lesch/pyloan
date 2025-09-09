@@ -32,7 +32,7 @@ In addition, the loan has the following **optional argument**:
 * ``payment_end_of_month``: boolean argument that defines whether loan/mortgage repayments fall on month-end or not. Default value is True. If set to False, and ``first_payment_date`` is None then loan/mortgage payments will fall on the day specified in the ``start_date``.
 * ``annual_payments``: the number of annual payments on the loan/mortgage. The argument can be set to either 12 (monthly), 4 (quarterly), 2 (semi-annual), and 1 (annual). The default value is 12 (monthly).
 * ``interest_only_period``: the number of interest-only payments on the loan/mortgage. The default value is 0.
-* ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360'. For more details on other alternatives, see :ref:`Section on interest rate compounding`.
+* ``compounding_method``: the compounding method used to accrue interest on the loan/mortgage. The default value is '30E/360 ISDA (a.k.a. 30E/360 German)'. For more details on other alternatives, see :ref:`Section on interest rate compounding`.
 * ``loan_type``: type of loan/mortgage. Default value is annuity. Alternative values are: linear and interest-only.
 
 Get payment schedule
@@ -185,20 +185,20 @@ The above outputs a dataclass with the following fields:
 
 Interest rate compounding
 =========================
-By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 method. To change the method use the ``compounding_method`` attribute when defining a loan, which accepts the following day count conventions:
+By default PyLoan is compounding interest rates based on the 30/360 day count method, specifically the so-called 30E/360 ISDA method. To change the method use the ``compounding_method`` attribute when defining a loan, which accepts the following day count conventions:
 
-* 30U/360
-* 30E/360
-* A/365
-* A/360
-* A/A
+* 30E/360 ISDA (a.k.a. 30/360 German): every single month is assumed to have 30 days, including February, A year is considered to have 360 days. 
+* 30E/360: every single month, except February, is assumed to have 30 days. February is not adjusted and is counted with its actual nubmer of days (28 or 29). A year is considered to have 360 days.
+* A/360: every single month is counted with its actual number of days. A year is considered to be 360 days.
+* A/365: every single month is counted with its actual number of days. A year is considered to be 365 days.
+* A/A: every single month is counted with its actual number of days. A year is counted with its actual number of days.
 
 .. tip::
    Certain day count conventions are more advantageous to the borrower while other day count conventions are more advantageous to the lender. Use the method ``get_loan_summary`` to compare which day count method is the least expensive and which is the most expensive in terms of total interest amount paid over the lifetime of a mortgage/loan.
 
    Following the examples above, the code block below compares total interest amount paid on a 10-year mortgage/loan of 160,000 EUR with annual interest of 1.1% starting on the 15th of June 2020::
 
-    day_count_conventions=['30U/360','30E/360','A/365','A/360','A/A']
+    day_count_conventions=['30E/360 ISDA','30E/360','A/365','A/360','A/A']
     loan_summary=list(map(lambda x:[x,Loan(loan_amount=160000,interest_rate=1.1,loan_term=10,start_date='2020-06-15',compounding_method=x).get_loan_summary().total_interest_amount],day_count_conventions))
 
    Results can be summarized in the familiar pandas DataFrame::
