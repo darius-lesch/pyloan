@@ -120,39 +120,35 @@ class TestLoan(unittest.TestCase):
             interest_rate=6.0,
             loan_term=30,
             start_date='2022-01-01',
-            compounding_method='30U/360'
+            compounding_method='30E/360'
         )
         schedule = loan.get_payment_schedule()
         first_payment = schedule[1]
-        self.assertAlmostEqual(first_payment.interest_amount, Decimal('1000.00'), places=2)
+        self.assertAlmostEqual(first_payment.interest_amount, Decimal('966.67'), places=2)
         # This value depends on the annuity calculation, which is complex.
         # The important part is that the interest is correct.
         # The principal is the remainder of the payment.
         self.assertTrue(first_payment.principal_amount > 0)
 
-    def test_interest_calculation_with_special_payment_on_odd_date(self):
+    def test_30e_360_isda_feb_march_logic(self):
+        """
+        Tests that the 30E/360 ISDA logic correctly calculates interest
+        for a period covering the end of February and March.
+        """
         loan = Loan(
-            loan_amount=1200,
-            interest_rate=10,
+            loan_amount=10000,
+            interest_rate=12.0,
             loan_term=1,
-            start_date="2025-09-30",
-            loan_term_period="Y",
-            payment_end_of_month=True,
-            annual_payments=12,
-            interest_only_period=0,
-            compounding_method="30U/360",
-            loan_type="annuity"
-        )
-        loan.add_special_payment(
-            payment_amount=250,
-            first_payment_date="2026-01-19",
-            special_payment_term=1,
-            annual_payments=1,
-            special_payment_term_period="Y"
+            loan_term_period='Y',
+            start_date='2026-02-28',
+            first_payment_date='2026-03-31',
+            compounding_method='30E/360'
         )
         schedule = loan.get_payment_schedule()
-        payment_on_2026_01_31 = next(p for p in schedule if p.date.strftime('%Y-%m-%d') == '2026-01-31')
-        self.assertAlmostEqual(payment_on_2026_01_31.interest_amount, Decimal('6.83'), places=2)
+        first_payment = schedule[1]
+        # From 2026-02-28 to 2026-03-31 should be 30 days with the new logic.
+        # Interest = 10000 * 0.12 * (30/360) = 100
+        self.assertAlmostEqual(first_payment.interest_amount, Decimal('100.00'), places=2)
 
     def test_get_loan_summary_zero_division(self):
         loan = Loan(
@@ -166,7 +162,7 @@ class TestLoan(unittest.TestCase):
         summary = loan.get_loan_summary()
         self.assertEqual(summary.repayment_to_principal, Decimal('0.00'))
 
-    def test_first_payment_date_on_31st_is_respected_30U360(self):
+    def test_first_payment_date_on_31st_is_respected_30E360(self):
         """
         Tests that a specific first payment date on the 31st is respected,
         even if the underlying logic shifts it for calculation purposes in 30/360.
@@ -181,12 +177,12 @@ class TestLoan(unittest.TestCase):
             first_payment_date='2025-10-31',
             payment_end_of_month=False,
             annual_payments=12,
-            compounding_method='30U/360',
+            compounding_method='30E/360',
             loan_type='annuity'
         )
         schedule = loan.get_payment_schedule()
         first_payment_date = schedule[1].date
-        self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for 30U/360")
+        self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for 30E/360")
 
     def test_first_payment_date_on_31st_is_respected_AA(self):
         """

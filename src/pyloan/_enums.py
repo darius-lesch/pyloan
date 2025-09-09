@@ -10,8 +10,8 @@ class LoanType(Enum):
     INTEREST_ONLY = 'interest-only'
 
 class CompoundingMethod(Enum):
-    THIRTY_360_US = '30U/360'
-    THIRTY_E_360_ISDA = '30E/360'
-    ACTUAL_365_FIXED = 'A/365'
+    THIRTY_E_360_ISDA = '30E/360 ISDA'
+    THIRTY_E_360 = '30E/360'
+    ACTUAL_365 = 'A/365'
     ACTUAL_360 = 'A/360'
-    ACTUAL_ACTUAL_ISDA = 'A/A'
+    ACTUAL_ACTUAL = 'A/A'
