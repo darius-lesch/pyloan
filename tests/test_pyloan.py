@@ -209,6 +209,32 @@ class TestLoan(unittest.TestCase):
         first_payment_date = schedule[1].date
         self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for A/A")
 
+    def test_logging_for_special_payments(self):
+        """
+        Tests that debug logging for day count and accrued interest is working correctly.
+        """
+        loan = Loan(
+            loan_amount=10000,
+            interest_rate=12.0,
+            loan_term=1,
+            start_date='2023-01-01',
+            compounding_method='A/360',
+            annual_payments=12,
+            first_payment_date='2023-01-31'
+        )
+        loan.add_special_payment(
+            payment_amount=1000,
+            first_payment_date='2023-01-15',
+            special_payment_term=1,
+            annual_payments=1
+        )
+
+        with self.assertLogs('src.pyloan.pyloan', level='DEBUG') as cm:
+            loan.get_payment_schedule()
+            self.assertIn('DEBUG:src.pyloan.pyloan:Event on 2023-01-15: Days since last event: 14', cm.output)
+            self.assertIn('DEBUG:src.pyloan.pyloan:Special payment on 2023-01-15: Accrued interest since last regular payment: 46.67', cm.output)
+            self.assertIn('DEBUG:src.pyloan.pyloan:Event on 2023-01-31: Days since last event: 16', cm.output)
+
 
 if __name__ == '__main__':
     unittest.main()
