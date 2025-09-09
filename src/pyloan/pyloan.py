@@ -2,6 +2,7 @@
 """
 This module contains the Loan class, which is the main class of the pyloan package.
 """
+import logging
 import datetime as dt
 import calendar as cal
 import collections
@@ -23,6 +24,10 @@ from ._validators import (
 from ._enums import LoanType, CompoundingMethod
 from ._day_count import DAY_COUNT_METHODS
 from ._models import Payment, SpecialPayment, LoanSummary
+
+
+logger = logging.getLogger(__name__)
+
 
 class Loan(object):
     """
@@ -332,6 +337,8 @@ class Loan(object):
         all_regular_dates = [self.start_date] + regular_payment_dates
 
         accrued_interest = Decimal('0')
+        interest_since_last_regular_payment = Decimal('0')
+
         for date in payment_timeline:
             last_payment = payment_schedule[-1]
             balance_bop = self._quantize(last_payment.loan_balance_amount)
@@ -341,9 +348,11 @@ class Loan(object):
 
             bop_date = last_payment.date
             days, year = DAY_COUNT_METHODS[self.compounding_method.value](bop_date, date)
+            logger.debug(f"Event on {date.strftime('%Y-%m-%d')}: Days since last event: {days}")
             compounding_factor = Decimal(str(days / year))
             period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)
             accrued_interest += period_interest
+            interest_since_last_regular_payment += period_interest
 
             is_regular_day = date in regular_payment_dates
             is_special_day = date in special_payments
@@ -352,7 +361,7 @@ class Loan(object):
             principal_amount = Decimal('0')
             special_principal_amount = Decimal('0')
 
-            if date in regular_payment_dates:
+            if is_regular_day:
                 last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)
 
                 special_payments_in_period = {
@@ -362,6 +371,7 @@ class Loan(object):
                 balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)
 
                 interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)
+                interest_since_last_regular_payment = Decimal('0')
 
                 if interest_only_payments_left <= 0:
                     if self.loan_type == LoanType.ANNUITY:
@@ -370,7 +380,8 @@ class Loan(object):
                         principal_amount = min(regular_payment_amount, balance_bop)
                 interest_only_payments_left -= 1
 
-            if date in special_payments:
+            if is_special_day:
+                logger.debug(f"Special payment on {date.strftime('%Y-%m-%d')}: Accrued interest since last regular payment: {interest_since_last_regular_payment}")
                 special_principal_amount = min(balance_bop - principal_amount, special_payments[date])
 
             total_principal_amount = self._quantize(principal_amount + special_principal_amount)
