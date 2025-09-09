@@ -7,34 +7,20 @@ import calendar as cal
 from datetime import datetime
 from typing import Dict, Callable, Tuple
 
-def _thirty_360_us(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
-    """
-    Calculates the number of days between two dates using the 30U/360 convention.
-    This is used for US mortgages, corporate, and municipal bonds.
-    """
-    y1, m1, d1 = dt1.year, dt1.month, dt1.day
-    y2, m2, d2 = dt2.year, dt2.month, dt2.day
-
-    if d1 == 31:
-        d1 = 30
-    if d2 == 31 and d1 >= 30:
-        d2 = 30
-
-    return (360 * (y2 - y1) + 30 * (m2 - m1) + (d2 - d1)), 360
-
-
 def _thirty_e_360_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
-    Calculates the number of days using the 30E/360 (Eurobond Basis) convention.
-    This is relevant for European loans and bonds.
+    Calculates the number of days using the 30E/360 ISDA convention.
+    This is a simplified version where every month is treated as having 30 days.
     """
     y1, m1, d1 = dt1.year, dt1.month, dt1.day
     y2, m2, d2 = dt2.year, dt2.month, dt2.day
 
-    # This is the simplified and correct rule for 30E/360 ISDA.
-    if d1 == 31:
+    # If the start date is the last day of the month, it is treated as the 30th.
+    if d1 == cal.monthrange(y1, m1)[1]:
         d1 = 30
-    if d2 == 31:
+
+    # If the end date is the last day of the month, it is treated as the 30th.
+    if d2 == cal.monthrange(y2, m2)[1]:
         d2 = 30
 
     return (360 * (y2 - y1) + 30 * (m2 - m1) + (d2 - d1)), 360
@@ -90,7 +76,6 @@ def _actual_actual_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 
 # Create a dictionary to map method names to functions
 DAY_COUNT_METHODS: Dict[str, Callable[[datetime, datetime], Tuple[int, int]]] = {
-    '30U/360': _thirty_360_us,
     '30E/360': _thirty_e_360_isda,
     'A/365': _actual_365_fixed,
     'A/360': _actual_360,
