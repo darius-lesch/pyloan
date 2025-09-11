@@ -181,6 +181,29 @@ The above outputs a dataclass with the following fields:
    .. image:: _static/loan_summary.png
       :alt: Pandas DataFrame output of the loan summary
 
+Get internal rate of return
+===========================
+To get the internal rate of return (IRR) of the loan, use the ``get_internal_rate_of_return`` method::
+
+  irr = loan.get_internal_rate_of_return()
+
+The above outputs a float representing the effective annual interest rate of the loan, considering all cash flows (initial loan amount, regular payments, and special payments). For a standard loan without special payments, this will be very close to the effective annual rate calculated from the nominal interest rate.
+
+Here is an example of how to use this method::
+
+    loan = Loan(
+        loan_amount=200000,
+        interest_rate=6.0,
+        loan_term=30,
+        start_date='2022-01-01'
+    )
+    irr = loan.get_internal_rate_of_return()
+    print(f"Internal Rate of Return: {irr:.2f}%")
+
+This will output::
+
+    Internal Rate of Return: 6.17%
+
 .. _Section on interest rate compounding:
 
 Interest rate compounding

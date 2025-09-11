@@ -1,0 +1,2623 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.11, pytest-8.4.2, pluggy-1.6.0
+rootdir: /app
+configfile: pyproject.toml
+collected 15 items
+
+tests/test_loan_scenarios.py F                                           [  6%]
+tests/test_performance.py .                                              [ 13%]
+tests/test_pyloan.py ....F........                                       [100%]
+
+=================================== FAILURES ===================================
+_______________ TestLoanScenarios.test_loan_scenarios_from_file ________________
+
+self = <tests.test_loan_scenarios.TestLoanScenarios testMethod=test_loan_scenarios_from_file>
+
+    def test_loan_scenarios_from_file(self):
+        with open('tests/scenarios.json', 'r') as f:
+            scenarios = json.load(f)
+
+        for scenario in scenarios:
+            scenario_name = scenario['scenario_name']
+            with self.subTest(scenario_name=scenario_name):
+                # Instantiate Loan with parameters
+                loan = Loan(**scenario['loan_params'])
+
+                # Add any special payments
+                if 'special_payments' in scenario:
+                    for sp in scenario['special_payments']:
+                        loan.add_special_payment(**sp)
+
+                # Generate the payment schedule
+                payment_schedule = loan.get_payment_schedule()
+
+                # Convert schedule to a serializable format (list of dicts)
+                schedule_as_dicts = [asdict(p) for p in payment_schedule]
+
+                # Compare with snapshot
+>               self.snapshot_helper.compare(scenario_name, schedule_as_dicts)
+
+tests/test_loan_scenarios.py:34:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <tests.snapshot_helper.SnapshotHelper object at 0x7fa9922d2cc0>
+test_name = 'annuity_with_special_payment'
+generated_data = [{'date': datetime.datetime(2024, 1, 31, 0, 0), 'interest_amount': 0, 'loan_balance_amount': 300000.0, 'payment_amount...': np.float64(1237.76), 'loan_balance_amount': np.float64(296320.12), 'payment_amount': np.float64(1979.87), ...}, ...]
+
+    def compare(self, test_name, generated_data):
+        snapshot_path = self._get_snapshot_path(test_name)
+        serialized_data = self._serialize_data(generated_data)
+
+        if os.environ.get('UPDATE_SNAPSHOTS') == '1':
+            with open(snapshot_path, 'w') as f:
+                f.write(serialized_data)
+            return True, f"Snapshot for '{test_name}' updated."
+
+        if not os.path.exists(snapshot_path):
+            with open(snapshot_path, 'w') as f:
+                f.write(serialized_data)
+            raise AssertionError(f"Snapshot for '{test_name}' did not exist. A new one has been created. Please review it and run the tests again.")
+
+        with open(snapshot_path, 'r') as f:
+            snapshot_data = f.read()
+
+        if snapshot_data != serialized_data:
+            diff = f"--- Snapshot\n+++ Generated\n"
+            # A simple diff-like output
+            snapshot_lines = snapshot_data.splitlines()
+            generated_lines = serialized_data.splitlines()
+            for i in range(max(len(snapshot_lines), len(generated_lines))):
+                s_line = snapshot_lines[i] if i < len(snapshot_lines) else ""
+                g_line = generated_lines[i] if i < len(generated_lines) else ""
+                if s_line != g_line:
+                    diff += f"- {s_line}\n+ {g_line}\n"
+
+>           raise AssertionError(f"Snapshot for '{test_name}' does not match the generated data.\n\nDiff:\n{diff}")
+E           AssertionError: Snapshot for 'annuity_with_special_payment' does not match the generated data.
+E
+E           Diff:
+E           --- Snapshot
+E           +++ Generated
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "principal_amount": 871.38,
+E           +     "principal_amount": 706.5,
+E           -     "total_principal_amount": 871.38,
+E           +     "total_principal_amount": 706.5,
+E           -     "loan_balance_amount": 265166.68
+E           +     "loan_balance_amount": 265331.56
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1104.86,
+E           +     "interest_amount": 1105.55,
+E           -     "principal_amount": 875.01,
+E           +     "principal_amount": 709.45,
+E           -     "total_principal_amount": 875.01,
+E           +     "total_principal_amount": 709.45,
+E           -     "loan_balance_amount": 264291.67
+E           +     "loan_balance_amount": 264622.11
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1101.22,
+E           +     "interest_amount": 1102.59,
+E           -     "principal_amount": 878.65,
+E           +     "principal_amount": 712.4,
+E           -     "total_principal_amount": 878.65,
+E           +     "total_principal_amount": 712.4,
+E           -     "loan_balance_amount": 263413.02
+E           +     "loan_balance_amount": 263909.71
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1097.55,
+E           +     "interest_amount": 1099.62,
+E           -     "principal_amount": 882.31,
+E           +     "principal_amount": 715.37,
+E           -     "total_principal_amount": 882.31,
+E           +     "total_principal_amount": 715.37,
+E           -     "loan_balance_amount": 262530.71
+E           +     "loan_balance_amount": 263194.34
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1093.88,
+E           +     "interest_amount": 1096.64,
+E           -     "principal_amount": 885.99,
+E           +     "principal_amount": 718.35,
+E           -     "total_principal_amount": 885.99,
+E           +     "total_principal_amount": 718.35,
+E           -     "loan_balance_amount": 261644.72
+E           +     "loan_balance_amount": 262475.99
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1090.19,
+E           +     "interest_amount": 1093.65,
+E           -     "principal_amount": 889.68,
+E           +     "principal_amount": 721.35,
+E           -     "total_principal_amount": 889.68,
+E           +     "total_principal_amount": 721.35,
+E           -     "loan_balance_amount": 260755.04
+E           +     "loan_balance_amount": 261754.64
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1086.48,
+E           +     "interest_amount": 1090.64,
+E           -     "principal_amount": 893.39,
+E           +     "principal_amount": 724.35,
+E           -     "total_principal_amount": 893.39,
+E           +     "total_principal_amount": 724.35,
+E           -     "loan_balance_amount": 259861.65
+E           +     "loan_balance_amount": 261030.29
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1082.76,
+E           +     "interest_amount": 1087.63,
+E           -     "principal_amount": 897.11,
+E           +     "principal_amount": 727.37,
+E           -     "total_principal_amount": 897.11,
+E           +     "total_principal_amount": 727.37,
+E           -     "loan_balance_amount": 258964.54
+E           +     "loan_balance_amount": 260302.92
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1079.02,
+E           +     "interest_amount": 1084.6,
+E           -     "principal_amount": 900.85,
+E           +     "principal_amount": 730.4,
+E           -     "total_principal_amount": 900.85,
+E           +     "total_principal_amount": 730.4,
+E           -     "loan_balance_amount": 258063.69
+E           +     "loan_balance_amount": 259572.52
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1075.27,
+E           +     "interest_amount": 1081.55,
+E           -     "principal_amount": 904.6,
+E           +     "principal_amount": 733.44,
+E           -     "total_principal_amount": 904.6,
+E           +     "total_principal_amount": 733.44,
+E           -     "loan_balance_amount": 257159.09
+E           +     "loan_balance_amount": 258839.08
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1071.5,
+E           +     "interest_amount": 1078.5,
+E           -     "principal_amount": 908.37,
+E           +     "principal_amount": 736.5,
+E           -     "total_principal_amount": 908.37,
+E           +     "total_principal_amount": 736.5,
+E           -     "loan_balance_amount": 256250.72
+E           +     "loan_balance_amount": 258102.58
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1067.71,
+E           +     "interest_amount": 1075.43,
+E           -     "principal_amount": 912.16,
+E           +     "principal_amount": 739.57,
+E           -     "total_principal_amount": 912.16,
+E           +     "total_principal_amount": 739.57,
+E           -     "loan_balance_amount": 255338.56
+E           +     "loan_balance_amount": 257363.01
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1063.91,
+E           +     "interest_amount": 1072.35,
+E           -     "principal_amount": 915.96,
+E           +     "principal_amount": 742.65,
+E           -     "total_principal_amount": 915.96,
+E           +     "total_principal_amount": 742.65,
+E           -     "loan_balance_amount": 254422.6
+E           +     "loan_balance_amount": 256620.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1060.09,
+E           +     "interest_amount": 1069.25,
+E           -     "principal_amount": 919.77,
+E           +     "principal_amount": 745.74,
+E           -     "total_principal_amount": 919.77,
+E           +     "total_principal_amount": 745.74,
+E           -     "loan_balance_amount": 253502.83
+E           +     "loan_balance_amount": 255874.62
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1056.26,
+E           +     "interest_amount": 1066.14,
+E           -     "principal_amount": 923.61,
+E           +     "principal_amount": 748.85,
+E           -     "total_principal_amount": 923.61,
+E           +     "total_principal_amount": 748.85,
+E           -     "loan_balance_amount": 252579.22
+E           +     "loan_balance_amount": 255125.77
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1052.41,
+E           +     "interest_amount": 1063.02,
+E           -     "principal_amount": 927.45,
+E           +     "principal_amount": 751.97,
+E           -     "total_principal_amount": 927.45,
+E           +     "total_principal_amount": 751.97,
+E           -     "loan_balance_amount": 251651.77
+E           +     "loan_balance_amount": 254373.8
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1048.55,
+E           +     "interest_amount": 1059.89,
+E           -     "principal_amount": 931.32,
+E           +     "principal_amount": 755.1,
+E           -     "total_principal_amount": 931.32,
+E           +     "total_principal_amount": 755.1,
+E           -     "loan_balance_amount": 250720.45
+E           +     "loan_balance_amount": 253618.7
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1044.67,
+E           +     "interest_amount": 1056.74,
+E           -     "principal_amount": 935.2,
+E           +     "principal_amount": 758.25,
+E           -     "total_principal_amount": 935.2,
+E           +     "total_principal_amount": 758.25,
+E           -     "loan_balance_amount": 249785.25
+E           +     "loan_balance_amount": 252860.45
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1040.77,
+E           +     "interest_amount": 1053.59,
+E           -     "principal_amount": 939.1,
+E           +     "principal_amount": 761.41,
+E           -     "total_principal_amount": 939.1,
+E           +     "total_principal_amount": 761.41,
+E           -     "loan_balance_amount": 248846.15
+E           +     "loan_balance_amount": 252099.04
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1036.86,
+E           +     "interest_amount": 1050.41,
+E           -     "principal_amount": 943.01,
+E           +     "principal_amount": 764.58,
+E           -     "total_principal_amount": 943.01,
+E           +     "total_principal_amount": 764.58,
+E           -     "loan_balance_amount": 247903.14
+E           +     "loan_balance_amount": 251334.46
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1032.93,
+E           +     "interest_amount": 1047.23,
+E           -     "principal_amount": 946.94,
+E           +     "principal_amount": 767.77,
+E           -     "total_principal_amount": 946.94,
+E           +     "total_principal_amount": 767.77,
+E           -     "loan_balance_amount": 246956.2
+E           +     "loan_balance_amount": 250566.69
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1028.98,
+E           +     "interest_amount": 1044.03,
+E           -     "principal_amount": 950.88,
+E           +     "principal_amount": 770.97,
+E           -     "total_principal_amount": 950.88,
+E           +     "total_principal_amount": 770.97,
+E           -     "loan_balance_amount": 246005.32
+E           +     "loan_balance_amount": 249795.72
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1025.02,
+E           +     "interest_amount": 1040.82,
+E           -     "principal_amount": 954.85,
+E           +     "principal_amount": 774.18,
+E           -     "total_principal_amount": 954.85,
+E           +     "total_principal_amount": 774.18,
+E           -     "loan_balance_amount": 245050.47
+E           +     "loan_balance_amount": 249021.54
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1021.04,
+E           +     "interest_amount": 1037.59,
+E           -     "principal_amount": 958.82,
+E           +     "principal_amount": 777.41,
+E           -     "total_principal_amount": 958.82,
+E           +     "total_principal_amount": 777.41,
+E           -     "loan_balance_amount": 244091.65
+E           +     "loan_balance_amount": 248244.13
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1017.05,
+E           +     "interest_amount": 1034.35,
+E           -     "principal_amount": 962.82,
+E           +     "principal_amount": 780.64,
+E           -     "total_principal_amount": 962.82,
+E           +     "total_principal_amount": 780.64,
+E           -     "loan_balance_amount": 243128.83
+E           +     "loan_balance_amount": 247463.49
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1013.04,
+E           +     "interest_amount": 1031.1,
+E           -     "principal_amount": 966.83,
+E           +     "principal_amount": 783.9,
+E           -     "total_principal_amount": 966.83,
+E           +     "total_principal_amount": 783.9,
+E           -     "loan_balance_amount": 242162.0
+E           +     "loan_balance_amount": 246679.59
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1009.01,
+E           +     "interest_amount": 1027.83,
+E           -     "principal_amount": 970.86,
+E           +     "principal_amount": 787.16,
+E           -     "total_principal_amount": 970.86,
+E           +     "total_principal_amount": 787.16,
+E           -     "loan_balance_amount": 241191.14
+E           +     "loan_balance_amount": 245892.43
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1004.96,
+E           +     "interest_amount": 1024.55,
+E           -     "principal_amount": 974.9,
+E           +     "principal_amount": 790.44,
+E           -     "total_principal_amount": 974.9,
+E           +     "total_principal_amount": 790.44,
+E           -     "loan_balance_amount": 240216.24
+E           +     "loan_balance_amount": 245101.99
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 1000.9,
+E           +     "interest_amount": 1021.26,
+E           -     "principal_amount": 978.97,
+E           +     "principal_amount": 793.74,
+E           -     "total_principal_amount": 978.97,
+E           +     "total_principal_amount": 793.74,
+E           -     "loan_balance_amount": 239237.27
+E           +     "loan_balance_amount": 244308.25
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 996.82,
+E           +     "interest_amount": 1017.95,
+E           -     "principal_amount": 983.05,
+E           +     "principal_amount": 797.04,
+E           -     "total_principal_amount": 983.05,
+E           +     "total_principal_amount": 797.04,
+E           -     "loan_balance_amount": 238254.22
+E           +     "loan_balance_amount": 243511.21
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 992.73,
+E           +     "interest_amount": 1014.63,
+E           -     "principal_amount": 987.14,
+E           +     "principal_amount": 800.37,
+E           -     "total_principal_amount": 987.14,
+E           +     "total_principal_amount": 800.37,
+E           -     "loan_balance_amount": 237267.08
+E           +     "loan_balance_amount": 242710.84
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 988.61,
+E           +     "interest_amount": 1011.3,
+E           -     "principal_amount": 991.25,
+E           +     "principal_amount": 803.7,
+E           -     "total_principal_amount": 991.25,
+E           +     "total_principal_amount": 803.7,
+E           -     "loan_balance_amount": 236275.83
+E           +     "loan_balance_amount": 241907.14
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 984.48,
+E           +     "interest_amount": 1007.95,
+E           -     "principal_amount": 995.38,
+E           +     "principal_amount": 807.05,
+E           -     "total_principal_amount": 995.38,
+E           +     "total_principal_amount": 807.05,
+E           -     "loan_balance_amount": 235280.45
+E           +     "loan_balance_amount": 241100.09
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 980.34,
+E           +     "interest_amount": 1004.58,
+E           -     "principal_amount": 999.53,
+E           +     "principal_amount": 810.41,
+E           -     "total_principal_amount": 999.53,
+E           +     "total_principal_amount": 810.41,
+E           -     "loan_balance_amount": 234280.92
+E           +     "loan_balance_amount": 240289.68
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 976.17,
+E           +     "interest_amount": 1001.21,
+E           -     "principal_amount": 1003.7,
+E           +     "principal_amount": 813.79,
+E           -     "total_principal_amount": 1003.7,
+E           +     "total_principal_amount": 813.79,
+E           -     "loan_balance_amount": 233277.22
+E           +     "loan_balance_amount": 239475.89
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 971.99,
+E           +     "interest_amount": 997.82,
+E           -     "principal_amount": 1007.88,
+E           +     "principal_amount": 817.18,
+E           -     "total_principal_amount": 1007.88,
+E           +     "total_principal_amount": 817.18,
+E           -     "loan_balance_amount": 232269.34
+E           +     "loan_balance_amount": 238658.71
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 967.79,
+E           +     "interest_amount": 994.41,
+E           -     "principal_amount": 1012.08,
+E           +     "principal_amount": 820.58,
+E           -     "total_principal_amount": 1012.08,
+E           +     "total_principal_amount": 820.58,
+E           -     "loan_balance_amount": 231257.26
+E           +     "loan_balance_amount": 237838.13
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 963.57,
+E           +     "interest_amount": 990.99,
+E           -     "principal_amount": 1016.3,
+E           +     "principal_amount": 824.0,
+E           -     "total_principal_amount": 1016.3,
+E           +     "total_principal_amount": 824.0,
+E           -     "loan_balance_amount": 230240.96
+E           +     "loan_balance_amount": 237014.13
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 959.34,
+E           +     "interest_amount": 987.56,
+E           -     "principal_amount": 1020.53,
+E           +     "principal_amount": 827.44,
+E           -     "total_principal_amount": 1020.53,
+E           +     "total_principal_amount": 827.44,
+E           -     "loan_balance_amount": 229220.43
+E           +     "loan_balance_amount": 236186.69
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 955.09,
+E           +     "interest_amount": 984.11,
+E           -     "principal_amount": 1024.78,
+E           +     "principal_amount": 830.88,
+E           -     "total_principal_amount": 1024.78,
+E           +     "total_principal_amount": 830.88,
+E           -     "loan_balance_amount": 228195.65
+E           +     "loan_balance_amount": 235355.81
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 950.82,
+E           +     "interest_amount": 980.65,
+E           -     "principal_amount": 1029.05,
+E           +     "principal_amount": 834.35,
+E           -     "total_principal_amount": 1029.05,
+E           +     "total_principal_amount": 834.35,
+E           -     "loan_balance_amount": 227166.6
+E           +     "loan_balance_amount": 234521.46
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 946.53,
+E           +     "interest_amount": 977.17,
+E           -     "principal_amount": 1033.34,
+E           +     "principal_amount": 837.82,
+E           -     "total_principal_amount": 1033.34,
+E           +     "total_principal_amount": 837.82,
+E           -     "loan_balance_amount": 226133.26
+E           +     "loan_balance_amount": 233683.64
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 942.22,
+E           +     "interest_amount": 973.68,
+E           -     "principal_amount": 1037.65,
+E           +     "principal_amount": 841.31,
+E           -     "total_principal_amount": 1037.65,
+E           +     "total_principal_amount": 841.31,
+E           -     "loan_balance_amount": 225095.61
+E           +     "loan_balance_amount": 232842.33
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 937.9,
+E           +     "interest_amount": 970.18,
+E           -     "principal_amount": 1041.97,
+E           +     "principal_amount": 844.82,
+E           -     "total_principal_amount": 1041.97,
+E           +     "total_principal_amount": 844.82,
+E           -     "loan_balance_amount": 224053.64
+E           +     "loan_balance_amount": 231997.51
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 933.56,
+E           +     "interest_amount": 966.66,
+E           -     "principal_amount": 1046.31,
+E           +     "principal_amount": 848.34,
+E           -     "total_principal_amount": 1046.31,
+E           +     "total_principal_amount": 848.34,
+E           -     "loan_balance_amount": 223007.33
+E           +     "loan_balance_amount": 231149.17
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 929.2,
+E           +     "interest_amount": 963.12,
+E           -     "principal_amount": 1050.67,
+E           +     "principal_amount": 851.87,
+E           -     "total_principal_amount": 1050.67,
+E           +     "total_principal_amount": 851.87,
+E           -     "loan_balance_amount": 221956.66
+E           +     "loan_balance_amount": 230297.3
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 924.82,
+E           +     "interest_amount": 959.57,
+E           -     "principal_amount": 1055.05,
+E           +     "principal_amount": 855.42,
+E           -     "total_principal_amount": 1055.05,
+E           +     "total_principal_amount": 855.42,
+E           -     "loan_balance_amount": 220901.61
+E           +     "loan_balance_amount": 229441.88
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 920.42,
+E           +     "interest_amount": 956.01,
+E           -     "principal_amount": 1059.44,
+E           +     "principal_amount": 858.99,
+E           -     "total_principal_amount": 1059.44,
+E           +     "total_principal_amount": 858.99,
+E           -     "loan_balance_amount": 219842.17
+E           +     "loan_balance_amount": 228582.89
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 916.01,
+E           +     "interest_amount": 952.43,
+E           -     "principal_amount": 1063.86,
+E           +     "principal_amount": 862.57,
+E           -     "total_principal_amount": 1063.86,
+E           +     "total_principal_amount": 862.57,
+E           -     "loan_balance_amount": 218778.31
+E           +     "loan_balance_amount": 227720.32
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 911.58,
+E           +     "interest_amount": 948.83,
+E           -     "principal_amount": 1068.29,
+E           +     "principal_amount": 866.16,
+E           -     "total_principal_amount": 1068.29,
+E           +     "total_principal_amount": 866.16,
+E           -     "loan_balance_amount": 217710.02
+E           +     "loan_balance_amount": 226854.16
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 907.13,
+E           +     "interest_amount": 945.23,
+E           -     "principal_amount": 1072.74,
+E           +     "principal_amount": 869.77,
+E           -     "total_principal_amount": 1072.74,
+E           +     "total_principal_amount": 869.77,
+E           -     "loan_balance_amount": 216637.28
+E           +     "loan_balance_amount": 225984.39
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 902.66,
+E           +     "interest_amount": 941.6,
+E           -     "principal_amount": 1077.21,
+E           +     "principal_amount": 873.39,
+E           -     "total_principal_amount": 1077.21,
+E           +     "total_principal_amount": 873.39,
+E           -     "loan_balance_amount": 215560.07
+E           +     "loan_balance_amount": 225111.0
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 898.17,
+E           +     "interest_amount": 937.96,
+E           -     "principal_amount": 1081.7,
+E           +     "principal_amount": 877.03,
+E           -     "total_principal_amount": 1081.7,
+E           +     "total_principal_amount": 877.03,
+E           -     "loan_balance_amount": 214478.37
+E           +     "loan_balance_amount": 224233.97
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 893.66,
+E           +     "interest_amount": 934.31,
+E           -     "principal_amount": 1086.21,
+E           +     "principal_amount": 880.69,
+E           -     "total_principal_amount": 1086.21,
+E           +     "total_principal_amount": 880.69,
+E           -     "loan_balance_amount": 213392.16
+E           +     "loan_balance_amount": 223353.28
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 889.13,
+E           +     "interest_amount": 930.64,
+E           -     "principal_amount": 1090.73,
+E           +     "principal_amount": 884.36,
+E           -     "total_principal_amount": 1090.73,
+E           +     "total_principal_amount": 884.36,
+E           -     "loan_balance_amount": 212301.43
+E           +     "loan_balance_amount": 222468.92
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 884.59,
+E           +     "interest_amount": 926.95,
+E           -     "principal_amount": 1095.28,
+E           +     "principal_amount": 888.04,
+E           -     "total_principal_amount": 1095.28,
+E           +     "total_principal_amount": 888.04,
+E           -     "loan_balance_amount": 211206.15
+E           +     "loan_balance_amount": 221580.88
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 880.03,
+E           +     "interest_amount": 923.25,
+E           -     "principal_amount": 1099.84,
+E           +     "principal_amount": 891.74,
+E           -     "total_principal_amount": 1099.84,
+E           +     "total_principal_amount": 891.74,
+E           -     "loan_balance_amount": 210106.31
+E           +     "loan_balance_amount": 220689.14
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 875.44,
+E           +     "interest_amount": 919.54,
+E           -     "principal_amount": 1104.42,
+E           +     "principal_amount": 895.46,
+E           -     "total_principal_amount": 1104.42,
+E           +     "total_principal_amount": 895.46,
+E           -     "loan_balance_amount": 209001.89
+E           +     "loan_balance_amount": 219793.68
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 870.84,
+E           +     "interest_amount": 915.81,
+E           -     "principal_amount": 1109.03,
+E           +     "principal_amount": 899.19,
+E           -     "total_principal_amount": 1109.03,
+E           +     "total_principal_amount": 899.19,
+E           -     "loan_balance_amount": 207892.86
+E           +     "loan_balance_amount": 218894.49
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 866.22,
+E           +     "interest_amount": 912.06,
+E           -     "principal_amount": 1113.65,
+E           +     "principal_amount": 902.93,
+E           -     "total_principal_amount": 1113.65,
+E           +     "total_principal_amount": 902.93,
+E           -     "loan_balance_amount": 206779.21
+E           +     "loan_balance_amount": 217991.56
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 861.58,
+E           +     "interest_amount": 908.3,
+E           -     "principal_amount": 1118.29,
+E           +     "principal_amount": 906.7,
+E           -     "total_principal_amount": 1118.29,
+E           +     "total_principal_amount": 906.7,
+E           -     "loan_balance_amount": 205660.92
+E           +     "loan_balance_amount": 217084.86
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 856.92,
+E           +     "interest_amount": 904.52,
+E           -     "principal_amount": 1122.95,
+E           +     "principal_amount": 910.48,
+E           -     "total_principal_amount": 1122.95,
+E           +     "total_principal_amount": 910.48,
+E           -     "loan_balance_amount": 204537.97
+E           +     "loan_balance_amount": 216174.38
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 852.24,
+E           +     "interest_amount": 900.73,
+E           -     "principal_amount": 1127.63,
+E           +     "principal_amount": 914.27,
+E           -     "total_principal_amount": 1127.63,
+E           +     "total_principal_amount": 914.27,
+E           -     "loan_balance_amount": 203410.34
+E           +     "loan_balance_amount": 215260.11
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 847.54,
+E           +     "interest_amount": 896.92,
+E           -     "principal_amount": 1132.32,
+E           +     "principal_amount": 918.08,
+E           -     "total_principal_amount": 1132.32,
+E           +     "total_principal_amount": 918.08,
+E           -     "loan_balance_amount": 202278.02
+E           +     "loan_balance_amount": 214342.03
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 842.83,
+E           +     "interest_amount": 893.09,
+E           -     "principal_amount": 1137.04,
+E           +     "principal_amount": 921.9,
+E           -     "total_principal_amount": 1137.04,
+E           +     "total_principal_amount": 921.9,
+E           -     "loan_balance_amount": 201140.98
+E           +     "loan_balance_amount": 213420.13
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 838.09,
+E           +     "interest_amount": 889.25,
+E           -     "principal_amount": 1141.78,
+E           +     "principal_amount": 925.74,
+E           -     "total_principal_amount": 1141.78,
+E           +     "total_principal_amount": 925.74,
+E           -     "loan_balance_amount": 199999.2
+E           +     "loan_balance_amount": 212494.39
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 833.33,
+E           +     "interest_amount": 885.39,
+E           -     "principal_amount": 1146.54,
+E           +     "principal_amount": 929.6,
+E           -     "total_principal_amount": 1146.54,
+E           +     "total_principal_amount": 929.6,
+E           -     "loan_balance_amount": 198852.66
+E           +     "loan_balance_amount": 211564.79
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 828.55,
+E           +     "interest_amount": 881.52,
+E           -     "principal_amount": 1151.31,
+E           +     "principal_amount": 933.48,
+E           -     "total_principal_amount": 1151.31,
+E           +     "total_principal_amount": 933.48,
+E           -     "loan_balance_amount": 197701.35
+E           +     "loan_balance_amount": 210631.31
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 823.76,
+E           +     "interest_amount": 877.63,
+E           -     "principal_amount": 1156.11,
+E           +     "principal_amount": 937.36,
+E           -     "total_principal_amount": 1156.11,
+E           +     "total_principal_amount": 937.36,
+E           -     "loan_balance_amount": 196545.24
+E           +     "loan_balance_amount": 209693.95
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 818.94,
+E           +     "interest_amount": 873.72,
+E           -     "principal_amount": 1160.93,
+E           +     "principal_amount": 941.27,
+E           -     "total_principal_amount": 1160.93,
+E           +     "total_principal_amount": 941.27,
+E           -     "loan_balance_amount": 195384.31
+E           +     "loan_balance_amount": 208752.68
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 814.1,
+E           +     "interest_amount": 869.8,
+E           -     "principal_amount": 1165.77,
+E           +     "principal_amount": 945.19,
+E           -     "total_principal_amount": 1165.77,
+E           +     "total_principal_amount": 945.19,
+E           -     "loan_balance_amount": 194218.54
+E           +     "loan_balance_amount": 207807.49
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 809.24,
+E           +     "interest_amount": 865.86,
+E           -     "principal_amount": 1170.62,
+E           +     "principal_amount": 949.13,
+E           -     "total_principal_amount": 1170.62,
+E           +     "total_principal_amount": 949.13,
+E           -     "loan_balance_amount": 193047.92
+E           +     "loan_balance_amount": 206858.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 804.37,
+E           +     "interest_amount": 861.91,
+E           -     "principal_amount": 1175.5,
+E           +     "principal_amount": 953.09,
+E           -     "total_principal_amount": 1175.5,
+E           +     "total_principal_amount": 953.09,
+E           -     "loan_balance_amount": 191872.42
+E           +     "loan_balance_amount": 205905.27
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 799.47,
+E           +     "interest_amount": 857.94,
+E           -     "principal_amount": 1180.4,
+E           +     "principal_amount": 957.06,
+E           -     "total_principal_amount": 1180.4,
+E           +     "total_principal_amount": 957.06,
+E           -     "loan_balance_amount": 190692.02
+E           +     "loan_balance_amount": 204948.21
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 794.55,
+E           +     "interest_amount": 853.95,
+E           -     "principal_amount": 1185.32,
+E           +     "principal_amount": 961.04,
+E           -     "total_principal_amount": 1185.32,
+E           +     "total_principal_amount": 961.04,
+E           -     "loan_balance_amount": 189506.7
+E           +     "loan_balance_amount": 203987.17
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 789.61,
+E           +     "interest_amount": 849.95,
+E           -     "principal_amount": 1190.26,
+E           +     "principal_amount": 965.05,
+E           -     "total_principal_amount": 1190.26,
+E           +     "total_principal_amount": 965.05,
+E           -     "loan_balance_amount": 188316.44
+E           +     "loan_balance_amount": 203022.12
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 784.65,
+E           +     "interest_amount": 845.93,
+E           -     "principal_amount": 1195.22,
+E           +     "principal_amount": 969.07,
+E           -     "total_principal_amount": 1195.22,
+E           +     "total_principal_amount": 969.07,
+E           -     "loan_balance_amount": 187121.22
+E           +     "loan_balance_amount": 202053.05
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 779.67,
+E           +     "interest_amount": 841.89,
+E           -     "principal_amount": 1200.2,
+E           +     "principal_amount": 973.11,
+E           -     "total_principal_amount": 1200.2,
+E           +     "total_principal_amount": 973.11,
+E           -     "loan_balance_amount": 185921.02
+E           +     "loan_balance_amount": 201079.94
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 774.67,
+E           +     "interest_amount": 837.83,
+E           -     "principal_amount": 1205.2,
+E           +     "principal_amount": 977.16,
+E           -     "total_principal_amount": 1205.2,
+E           +     "total_principal_amount": 977.16,
+E           -     "loan_balance_amount": 184715.82
+E           +     "loan_balance_amount": 200102.78
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 769.65,
+E           +     "interest_amount": 833.76,
+E           -     "principal_amount": 1210.22,
+E           +     "principal_amount": 981.23,
+E           -     "total_principal_amount": 1210.22,
+E           +     "total_principal_amount": 981.23,
+E           -     "loan_balance_amount": 183505.6
+E           +     "loan_balance_amount": 199121.55
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 764.61,
+E           +     "interest_amount": 829.67,
+E           -     "principal_amount": 1215.26,
+E           +     "principal_amount": 985.32,
+E           -     "total_principal_amount": 1215.26,
+E           +     "total_principal_amount": 985.32,
+E           -     "loan_balance_amount": 182290.34
+E           +     "loan_balance_amount": 198136.23
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 759.54,
+E           +     "interest_amount": 825.57,
+E           -     "principal_amount": 1220.32,
+E           +     "principal_amount": 989.43,
+E           -     "total_principal_amount": 1220.32,
+E           +     "total_principal_amount": 989.43,
+E           -     "loan_balance_amount": 181070.02
+E           +     "loan_balance_amount": 197146.8
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 754.46,
+E           +     "interest_amount": 821.44,
+E           -     "principal_amount": 1225.41,
+E           +     "principal_amount": 993.55,
+E           -     "total_principal_amount": 1225.41,
+E           +     "total_principal_amount": 993.55,
+E           -     "loan_balance_amount": 179844.61
+E           +     "loan_balance_amount": 196153.25
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 749.35,
+E           +     "interest_amount": 817.31,
+E           -     "principal_amount": 1230.51,
+E           +     "principal_amount": 997.69,
+E           -     "total_principal_amount": 1230.51,
+E           +     "total_principal_amount": 997.69,
+E           -     "loan_balance_amount": 178614.1
+E           +     "loan_balance_amount": 195155.56
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 744.23,
+E           +     "interest_amount": 813.15,
+E           -     "principal_amount": 1235.64,
+E           +     "principal_amount": 1001.85,
+E           -     "total_principal_amount": 1235.64,
+E           +     "total_principal_amount": 1001.85,
+E           -     "loan_balance_amount": 177378.46
+E           +     "loan_balance_amount": 194153.71
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 739.08,
+E           +     "interest_amount": 808.97,
+E           -     "principal_amount": 1240.79,
+E           +     "principal_amount": 1006.02,
+E           -     "total_principal_amount": 1240.79,
+E           +     "total_principal_amount": 1006.02,
+E           -     "loan_balance_amount": 176137.67
+E           +     "loan_balance_amount": 193147.69
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 733.91,
+E           +     "interest_amount": 804.78,
+E           -     "principal_amount": 1245.96,
+E           +     "principal_amount": 1010.21,
+E           -     "total_principal_amount": 1245.96,
+E           +     "total_principal_amount": 1010.21,
+E           -     "loan_balance_amount": 174891.71
+E           +     "loan_balance_amount": 192137.48
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 728.72,
+E           +     "interest_amount": 800.57,
+E           -     "principal_amount": 1251.15,
+E           +     "principal_amount": 1014.42,
+E           -     "total_principal_amount": 1251.15,
+E           +     "total_principal_amount": 1014.42,
+E           -     "loan_balance_amount": 173640.56
+E           +     "loan_balance_amount": 191123.06
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 723.5,
+E           +     "interest_amount": 796.35,
+E           -     "principal_amount": 1256.36,
+E           +     "principal_amount": 1018.65,
+E           -     "total_principal_amount": 1256.36,
+E           +     "total_principal_amount": 1018.65,
+E           -     "loan_balance_amount": 172384.2
+E           +     "loan_balance_amount": 190104.41
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 718.27,
+E           +     "interest_amount": 792.1,
+E           -     "principal_amount": 1261.6,
+E           +     "principal_amount": 1022.89,
+E           -     "total_principal_amount": 1261.6,
+E           +     "total_principal_amount": 1022.89,
+E           -     "loan_balance_amount": 171122.6
+E           +     "loan_balance_amount": 189081.52
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 713.01,
+E           +     "interest_amount": 787.84,
+E           -     "principal_amount": 1266.86,
+E           +     "principal_amount": 1027.16,
+E           -     "total_principal_amount": 1266.86,
+E           +     "total_principal_amount": 1027.16,
+E           -     "loan_balance_amount": 169855.74
+E           +     "loan_balance_amount": 188054.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 707.73,
+E           +     "interest_amount": 783.56,
+E           -     "principal_amount": 1272.13,
+E           +     "principal_amount": 1031.44,
+E           -     "total_principal_amount": 1272.13,
+E           +     "total_principal_amount": 1031.44,
+E           -     "loan_balance_amount": 168583.61
+E           +     "loan_balance_amount": 187022.92
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 702.43,
+E           +     "interest_amount": 779.26,
+E           -     "principal_amount": 1277.44,
+E           +     "principal_amount": 1035.73,
+E           -     "total_principal_amount": 1277.44,
+E           +     "total_principal_amount": 1035.73,
+E           -     "loan_balance_amount": 167306.17
+E           +     "loan_balance_amount": 185987.19
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 697.11,
+E           +     "interest_amount": 774.95,
+E           -     "principal_amount": 1282.76,
+E           +     "principal_amount": 1040.05,
+E           -     "total_principal_amount": 1282.76,
+E           +     "total_principal_amount": 1040.05,
+E           -     "loan_balance_amount": 166023.41
+E           +     "loan_balance_amount": 184947.14
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 691.76,
+E           +     "interest_amount": 770.61,
+E           -     "principal_amount": 1288.1,
+E           +     "principal_amount": 1044.38,
+E           -     "total_principal_amount": 1288.1,
+E           +     "total_principal_amount": 1044.38,
+E           -     "loan_balance_amount": 164735.31
+E           +     "loan_balance_amount": 183902.76
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 686.4,
+E           +     "interest_amount": 766.26,
+E           -     "principal_amount": 1293.47,
+E           +     "principal_amount": 1048.73,
+E           -     "total_principal_amount": 1293.47,
+E           +     "total_principal_amount": 1048.73,
+E           -     "loan_balance_amount": 163441.84
+E           +     "loan_balance_amount": 182854.03
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 681.01,
+E           +     "interest_amount": 761.89,
+E           -     "principal_amount": 1298.86,
+E           +     "principal_amount": 1053.1,
+E           -     "total_principal_amount": 1298.86,
+E           +     "total_principal_amount": 1053.1,
+E           -     "loan_balance_amount": 162142.98
+E           +     "loan_balance_amount": 181800.93
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 675.6,
+E           +     "interest_amount": 757.5,
+E           -     "principal_amount": 1304.27,
+E           +     "principal_amount": 1057.49,
+E           -     "total_principal_amount": 1304.27,
+E           +     "total_principal_amount": 1057.49,
+E           -     "loan_balance_amount": 160838.71
+E           +     "loan_balance_amount": 180743.44
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 670.16,
+E           +     "interest_amount": 753.1,
+E           -     "principal_amount": 1309.71,
+E           +     "principal_amount": 1061.9,
+E           -     "total_principal_amount": 1309.71,
+E           +     "total_principal_amount": 1061.9,
+E           -     "loan_balance_amount": 159529.0
+E           +     "loan_balance_amount": 179681.54
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 664.7,
+E           +     "interest_amount": 748.67,
+E           -     "principal_amount": 1315.16,
+E           +     "principal_amount": 1066.32,
+E           -     "total_principal_amount": 1315.16,
+E           +     "total_principal_amount": 1066.32,
+E           -     "loan_balance_amount": 158213.84
+E           +     "loan_balance_amount": 178615.22
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 659.22,
+E           +     "interest_amount": 744.23,
+E           -     "principal_amount": 1320.64,
+E           +     "principal_amount": 1070.77,
+E           -     "total_principal_amount": 1320.64,
+E           +     "total_principal_amount": 1070.77,
+E           -     "loan_balance_amount": 156893.2
+E           +     "loan_balance_amount": 177544.45
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 653.72,
+E           +     "interest_amount": 739.77,
+E           -     "principal_amount": 1326.15,
+E           +     "principal_amount": 1075.23,
+E           -     "total_principal_amount": 1326.15,
+E           +     "total_principal_amount": 1075.23,
+E           -     "loan_balance_amount": 155567.05
+E           +     "loan_balance_amount": 176469.22
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 648.2,
+E           +     "interest_amount": 735.29,
+E           -     "principal_amount": 1331.67,
+E           +     "principal_amount": 1079.71,
+E           -     "total_principal_amount": 1331.67,
+E           +     "total_principal_amount": 1079.71,
+E           -     "loan_balance_amount": 154235.38
+E           +     "loan_balance_amount": 175389.51
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 642.65,
+E           +     "interest_amount": 730.79,
+E           -     "principal_amount": 1337.22,
+E           +     "principal_amount": 1084.21,
+E           -     "total_principal_amount": 1337.22,
+E           +     "total_principal_amount": 1084.21,
+E           -     "loan_balance_amount": 152898.16
+E           +     "loan_balance_amount": 174305.3
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 637.08,
+E           +     "interest_amount": 726.27,
+E           -     "principal_amount": 1342.79,
+E           +     "principal_amount": 1088.72,
+E           -     "total_principal_amount": 1342.79,
+E           +     "total_principal_amount": 1088.72,
+E           -     "loan_balance_amount": 151555.37
+E           +     "loan_balance_amount": 173216.58
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 631.48,
+E           +     "interest_amount": 721.74,
+E           -     "principal_amount": 1348.39,
+E           +     "principal_amount": 1093.26,
+E           -     "total_principal_amount": 1348.39,
+E           +     "total_principal_amount": 1093.26,
+E           -     "loan_balance_amount": 150206.98
+E           +     "loan_balance_amount": 172123.32
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 625.86,
+E           +     "interest_amount": 717.18,
+E           -     "principal_amount": 1354.0,
+E           +     "principal_amount": 1097.81,
+E           -     "total_principal_amount": 1354.0,
+E           +     "total_principal_amount": 1097.81,
+E           -     "loan_balance_amount": 148852.98
+E           +     "loan_balance_amount": 171025.51
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 620.22,
+E           +     "interest_amount": 712.61,
+E           -     "principal_amount": 1359.65,
+E           +     "principal_amount": 1102.39,
+E           -     "total_principal_amount": 1359.65,
+E           +     "total_principal_amount": 1102.39,
+E           -     "loan_balance_amount": 147493.33
+E           +     "loan_balance_amount": 169923.12
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 614.56,
+E           +     "interest_amount": 708.01,
+E           -     "principal_amount": 1365.31,
+E           +     "principal_amount": 1106.98,
+E           -     "total_principal_amount": 1365.31,
+E           +     "total_principal_amount": 1106.98,
+E           -     "loan_balance_amount": 146128.02
+E           +     "loan_balance_amount": 168816.14
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 608.87,
+E           +     "interest_amount": 703.4,
+E           -     "principal_amount": 1371.0,
+E           +     "principal_amount": 1111.59,
+E           -     "total_principal_amount": 1371.0,
+E           +     "total_principal_amount": 1111.59,
+E           -     "loan_balance_amount": 144757.02
+E           +     "loan_balance_amount": 167704.55
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 603.15,
+E           +     "interest_amount": 698.77,
+E           -     "principal_amount": 1376.71,
+E           +     "principal_amount": 1116.23,
+E           -     "total_principal_amount": 1376.71,
+E           +     "total_principal_amount": 1116.23,
+E           -     "loan_balance_amount": 143380.31
+E           +     "loan_balance_amount": 166588.32
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 597.42,
+E           +     "interest_amount": 694.12,
+E           -     "principal_amount": 1382.45,
+E           +     "principal_amount": 1120.88,
+E           -     "total_principal_amount": 1382.45,
+E           +     "total_principal_amount": 1120.88,
+E           -     "loan_balance_amount": 141997.86
+E           +     "loan_balance_amount": 165467.44
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 591.66,
+E           +     "interest_amount": 689.45,
+E           -     "principal_amount": 1388.21,
+E           +     "principal_amount": 1125.55,
+E           -     "total_principal_amount": 1388.21,
+E           +     "total_principal_amount": 1125.55,
+E           -     "loan_balance_amount": 140609.65
+E           +     "loan_balance_amount": 164341.89
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 585.87,
+E           +     "interest_amount": 684.76,
+E           -     "principal_amount": 1393.99,
+E           +     "principal_amount": 1130.24,
+E           -     "total_principal_amount": 1393.99,
+E           +     "total_principal_amount": 1130.24,
+E           -     "loan_balance_amount": 139215.66
+E           +     "loan_balance_amount": 163211.65
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 580.07,
+E           +     "interest_amount": 680.05,
+E           -     "principal_amount": 1399.8,
+E           +     "principal_amount": 1134.95,
+E           -     "total_principal_amount": 1399.8,
+E           +     "total_principal_amount": 1134.95,
+E           -     "loan_balance_amount": 137815.86
+E           +     "loan_balance_amount": 162076.7
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 574.23,
+E           +     "interest_amount": 675.32,
+E           -     "principal_amount": 1405.63,
+E           +     "principal_amount": 1139.68,
+E           -     "total_principal_amount": 1405.63,
+E           +     "total_principal_amount": 1139.68,
+E           -     "loan_balance_amount": 136410.23
+E           +     "loan_balance_amount": 160937.02
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 568.38,
+E           +     "interest_amount": 670.57,
+E           -     "principal_amount": 1411.49,
+E           +     "principal_amount": 1144.42,
+E           -     "total_principal_amount": 1411.49,
+E           +     "total_principal_amount": 1144.42,
+E           -     "loan_balance_amount": 134998.74
+E           +     "loan_balance_amount": 159792.6
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 562.49,
+E           +     "interest_amount": 665.8,
+E           -     "principal_amount": 1417.37,
+E           +     "principal_amount": 1149.19,
+E           -     "total_principal_amount": 1417.37,
+E           +     "total_principal_amount": 1149.19,
+E           -     "loan_balance_amount": 133581.37
+E           +     "loan_balance_amount": 158643.41
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 556.59,
+E           +     "interest_amount": 661.01,
+E           -     "principal_amount": 1423.28,
+E           +     "principal_amount": 1153.98,
+E           -     "total_principal_amount": 1423.28,
+E           +     "total_principal_amount": 1153.98,
+E           -     "loan_balance_amount": 132158.09
+E           +     "loan_balance_amount": 157489.43
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 550.66,
+E           +     "interest_amount": 656.21,
+E           -     "principal_amount": 1429.21,
+E           +     "principal_amount": 1158.79,
+E           -     "total_principal_amount": 1429.21,
+E           +     "total_principal_amount": 1158.79,
+E           -     "loan_balance_amount": 130728.88
+E           +     "loan_balance_amount": 156330.64
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 544.7,
+E           +     "interest_amount": 651.38,
+E           -     "principal_amount": 1435.16,
+E           +     "principal_amount": 1163.62,
+E           -     "total_principal_amount": 1435.16,
+E           +     "total_principal_amount": 1163.62,
+E           -     "loan_balance_amount": 129293.72
+E           +     "loan_balance_amount": 155167.02
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 538.72,
+E           +     "interest_amount": 646.53,
+E           -     "principal_amount": 1441.14,
+E           +     "principal_amount": 1168.47,
+E           -     "total_principal_amount": 1441.14,
+E           +     "total_principal_amount": 1168.47,
+E           -     "loan_balance_amount": 127852.58
+E           +     "loan_balance_amount": 153998.55
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 532.72,
+E           +     "interest_amount": 641.66,
+E           -     "principal_amount": 1447.15,
+E           +     "principal_amount": 1173.33,
+E           -     "total_principal_amount": 1447.15,
+E           +     "total_principal_amount": 1173.33,
+E           -     "loan_balance_amount": 126405.43
+E           +     "loan_balance_amount": 152825.22
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 526.69,
+E           +     "interest_amount": 636.77,
+E           -     "principal_amount": 1453.18,
+E           +     "principal_amount": 1178.22,
+E           -     "total_principal_amount": 1453.18,
+E           +     "total_principal_amount": 1178.22,
+E           -     "loan_balance_amount": 124952.25
+E           +     "loan_balance_amount": 151647.0
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 520.63,
+E           +     "interest_amount": 631.86,
+E           -     "principal_amount": 1459.23,
+E           +     "principal_amount": 1183.13,
+E           -     "total_principal_amount": 1459.23,
+E           +     "total_principal_amount": 1183.13,
+E           -     "loan_balance_amount": 123493.02
+E           +     "loan_balance_amount": 150463.87
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 514.55,
+E           +     "interest_amount": 626.93,
+E           -     "principal_amount": 1465.31,
+E           +     "principal_amount": 1188.06,
+E           -     "total_principal_amount": 1465.31,
+E           +     "total_principal_amount": 1188.06,
+E           -     "loan_balance_amount": 122027.71
+E           +     "loan_balance_amount": 149275.81
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 508.45,
+E           +     "interest_amount": 621.98,
+E           -     "principal_amount": 1471.42,
+E           +     "principal_amount": 1193.01,
+E           -     "total_principal_amount": 1471.42,
+E           +     "total_principal_amount": 1193.01,
+E           -     "loan_balance_amount": 120556.29
+E           +     "loan_balance_amount": 148082.8
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 502.32,
+E           +     "interest_amount": 617.01,
+E           -     "principal_amount": 1477.55,
+E           +     "principal_amount": 1197.98,
+E           -     "total_principal_amount": 1477.55,
+E           +     "total_principal_amount": 1197.98,
+E           -     "loan_balance_amount": 119078.74
+E           +     "loan_balance_amount": 146884.82
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 496.16,
+E           +     "interest_amount": 612.02,
+E           -     "principal_amount": 1483.71,
+E           +     "principal_amount": 1202.98,
+E           -     "total_principal_amount": 1483.71,
+E           +     "total_principal_amount": 1202.98,
+E           -     "loan_balance_amount": 117595.03
+E           +     "loan_balance_amount": 145681.84
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 489.98,
+E           +     "interest_amount": 607.01,
+E           -     "principal_amount": 1489.89,
+E           +     "principal_amount": 1207.99,
+E           -     "total_principal_amount": 1489.89,
+E           +     "total_principal_amount": 1207.99,
+E           -     "loan_balance_amount": 116105.14
+E           +     "loan_balance_amount": 144473.85
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 483.77,
+E           +     "interest_amount": 601.97,
+E           -     "principal_amount": 1496.1,
+E           +     "principal_amount": 1213.02,
+E           -     "total_principal_amount": 1496.1,
+E           +     "total_principal_amount": 1213.02,
+E           -     "loan_balance_amount": 114609.04
+E           +     "loan_balance_amount": 143260.83
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 477.54,
+E           +     "interest_amount": 596.92,
+E           -     "principal_amount": 1502.33,
+E           +     "principal_amount": 1218.08,
+E           -     "total_principal_amount": 1502.33,
+E           +     "total_principal_amount": 1218.08,
+E           -     "loan_balance_amount": 113106.71
+E           +     "loan_balance_amount": 142042.75
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 471.28,
+E           +     "interest_amount": 591.84,
+E           -     "principal_amount": 1508.59,
+E           +     "principal_amount": 1223.15,
+E           -     "total_principal_amount": 1508.59,
+E           +     "total_principal_amount": 1223.15,
+E           -     "loan_balance_amount": 111598.12
+E           +     "loan_balance_amount": 140819.6
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 464.99,
+E           +     "interest_amount": 586.75,
+E           -     "principal_amount": 1514.88,
+E           +     "principal_amount": 1228.25,
+E           -     "total_principal_amount": 1514.88,
+E           +     "total_principal_amount": 1228.25,
+E           -     "loan_balance_amount": 110083.24
+E           +     "loan_balance_amount": 139591.35
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 458.68,
+E           +     "interest_amount": 581.63,
+E           -     "principal_amount": 1521.19,
+E           +     "principal_amount": 1233.36,
+E           -     "total_principal_amount": 1521.19,
+E           +     "total_principal_amount": 1233.36,
+E           -     "loan_balance_amount": 108562.05
+E           +     "loan_balance_amount": 138357.99
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 452.34,
+E           +     "interest_amount": 576.49,
+E           -     "principal_amount": 1527.53,
+E           +     "principal_amount": 1238.5,
+E           -     "total_principal_amount": 1527.53,
+E           +     "total_principal_amount": 1238.5,
+E           -     "loan_balance_amount": 107034.52
+E           +     "loan_balance_amount": 137119.49
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 445.98,
+E           +     "interest_amount": 571.33,
+E           -     "principal_amount": 1533.89,
+E           +     "principal_amount": 1243.66,
+E           -     "total_principal_amount": 1533.89,
+E           +     "total_principal_amount": 1243.66,
+E           -     "loan_balance_amount": 105500.63
+E           +     "loan_balance_amount": 135875.83
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 439.59,
+E           +     "interest_amount": 566.15,
+E           -     "principal_amount": 1540.28,
+E           +     "principal_amount": 1248.85,
+E           -     "total_principal_amount": 1540.28,
+E           +     "total_principal_amount": 1248.85,
+E           -     "loan_balance_amount": 103960.35
+E           +     "loan_balance_amount": 134626.98
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 433.17,
+E           +     "interest_amount": 560.95,
+E           -     "principal_amount": 1546.7,
+E           +     "principal_amount": 1254.05,
+E           -     "total_principal_amount": 1546.7,
+E           +     "total_principal_amount": 1254.05,
+E           -     "loan_balance_amount": 102413.65
+E           +     "loan_balance_amount": 133372.93
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 426.72,
+E           +     "interest_amount": 555.72,
+E           -     "principal_amount": 1553.14,
+E           +     "principal_amount": 1259.27,
+E           -     "total_principal_amount": 1553.14,
+E           +     "total_principal_amount": 1259.27,
+E           -     "loan_balance_amount": 100860.51
+E           +     "loan_balance_amount": 132113.66
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 420.25,
+E           +     "interest_amount": 550.47,
+E           -     "principal_amount": 1559.62,
+E           +     "principal_amount": 1264.52,
+E           -     "total_principal_amount": 1559.62,
+E           +     "total_principal_amount": 1264.52,
+E           -     "loan_balance_amount": 99300.89
+E           +     "loan_balance_amount": 130849.14
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 413.75,
+E           +     "interest_amount": 545.2,
+E           -     "principal_amount": 1566.11,
+E           +     "principal_amount": 1269.79,
+E           -     "total_principal_amount": 1566.11,
+E           +     "total_principal_amount": 1269.79,
+E           -     "loan_balance_amount": 97734.78
+E           +     "loan_balance_amount": 129579.35
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 407.23,
+E           +     "interest_amount": 539.91,
+E           -     "principal_amount": 1572.64,
+E           +     "principal_amount": 1275.08,
+E           -     "total_principal_amount": 1572.64,
+E           +     "total_principal_amount": 1275.08,
+E           -     "loan_balance_amount": 96162.14
+E           +     "loan_balance_amount": 128304.27
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 400.68,
+E           +     "interest_amount": 534.6,
+E           -     "principal_amount": 1579.19,
+E           +     "principal_amount": 1280.39,
+E           -     "total_principal_amount": 1579.19,
+E           +     "total_principal_amount": 1280.39,
+E           -     "loan_balance_amount": 94582.95
+E           +     "loan_balance_amount": 127023.88
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 394.1,
+E           +     "interest_amount": 529.27,
+E           -     "principal_amount": 1585.77,
+E           +     "principal_amount": 1285.73,
+E           -     "total_principal_amount": 1585.77,
+E           +     "total_principal_amount": 1285.73,
+E           -     "loan_balance_amount": 92997.18
+E           +     "loan_balance_amount": 125738.15
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 387.49,
+E           +     "interest_amount": 523.91,
+E           -     "principal_amount": 1592.38,
+E           +     "principal_amount": 1291.09,
+E           -     "total_principal_amount": 1592.38,
+E           +     "total_principal_amount": 1291.09,
+E           -     "loan_balance_amount": 91404.8
+E           +     "loan_balance_amount": 124447.06
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 380.85,
+E           +     "interest_amount": 518.53,
+E           -     "principal_amount": 1599.01,
+E           +     "principal_amount": 1296.47,
+E           -     "total_principal_amount": 1599.01,
+E           +     "total_principal_amount": 1296.47,
+E           -     "loan_balance_amount": 89805.79
+E           +     "loan_balance_amount": 123150.59
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 374.19,
+E           +     "interest_amount": 513.13,
+E           -     "principal_amount": 1605.68,
+E           +     "principal_amount": 1301.87,
+E           -     "total_principal_amount": 1605.68,
+E           +     "total_principal_amount": 1301.87,
+E           -     "loan_balance_amount": 88200.11
+E           +     "loan_balance_amount": 121848.72
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 367.5,
+E           +     "interest_amount": 507.7,
+E           -     "principal_amount": 1612.37,
+E           +     "principal_amount": 1307.29,
+E           -     "total_principal_amount": 1612.37,
+E           +     "total_principal_amount": 1307.29,
+E           -     "loan_balance_amount": 86587.74
+E           +     "loan_balance_amount": 120541.43
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 360.78,
+E           +     "interest_amount": 502.26,
+E           -     "principal_amount": 1619.08,
+E           +     "principal_amount": 1312.74,
+E           -     "total_principal_amount": 1619.08,
+E           +     "total_principal_amount": 1312.74,
+E           -     "loan_balance_amount": 84968.66
+E           +     "loan_balance_amount": 119228.69
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 354.04,
+E           +     "interest_amount": 496.79,
+E           -     "principal_amount": 1625.83,
+E           +     "principal_amount": 1318.21,
+E           -     "total_principal_amount": 1625.83,
+E           +     "total_principal_amount": 1318.21,
+E           -     "loan_balance_amount": 83342.83
+E           +     "loan_balance_amount": 117910.48
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 347.26,
+E           +     "interest_amount": 491.29,
+E           -     "principal_amount": 1632.61,
+E           +     "principal_amount": 1323.7,
+E           -     "total_principal_amount": 1632.61,
+E           +     "total_principal_amount": 1323.7,
+E           -     "loan_balance_amount": 81710.22
+E           +     "loan_balance_amount": 116586.78
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 340.46,
+E           +     "interest_amount": 485.78,
+E           -     "principal_amount": 1639.41,
+E           +     "principal_amount": 1329.22,
+E           -     "total_principal_amount": 1639.41,
+E           +     "total_principal_amount": 1329.22,
+E           -     "loan_balance_amount": 80070.81
+E           +     "loan_balance_amount": 115257.56
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 333.63,
+E           +     "interest_amount": 480.24,
+E           -     "principal_amount": 1646.24,
+E           +     "principal_amount": 1334.76,
+E           -     "total_principal_amount": 1646.24,
+E           +     "total_principal_amount": 1334.76,
+E           -     "loan_balance_amount": 78424.57
+E           +     "loan_balance_amount": 113922.8
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 326.77,
+E           +     "interest_amount": 474.68,
+E           -     "principal_amount": 1653.1,
+E           +     "principal_amount": 1340.32,
+E           -     "total_principal_amount": 1653.1,
+E           +     "total_principal_amount": 1340.32,
+E           -     "loan_balance_amount": 76771.47
+E           +     "loan_balance_amount": 112582.48
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 319.88,
+E           +     "interest_amount": 469.09,
+E           -     "principal_amount": 1659.99,
+E           +     "principal_amount": 1345.9,
+E           -     "total_principal_amount": 1659.99,
+E           +     "total_principal_amount": 1345.9,
+E           -     "loan_balance_amount": 75111.48
+E           +     "loan_balance_amount": 111236.58
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 312.96,
+E           +     "interest_amount": 463.49,
+E           -     "principal_amount": 1666.9,
+E           +     "principal_amount": 1351.51,
+E           -     "total_principal_amount": 1666.9,
+E           +     "total_principal_amount": 1351.51,
+E           -     "loan_balance_amount": 73444.58
+E           +     "loan_balance_amount": 109885.07
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 306.02,
+E           +     "interest_amount": 457.85,
+E           -     "principal_amount": 1673.85,
+E           +     "principal_amount": 1357.14,
+E           -     "total_principal_amount": 1673.85,
+E           +     "total_principal_amount": 1357.14,
+E           -     "loan_balance_amount": 71770.73
+E           +     "loan_balance_amount": 108527.93
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 299.04,
+E           +     "interest_amount": 452.2,
+E           -     "principal_amount": 1680.82,
+E           +     "principal_amount": 1362.8,
+E           -     "total_principal_amount": 1680.82,
+E           +     "total_principal_amount": 1362.8,
+E           -     "loan_balance_amount": 70089.91
+E           +     "loan_balance_amount": 107165.13
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 292.04,
+E           +     "interest_amount": 446.52,
+E           -     "principal_amount": 1687.83,
+E           +     "principal_amount": 1368.47,
+E           -     "total_principal_amount": 1687.83,
+E           +     "total_principal_amount": 1368.47,
+E           -     "loan_balance_amount": 68402.08
+E           +     "loan_balance_amount": 105796.66
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 285.01,
+E           +     "interest_amount": 440.82,
+E           -     "principal_amount": 1694.86,
+E           +     "principal_amount": 1374.18,
+E           -     "total_principal_amount": 1694.86,
+E           +     "total_principal_amount": 1374.18,
+E           -     "loan_balance_amount": 66707.22
+E           +     "loan_balance_amount": 104422.48
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 277.95,
+E           +     "interest_amount": 435.09,
+E           -     "principal_amount": 1701.92,
+E           +     "principal_amount": 1379.9,
+E           -     "total_principal_amount": 1701.92,
+E           +     "total_principal_amount": 1379.9,
+E           -     "loan_balance_amount": 65005.3
+E           +     "loan_balance_amount": 103042.58
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 270.86,
+E           +     "interest_amount": 429.34,
+E           -     "principal_amount": 1709.01,
+E           +     "principal_amount": 1385.65,
+E           -     "total_principal_amount": 1709.01,
+E           +     "total_principal_amount": 1385.65,
+E           -     "loan_balance_amount": 63296.29
+E           +     "loan_balance_amount": 101656.93
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 263.73,
+E           +     "interest_amount": 423.57,
+E           -     "principal_amount": 1716.13,
+E           +     "principal_amount": 1391.42,
+E           -     "total_principal_amount": 1716.13,
+E           +     "total_principal_amount": 1391.42,
+E           -     "loan_balance_amount": 61580.16
+E           +     "loan_balance_amount": 100265.51
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 256.58,
+E           +     "interest_amount": 417.77,
+E           -     "principal_amount": 1723.28,
+E           +     "principal_amount": 1397.22,
+E           -     "total_principal_amount": 1723.28,
+E           +     "total_principal_amount": 1397.22,
+E           -     "loan_balance_amount": 59856.88
+E           +     "loan_balance_amount": 98868.29
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 249.4,
+E           +     "interest_amount": 411.95,
+E           -     "principal_amount": 1730.46,
+E           +     "principal_amount": 1403.04,
+E           -     "total_principal_amount": 1730.46,
+E           +     "total_principal_amount": 1403.04,
+E           -     "loan_balance_amount": 58126.42
+E           +     "loan_balance_amount": 97465.25
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 242.19,
+E           +     "interest_amount": 406.11,
+E           -     "principal_amount": 1737.67,
+E           +     "principal_amount": 1408.89,
+E           -     "total_principal_amount": 1737.67,
+E           +     "total_principal_amount": 1408.89,
+E           -     "loan_balance_amount": 56388.75
+E           +     "loan_balance_amount": 96056.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 234.95,
+E           +     "interest_amount": 400.23,
+E           -     "principal_amount": 1744.91,
+E           +     "principal_amount": 1414.76,
+E           -     "total_principal_amount": 1744.91,
+E           +     "total_principal_amount": 1414.76,
+E           -     "loan_balance_amount": 54643.84
+E           +     "loan_balance_amount": 94641.6
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 227.68,
+E           +     "interest_amount": 394.34,
+E           -     "principal_amount": 1752.18,
+E           +     "principal_amount": 1420.66,
+E           -     "total_principal_amount": 1752.18,
+E           +     "total_principal_amount": 1420.66,
+E           -     "loan_balance_amount": 52891.66
+E           +     "loan_balance_amount": 93220.94
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 220.38,
+E           +     "interest_amount": 388.42,
+E           -     "principal_amount": 1759.49,
+E           +     "principal_amount": 1426.57,
+E           -     "total_principal_amount": 1759.49,
+E           +     "total_principal_amount": 1426.57,
+E           -     "loan_balance_amount": 51132.17
+E           +     "loan_balance_amount": 91794.37
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 213.05,
+E           +     "interest_amount": 382.48,
+E           -     "principal_amount": 1766.82,
+E           +     "principal_amount": 1432.52,
+E           -     "total_principal_amount": 1766.82,
+E           +     "total_principal_amount": 1432.52,
+E           -     "loan_balance_amount": 49365.35
+E           +     "loan_balance_amount": 90361.85
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 205.69,
+E           +     "interest_amount": 376.51,
+E           -     "principal_amount": 1774.18,
+E           +     "principal_amount": 1438.49,
+E           -     "total_principal_amount": 1774.18,
+E           +     "total_principal_amount": 1438.49,
+E           -     "loan_balance_amount": 47591.17
+E           +     "loan_balance_amount": 88923.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 198.3,
+E           +     "interest_amount": 370.51,
+E           -     "principal_amount": 1781.57,
+E           +     "principal_amount": 1444.48,
+E           -     "total_principal_amount": 1781.57,
+E           +     "total_principal_amount": 1444.48,
+E           -     "loan_balance_amount": 45809.6
+E           +     "loan_balance_amount": 87478.88
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 190.87,
+E           +     "interest_amount": 364.5,
+E           -     "principal_amount": 1788.99,
+E           +     "principal_amount": 1450.5,
+E           -     "total_principal_amount": 1788.99,
+E           +     "total_principal_amount": 1450.5,
+E           -     "loan_balance_amount": 44020.61
+E           +     "loan_balance_amount": 86028.38
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 183.42,
+E           +     "interest_amount": 358.45,
+E           -     "principal_amount": 1796.45,
+E           +     "principal_amount": 1456.54,
+E           -     "total_principal_amount": 1796.45,
+E           +     "total_principal_amount": 1456.54,
+E           -     "loan_balance_amount": 42224.16
+E           +     "loan_balance_amount": 84571.84
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 175.93,
+E           +     "interest_amount": 352.38,
+E           -     "principal_amount": 1803.93,
+E           +     "principal_amount": 1462.61,
+E           -     "total_principal_amount": 1803.93,
+E           +     "total_principal_amount": 1462.61,
+E           -     "loan_balance_amount": 40420.23
+E           +     "loan_balance_amount": 83109.23
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 168.42,
+E           +     "interest_amount": 346.29,
+E           -     "principal_amount": 1811.45,
+E           +     "principal_amount": 1468.71,
+E           -     "total_principal_amount": 1811.45,
+E           +     "total_principal_amount": 1468.71,
+E           -     "loan_balance_amount": 38608.78
+E           +     "loan_balance_amount": 81640.52
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 160.87,
+E           +     "interest_amount": 340.17,
+E           -     "principal_amount": 1819.0,
+E           +     "principal_amount": 1474.83,
+E           -     "total_principal_amount": 1819.0,
+E           +     "total_principal_amount": 1474.83,
+E           -     "loan_balance_amount": 36789.78
+E           +     "loan_balance_amount": 80165.69
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 153.29,
+E           +     "interest_amount": 334.02,
+E           -     "principal_amount": 1826.58,
+E           +     "principal_amount": 1480.97,
+E           -     "total_principal_amount": 1826.58,
+E           +     "total_principal_amount": 1480.97,
+E           -     "loan_balance_amount": 34963.2
+E           +     "loan_balance_amount": 78684.72
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 145.68,
+E           +     "interest_amount": 327.85,
+E           -     "principal_amount": 1834.19,
+E           +     "principal_amount": 1487.14,
+E           -     "total_principal_amount": 1834.19,
+E           +     "total_principal_amount": 1487.14,
+E           -     "loan_balance_amount": 33129.01
+E           +     "loan_balance_amount": 77197.58
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 138.04,
+E           +     "interest_amount": 321.66,
+E           -     "principal_amount": 1841.83,
+E           +     "principal_amount": 1493.34,
+E           -     "total_principal_amount": 1841.83,
+E           +     "total_principal_amount": 1493.34,
+E           -     "loan_balance_amount": 31287.18
+E           +     "loan_balance_amount": 75704.24
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 130.36,
+E           +     "interest_amount": 315.43,
+E           -     "principal_amount": 1849.5,
+E           +     "principal_amount": 1499.56,
+E           -     "total_principal_amount": 1849.5,
+E           +     "total_principal_amount": 1499.56,
+E           -     "loan_balance_amount": 29437.68
+E           +     "loan_balance_amount": 74204.68
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 122.66,
+E           +     "interest_amount": 309.19,
+E           -     "principal_amount": 1857.21,
+E           +     "principal_amount": 1505.81,
+E           -     "total_principal_amount": 1857.21,
+E           +     "total_principal_amount": 1505.81,
+E           -     "loan_balance_amount": 27580.47
+E           +     "loan_balance_amount": 72698.87
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 114.92,
+E           +     "interest_amount": 302.91,
+E           -     "principal_amount": 1864.95,
+E           +     "principal_amount": 1512.08,
+E           -     "total_principal_amount": 1864.95,
+E           +     "total_principal_amount": 1512.08,
+E           -     "loan_balance_amount": 25715.52
+E           +     "loan_balance_amount": 71186.79
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 107.15,
+E           +     "interest_amount": 296.61,
+E           -     "principal_amount": 1872.72,
+E           +     "principal_amount": 1518.38,
+E           -     "total_principal_amount": 1872.72,
+E           +     "total_principal_amount": 1518.38,
+E           -     "loan_balance_amount": 23842.8
+E           +     "loan_balance_amount": 69668.41
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 99.34,
+E           +     "interest_amount": 290.29,
+E           -     "principal_amount": 1880.52,
+E           +     "principal_amount": 1524.71,
+E           -     "total_principal_amount": 1880.52,
+E           +     "total_principal_amount": 1524.71,
+E           -     "loan_balance_amount": 21962.28
+E           +     "loan_balance_amount": 68143.7
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 91.51,
+E           +     "interest_amount": 283.93,
+E           -     "principal_amount": 1888.36,
+E           +     "principal_amount": 1531.06,
+E           -     "total_principal_amount": 1888.36,
+E           +     "total_principal_amount": 1531.06,
+E           -     "loan_balance_amount": 20073.92
+E           +     "loan_balance_amount": 66612.64
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 83.64,
+E           +     "interest_amount": 277.55,
+E           -     "principal_amount": 1896.23,
+E           +     "principal_amount": 1537.44,
+E           -     "total_principal_amount": 1896.23,
+E           +     "total_principal_amount": 1537.44,
+E           -     "loan_balance_amount": 18177.69
+E           +     "loan_balance_amount": 65075.2
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 75.74,
+E           +     "interest_amount": 271.15,
+E           -     "principal_amount": 1904.13,
+E           +     "principal_amount": 1543.85,
+E           -     "total_principal_amount": 1904.13,
+E           +     "total_principal_amount": 1543.85,
+E           -     "loan_balance_amount": 16273.56
+E           +     "loan_balance_amount": 63531.35
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 67.81,
+E           +     "interest_amount": 264.71,
+E           -     "principal_amount": 1912.06,
+E           +     "principal_amount": 1550.28,
+E           -     "total_principal_amount": 1912.06,
+E           +     "total_principal_amount": 1550.28,
+E           -     "loan_balance_amount": 14361.5
+E           +     "loan_balance_amount": 61981.07
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 59.84,
+E           +     "interest_amount": 258.25,
+E           -     "principal_amount": 1920.03,
+E           +     "principal_amount": 1556.74,
+E           -     "total_principal_amount": 1920.03,
+E           +     "total_principal_amount": 1556.74,
+E           -     "loan_balance_amount": 12441.47
+E           +     "loan_balance_amount": 60424.33
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 51.84,
+E           +     "interest_amount": 251.77,
+E           -     "principal_amount": 1928.03,
+E           +     "principal_amount": 1563.23,
+E           -     "total_principal_amount": 1928.03,
+E           +     "total_principal_amount": 1563.23,
+E           -     "loan_balance_amount": 10513.44
+E           +     "loan_balance_amount": 58861.1
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 43.81,
+E           +     "interest_amount": 245.25,
+E           -     "principal_amount": 1936.06,
+E           +     "principal_amount": 1569.74,
+E           -     "total_principal_amount": 1936.06,
+E           +     "total_principal_amount": 1569.74,
+E           -     "loan_balance_amount": 8577.38
+E           +     "loan_balance_amount": 57291.36
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 35.74,
+E           +     "interest_amount": 238.71,
+E           -     "principal_amount": 1944.13,
+E           +     "principal_amount": 1576.28,
+E           -     "total_principal_amount": 1944.13,
+E           +     "total_principal_amount": 1576.28,
+E           -     "loan_balance_amount": 6633.25
+E           +     "loan_balance_amount": 55715.08
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 27.64,
+E           +     "interest_amount": 232.15,
+E           -     "principal_amount": 1952.23,
+E           +     "principal_amount": 1582.85,
+E           -     "total_principal_amount": 1952.23,
+E           +     "total_principal_amount": 1582.85,
+E           -     "loan_balance_amount": 4681.02
+E           +     "loan_balance_amount": 54132.23
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 19.5,
+E           +     "interest_amount": 225.55,
+E           -     "principal_amount": 1960.36,
+E           +     "principal_amount": 1589.44,
+E           -     "total_principal_amount": 1960.36,
+E           +     "total_principal_amount": 1589.44,
+E           -     "loan_balance_amount": 2720.66
+E           +     "loan_balance_amount": 52542.79
+E           -     "payment_amount": 1979.87,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 11.34,
+E           +     "interest_amount": 218.93,
+E           -     "principal_amount": 1968.53,
+E           +     "principal_amount": 1596.07,
+E           -     "total_principal_amount": 1968.53,
+E           +     "total_principal_amount": 1596.07,
+E           -     "loan_balance_amount": 752.13
+E           +     "loan_balance_amount": 50946.72
+E           -     "payment_amount": 755.26,
+E           +     "payment_amount": 1815.0,
+E           -     "interest_amount": 3.13,
+E           +     "interest_amount": 212.28,
+E           -     "principal_amount": 752.13,
+E           +     "principal_amount": 1602.72,
+E           -     "total_principal_amount": 752.13,
+E           +     "total_principal_amount": 1602.72,
+E           -     "loan_balance_amount": 0.0
+E           +     "loan_balance_amount": 49344.0
+E           -   }
+E           +   },
+E           - ]
+E           +   {
+E           -
+E           +     "date": "2041-08-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 205.6,
+E           -
+E           +     "principal_amount": 1609.4,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1609.4,
+E           -
+E           +     "loan_balance_amount": 47734.6
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2041-09-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 198.89,
+E           -
+E           +     "principal_amount": 1616.1,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1616.1,
+E           -
+E           +     "loan_balance_amount": 46118.5
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2041-10-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 192.16,
+E           -
+E           +     "principal_amount": 1622.83,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1622.83,
+E           -
+E           +     "loan_balance_amount": 44495.67
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2041-11-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 185.4,
+E           -
+E           +     "principal_amount": 1629.6,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1629.6,
+E           -
+E           +     "loan_balance_amount": 42866.07
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2041-12-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 178.61,
+E           -
+E           +     "principal_amount": 1636.39,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1636.39,
+E           -
+E           +     "loan_balance_amount": 41229.68
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-01-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 171.79,
+E           -
+E           +     "principal_amount": 1643.2,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1643.2,
+E           -
+E           +     "loan_balance_amount": 39586.48
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-02-28T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 164.94,
+E           -
+E           +     "principal_amount": 1650.05,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1650.05,
+E           -
+E           +     "loan_balance_amount": 37936.43
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-03-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 158.07,
+E           -
+E           +     "principal_amount": 1656.93,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1656.93,
+E           -
+E           +     "loan_balance_amount": 36279.5
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-04-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 151.16,
+E           -
+E           +     "principal_amount": 1663.83,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1663.83,
+E           -
+E           +     "loan_balance_amount": 34615.67
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-05-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 144.23,
+E           -
+E           +     "principal_amount": 1670.76,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1670.76,
+E           -
+E           +     "loan_balance_amount": 32944.91
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-06-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 137.27,
+E           -
+E           +     "principal_amount": 1677.72,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1677.72,
+E           -
+E           +     "loan_balance_amount": 31267.19
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-07-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 130.28,
+E           -
+E           +     "principal_amount": 1684.72,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1684.72,
+E           -
+E           +     "loan_balance_amount": 29582.47
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-08-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 123.26,
+E           -
+E           +     "principal_amount": 1691.73,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1691.73,
+E           -
+E           +     "loan_balance_amount": 27890.74
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-09-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 116.21,
+E           -
+E           +     "principal_amount": 1698.78,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1698.78,
+E           -
+E           +     "loan_balance_amount": 26191.96
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-10-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 109.13,
+E           -
+E           +     "principal_amount": 1705.86,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1705.86,
+E           -
+E           +     "loan_balance_amount": 24486.1
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-11-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 102.03,
+E           -
+E           +     "principal_amount": 1712.97,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1712.97,
+E           -
+E           +     "loan_balance_amount": 22773.13
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2042-12-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 94.89,
+E           -
+E           +     "principal_amount": 1720.11,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1720.11,
+E           -
+E           +     "loan_balance_amount": 21053.02
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-01-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 87.72,
+E           -
+E           +     "principal_amount": 1727.27,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1727.27,
+E           -
+E           +     "loan_balance_amount": 19325.75
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-02-28T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 80.52,
+E           -
+E           +     "principal_amount": 1734.47,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1734.47,
+E           -
+E           +     "loan_balance_amount": 17591.28
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-03-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 73.3,
+E           -
+E           +     "principal_amount": 1741.7,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1741.7,
+E           -
+E           +     "loan_balance_amount": 15849.58
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-04-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 66.04,
+E           -
+E           +     "principal_amount": 1748.96,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1748.96,
+E           -
+E           +     "loan_balance_amount": 14100.62
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-05-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 58.75,
+E           -
+E           +     "principal_amount": 1756.24,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1756.24,
+E           -
+E           +     "loan_balance_amount": 12344.38
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-06-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 51.43,
+E           -
+E           +     "principal_amount": 1763.56,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1763.56,
+E           -
+E           +     "loan_balance_amount": 10580.82
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-07-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 44.09,
+E           -
+E           +     "principal_amount": 1770.91,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1770.91,
+E           -
+E           +     "loan_balance_amount": 8809.91
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-08-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 36.71,
+E           -
+E           +     "principal_amount": 1778.29,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1778.29,
+E           -
+E           +     "loan_balance_amount": 7031.62
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-09-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 29.3,
+E           -
+E           +     "principal_amount": 1785.7,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1785.7,
+E           -
+E           +     "loan_balance_amount": 5245.92
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-10-31T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 21.86,
+E           -
+E           +     "principal_amount": 1793.14,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1793.14,
+E           -
+E           +     "loan_balance_amount": 3452.78
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-11-30T00:00:00",
+E           -
+E           +     "payment_amount": 1815.0,
+E           -
+E           +     "interest_amount": 14.39,
+E           -
+E           +     "principal_amount": 1800.61,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1800.61,
+E           -
+E           +     "loan_balance_amount": 1652.17
+E           -
+E           +   },
+E           -
+E           +   {
+E           -
+E           +     "date": "2043-12-31T00:00:00",
+E           -
+E           +     "payment_amount": 1659.05,
+E           -
+E           +     "interest_amount": 6.88,
+E           -
+E           +     "principal_amount": 1652.17,
+E           -
+E           +     "special_principal_amount": 0.0,
+E           -
+E           +     "total_principal_amount": 1652.17,
+E           -
+E           +     "loan_balance_amount": 0.0
+E           -
+E           +   }
+E           -
+E           + ]
+
+tests/snapshot_helper.py:55: AssertionError
+__________________ TestLoan.test_get_internal_rate_of_return ___________________
+
+self = <tests.test_pyloan.TestLoan testMethod=test_get_internal_rate_of_return>
+
+    def test_get_internal_rate_of_return(self):
+        # Scenario 1: Standard loan
+        loan1 = Loan(
+            loan_amount=200000,
+            interest_rate=6.0,
+            loan_term=30,
+            start_date='2022-01-01'
+        )
+        irr1 = loan1.get_internal_rate_of_return()
+        self.assertAlmostEqual(irr1, 6.17, places=2)
+
+        # Scenario 2: Loan with special payments
+        loan2 = Loan(
+            loan_amount=200000,
+            interest_rate=6.0,
+            loan_term=30,
+            start_date='2022-01-01'
+        )
+        loan2.add_special_payment(
+            payment_amount=10000,
+            first_payment_date='2025-01-01',
+            special_payment_term=1,
+            annual_payments=1
+        )
+        irr2 = loan2.get_internal_rate_of_return()
+>       self.assertTrue(irr2 > 6.17)
+E       AssertionError: False is not true
+
+tests/test_pyloan.py:213: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_loan_scenarios.py::TestLoanScenarios::test_loan_scenarios_from_file
+FAILED tests/test_pyloan.py::TestLoan::test_get_internal_rate_of_return - Ass...
+========================= 2 failed, 13 passed in 1.41s =========================

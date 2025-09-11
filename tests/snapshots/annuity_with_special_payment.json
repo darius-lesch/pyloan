@@ -1,1901 +1,1901 @@
 [
   {
     "date": "2024-01-31T00:00:00",
-    "payment_amount": "0.00",
-    "interest_amount": "0.00",
-    "principal_amount": "0.00",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "0.00",
-    "loan_balance_amount": "300000.00"
+    "payment_amount": 0,
+    "interest_amount": 0,
+    "principal_amount": 0,
+    "special_principal_amount": 0,
+    "total_principal_amount": 0,
+    "loan_balance_amount": 300000.0
   },
   {
     "date": "2024-02-29T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1250.00",
-    "principal_amount": "729.87",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "729.87",
-    "loan_balance_amount": "299270.13"
+    "payment_amount": 1979.87,
+    "interest_amount": 1250.0,
+    "principal_amount": 729.87,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 729.87,
+    "loan_balance_amount": 299270.13
   },
   {
     "date": "2024-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1246.96",
-    "principal_amount": "732.91",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "732.91",
-    "loan_balance_amount": "298537.22"
+    "payment_amount": 1979.87,
+    "interest_amount": 1246.96,
+    "principal_amount": 732.91,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 732.91,
+    "loan_balance_amount": 298537.22
   },
   {
     "date": "2024-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1243.91",
-    "principal_amount": "735.96",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "735.96",
-    "loan_balance_amount": "297801.26"
+    "payment_amount": 1979.87,
+    "interest_amount": 1243.91,
+    "principal_amount": 735.96,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 735.96,
+    "loan_balance_amount": 297801.26
   },
   {
     "date": "2024-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1240.84",
-    "principal_amount": "739.03",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "739.03",
-    "loan_balance_amount": "297062.23"
+    "payment_amount": 1979.87,
+    "interest_amount": 1240.84,
+    "principal_amount": 739.03,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 739.03,
+    "loan_balance_amount": 297062.23
   },
   {
     "date": "2024-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1237.76",
-    "principal_amount": "742.11",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "742.11",
-    "loan_balance_amount": "296320.12"
+    "payment_amount": 1979.87,
+    "interest_amount": 1237.76,
+    "principal_amount": 742.11,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 742.11,
+    "loan_balance_amount": 296320.12
   },
   {
     "date": "2024-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1234.67",
-    "principal_amount": "745.20",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "745.20",
-    "loan_balance_amount": "295574.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 1234.67,
+    "principal_amount": 745.2,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 745.2,
+    "loan_balance_amount": 295574.92
   },
   {
     "date": "2024-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1231.56",
-    "principal_amount": "748.31",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "748.31",
-    "loan_balance_amount": "294826.61"
+    "payment_amount": 1979.87,
+    "interest_amount": 1231.56,
+    "principal_amount": 748.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 748.31,
+    "loan_balance_amount": 294826.61
   },
   {
     "date": "2024-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1228.44",
-    "principal_amount": "751.43",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "751.43",
-    "loan_balance_amount": "294075.18"
+    "payment_amount": 1979.87,
+    "interest_amount": 1228.44,
+    "principal_amount": 751.42,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 751.42,
+    "loan_balance_amount": 294075.19
   },
   {
     "date": "2024-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1225.31",
-    "principal_amount": "754.56",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "754.56",
-    "loan_balance_amount": "293320.62"
+    "payment_amount": 1979.87,
+    "interest_amount": 1225.31,
+    "principal_amount": 754.55,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 754.55,
+    "loan_balance_amount": 293320.64
   },
   {
     "date": "2024-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1222.17",
-    "principal_amount": "757.70",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "757.70",
-    "loan_balance_amount": "292562.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 1222.17,
+    "principal_amount": 757.7,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 757.7,
+    "loan_balance_amount": 292562.94
   },
   {
     "date": "2024-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1219.01",
-    "principal_amount": "760.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "760.86",
-    "loan_balance_amount": "291802.06"
+    "payment_amount": 1979.87,
+    "interest_amount": 1219.01,
+    "principal_amount": 760.85,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 760.85,
+    "loan_balance_amount": 291802.09
   },
   {
     "date": "2025-01-31T00:00:00",
-    "payment_amount": "26979.87",
-    "interest_amount": "1215.84",
-    "principal_amount": "764.03",
-    "special_principal_amount": "25000.00",
-    "total_principal_amount": "25764.03",
-    "loan_balance_amount": "266038.03"
+    "payment_amount": 26979.87,
+    "interest_amount": 1215.84,
+    "principal_amount": 764.03,
+    "special_principal_amount": 25000.0,
+    "total_principal_amount": 25764.03,
+    "loan_balance_amount": 266038.06
   },
   {
     "date": "2025-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1108.49",
-    "principal_amount": "871.38",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "871.38",
-    "loan_balance_amount": "265166.65"
+    "payment_amount": 1979.87,
+    "interest_amount": 1108.49,
+    "principal_amount": 871.38,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 871.38,
+    "loan_balance_amount": 265166.68
   },
   {
     "date": "2025-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1104.86",
-    "principal_amount": "875.01",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "875.01",
-    "loan_balance_amount": "264291.64"
+    "payment_amount": 1979.87,
+    "interest_amount": 1104.86,
+    "principal_amount": 875.01,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 875.01,
+    "loan_balance_amount": 264291.67
   },
   {
     "date": "2025-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1101.22",
-    "principal_amount": "878.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "878.65",
-    "loan_balance_amount": "263412.99"
+    "payment_amount": 1979.87,
+    "interest_amount": 1101.22,
+    "principal_amount": 878.65,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 878.65,
+    "loan_balance_amount": 263413.02
   },
   {
     "date": "2025-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1097.55",
-    "principal_amount": "882.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "882.32",
-    "loan_balance_amount": "262530.67"
+    "payment_amount": 1979.87,
+    "interest_amount": 1097.55,
+    "principal_amount": 882.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 882.31,
+    "loan_balance_amount": 262530.71
   },
   {
     "date": "2025-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1093.88",
-    "principal_amount": "885.99",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "885.99",
-    "loan_balance_amount": "261644.68"
+    "payment_amount": 1979.87,
+    "interest_amount": 1093.88,
+    "principal_amount": 885.99,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 885.99,
+    "loan_balance_amount": 261644.72
   },
   {
     "date": "2025-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1090.19",
-    "principal_amount": "889.68",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "889.68",
-    "loan_balance_amount": "260755.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 1090.19,
+    "principal_amount": 889.68,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 889.68,
+    "loan_balance_amount": 260755.04
   },
   {
     "date": "2025-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1086.48",
-    "principal_amount": "893.39",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "893.39",
-    "loan_balance_amount": "259861.61"
+    "payment_amount": 1979.87,
+    "interest_amount": 1086.48,
+    "principal_amount": 893.39,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 893.39,
+    "loan_balance_amount": 259861.65
   },
   {
     "date": "2025-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1082.76",
-    "principal_amount": "897.11",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "897.11",
-    "loan_balance_amount": "258964.50"
+    "payment_amount": 1979.87,
+    "interest_amount": 1082.76,
+    "principal_amount": 897.11,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 897.11,
+    "loan_balance_amount": 258964.54
   },
   {
     "date": "2025-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1079.02",
-    "principal_amount": "900.85",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "900.85",
-    "loan_balance_amount": "258063.65"
+    "payment_amount": 1979.87,
+    "interest_amount": 1079.02,
+    "principal_amount": 900.85,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 900.85,
+    "loan_balance_amount": 258063.69
   },
   {
     "date": "2025-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1075.27",
-    "principal_amount": "904.60",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "904.60",
-    "loan_balance_amount": "257159.05"
+    "payment_amount": 1979.87,
+    "interest_amount": 1075.27,
+    "principal_amount": 904.6,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 904.6,
+    "loan_balance_amount": 257159.09
   },
   {
     "date": "2025-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1071.50",
-    "principal_amount": "908.37",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "908.37",
-    "loan_balance_amount": "256250.68"
+    "payment_amount": 1979.87,
+    "interest_amount": 1071.5,
+    "principal_amount": 908.37,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 908.37,
+    "loan_balance_amount": 256250.72
   },
   {
     "date": "2026-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1067.71",
-    "principal_amount": "912.16",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "912.16",
-    "loan_balance_amount": "255338.52"
+    "payment_amount": 1979.87,
+    "interest_amount": 1067.71,
+    "principal_amount": 912.16,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 912.16,
+    "loan_balance_amount": 255338.56
   },
   {
     "date": "2026-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1063.91",
-    "principal_amount": "915.96",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "915.96",
-    "loan_balance_amount": "254422.56"
+    "payment_amount": 1979.87,
+    "interest_amount": 1063.91,
+    "principal_amount": 915.96,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 915.96,
+    "loan_balance_amount": 254422.6
   },
   {
     "date": "2026-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1060.09",
-    "principal_amount": "919.78",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "919.78",
-    "loan_balance_amount": "253502.78"
+    "payment_amount": 1979.87,
+    "interest_amount": 1060.09,
+    "principal_amount": 919.77,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 919.77,
+    "loan_balance_amount": 253502.83
   },
   {
     "date": "2026-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1056.26",
-    "principal_amount": "923.61",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "923.61",
-    "loan_balance_amount": "252579.17"
+    "payment_amount": 1979.87,
+    "interest_amount": 1056.26,
+    "principal_amount": 923.61,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 923.61,
+    "loan_balance_amount": 252579.22
   },
   {
     "date": "2026-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1052.41",
-    "principal_amount": "927.46",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "927.46",
-    "loan_balance_amount": "251651.71"
+    "payment_amount": 1979.87,
+    "interest_amount": 1052.41,
+    "principal_amount": 927.45,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 927.45,
+    "loan_balance_amount": 251651.77
   },
   {
     "date": "2026-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1048.55",
-    "principal_amount": "931.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "931.32",
-    "loan_balance_amount": "250720.39"
+    "payment_amount": 1979.87,
+    "interest_amount": 1048.55,
+    "principal_amount": 931.32,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 931.32,
+    "loan_balance_amount": 250720.45
   },
   {
     "date": "2026-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1044.67",
-    "principal_amount": "935.20",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "935.20",
-    "loan_balance_amount": "249785.19"
+    "payment_amount": 1979.87,
+    "interest_amount": 1044.67,
+    "principal_amount": 935.2,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 935.2,
+    "loan_balance_amount": 249785.25
   },
   {
     "date": "2026-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1040.77",
-    "principal_amount": "939.10",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "939.10",
-    "loan_balance_amount": "248846.09"
+    "payment_amount": 1979.87,
+    "interest_amount": 1040.77,
+    "principal_amount": 939.1,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 939.1,
+    "loan_balance_amount": 248846.15
   },
   {
     "date": "2026-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1036.86",
-    "principal_amount": "943.01",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "943.01",
-    "loan_balance_amount": "247903.08"
+    "payment_amount": 1979.87,
+    "interest_amount": 1036.86,
+    "principal_amount": 943.01,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 943.01,
+    "loan_balance_amount": 247903.14
   },
   {
     "date": "2026-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1032.93",
-    "principal_amount": "946.94",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "946.94",
-    "loan_balance_amount": "246956.14"
+    "payment_amount": 1979.87,
+    "interest_amount": 1032.93,
+    "principal_amount": 946.94,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 946.94,
+    "loan_balance_amount": 246956.2
   },
   {
     "date": "2026-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1028.98",
-    "principal_amount": "950.89",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "950.89",
-    "loan_balance_amount": "246005.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 1028.98,
+    "principal_amount": 950.88,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 950.88,
+    "loan_balance_amount": 246005.32
   },
   {
     "date": "2026-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1025.02",
-    "principal_amount": "954.85",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "954.85",
-    "loan_balance_amount": "245050.40"
+    "payment_amount": 1979.87,
+    "interest_amount": 1025.02,
+    "principal_amount": 954.85,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 954.85,
+    "loan_balance_amount": 245050.47
   },
   {
     "date": "2027-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1021.04",
-    "principal_amount": "958.83",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "958.83",
-    "loan_balance_amount": "244091.57"
+    "payment_amount": 1979.87,
+    "interest_amount": 1021.04,
+    "principal_amount": 958.82,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 958.82,
+    "loan_balance_amount": 244091.65
   },
   {
     "date": "2027-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1017.05",
-    "principal_amount": "962.82",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "962.82",
-    "loan_balance_amount": "243128.75"
+    "payment_amount": 1979.87,
+    "interest_amount": 1017.05,
+    "principal_amount": 962.82,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 962.82,
+    "loan_balance_amount": 243128.83
   },
   {
     "date": "2027-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1013.04",
-    "principal_amount": "966.83",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "966.83",
-    "loan_balance_amount": "242161.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 1013.04,
+    "principal_amount": 966.83,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 966.83,
+    "loan_balance_amount": 242162.0
   },
   {
     "date": "2027-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1009.01",
-    "principal_amount": "970.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "970.86",
-    "loan_balance_amount": "241191.06"
+    "payment_amount": 1979.87,
+    "interest_amount": 1009.01,
+    "principal_amount": 970.86,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 970.86,
+    "loan_balance_amount": 241191.14
   },
   {
     "date": "2027-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1004.96",
-    "principal_amount": "974.91",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "974.91",
-    "loan_balance_amount": "240216.15"
+    "payment_amount": 1979.87,
+    "interest_amount": 1004.96,
+    "principal_amount": 974.9,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 974.9,
+    "loan_balance_amount": 240216.24
   },
   {
     "date": "2027-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "1000.90",
-    "principal_amount": "978.97",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "978.97",
-    "loan_balance_amount": "239237.18"
+    "payment_amount": 1979.87,
+    "interest_amount": 1000.9,
+    "principal_amount": 978.97,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 978.97,
+    "loan_balance_amount": 239237.27
   },
   {
     "date": "2027-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "996.82",
-    "principal_amount": "983.05",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "983.05",
-    "loan_balance_amount": "238254.13"
+    "payment_amount": 1979.87,
+    "interest_amount": 996.82,
+    "principal_amount": 983.05,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 983.05,
+    "loan_balance_amount": 238254.22
   },
   {
     "date": "2027-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "992.73",
-    "principal_amount": "987.14",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "987.14",
-    "loan_balance_amount": "237266.99"
+    "payment_amount": 1979.87,
+    "interest_amount": 992.73,
+    "principal_amount": 987.14,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 987.14,
+    "loan_balance_amount": 237267.08
   },
   {
     "date": "2027-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "988.61",
-    "principal_amount": "991.26",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "991.26",
-    "loan_balance_amount": "236275.73"
+    "payment_amount": 1979.87,
+    "interest_amount": 988.61,
+    "principal_amount": 991.25,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 991.25,
+    "loan_balance_amount": 236275.83
   },
   {
     "date": "2027-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "984.48",
-    "principal_amount": "995.39",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "995.39",
-    "loan_balance_amount": "235280.34"
+    "payment_amount": 1979.87,
+    "interest_amount": 984.48,
+    "principal_amount": 995.38,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 995.38,
+    "loan_balance_amount": 235280.45
   },
   {
     "date": "2027-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "980.33",
-    "principal_amount": "999.54",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "999.54",
-    "loan_balance_amount": "234280.80"
+    "payment_amount": 1979.87,
+    "interest_amount": 980.34,
+    "principal_amount": 999.53,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 999.53,
+    "loan_balance_amount": 234280.92
   },
   {
     "date": "2027-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "976.17",
-    "principal_amount": "1003.70",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1003.70",
-    "loan_balance_amount": "233277.10"
+    "payment_amount": 1979.87,
+    "interest_amount": 976.17,
+    "principal_amount": 1003.7,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1003.7,
+    "loan_balance_amount": 233277.22
   },
   {
     "date": "2028-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "971.99",
-    "principal_amount": "1007.88",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1007.88",
-    "loan_balance_amount": "232269.22"
+    "payment_amount": 1979.87,
+    "interest_amount": 971.99,
+    "principal_amount": 1007.88,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1007.88,
+    "loan_balance_amount": 232269.34
   },
   {
     "date": "2028-02-29T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "967.79",
-    "principal_amount": "1012.08",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1012.08",
-    "loan_balance_amount": "231257.14"
+    "payment_amount": 1979.87,
+    "interest_amount": 967.79,
+    "principal_amount": 1012.08,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1012.08,
+    "loan_balance_amount": 231257.26
   },
   {
     "date": "2028-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "963.57",
-    "principal_amount": "1016.30",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1016.30",
-    "loan_balance_amount": "230240.84"
+    "payment_amount": 1979.87,
+    "interest_amount": 963.57,
+    "principal_amount": 1016.3,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1016.3,
+    "loan_balance_amount": 230240.96
   },
   {
     "date": "2028-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "959.34",
-    "principal_amount": "1020.53",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1020.53",
-    "loan_balance_amount": "229220.31"
+    "payment_amount": 1979.87,
+    "interest_amount": 959.34,
+    "principal_amount": 1020.53,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1020.53,
+    "loan_balance_amount": 229220.43
   },
   {
     "date": "2028-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "955.08",
-    "principal_amount": "1024.79",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1024.79",
-    "loan_balance_amount": "228195.52"
+    "payment_amount": 1979.87,
+    "interest_amount": 955.09,
+    "principal_amount": 1024.78,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1024.78,
+    "loan_balance_amount": 228195.65
   },
   {
     "date": "2028-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "950.81",
-    "principal_amount": "1029.06",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1029.06",
-    "loan_balance_amount": "227166.46"
+    "payment_amount": 1979.87,
+    "interest_amount": 950.82,
+    "principal_amount": 1029.05,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1029.05,
+    "loan_balance_amount": 227166.6
   },
   {
     "date": "2028-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "946.53",
-    "principal_amount": "1033.34",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1033.34",
-    "loan_balance_amount": "226133.12"
+    "payment_amount": 1979.87,
+    "interest_amount": 946.53,
+    "principal_amount": 1033.34,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1033.34,
+    "loan_balance_amount": 226133.26
   },
   {
     "date": "2028-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "942.22",
-    "principal_amount": "1037.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1037.65",
-    "loan_balance_amount": "225095.47"
+    "payment_amount": 1979.87,
+    "interest_amount": 942.22,
+    "principal_amount": 1037.65,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1037.65,
+    "loan_balance_amount": 225095.61
   },
   {
     "date": "2028-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "937.90",
-    "principal_amount": "1041.97",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1041.97",
-    "loan_balance_amount": "224053.50"
+    "payment_amount": 1979.87,
+    "interest_amount": 937.9,
+    "principal_amount": 1041.97,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1041.97,
+    "loan_balance_amount": 224053.64
   },
   {
     "date": "2028-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "933.56",
-    "principal_amount": "1046.31",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1046.31",
-    "loan_balance_amount": "223007.19"
+    "payment_amount": 1979.87,
+    "interest_amount": 933.56,
+    "principal_amount": 1046.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1046.31,
+    "loan_balance_amount": 223007.33
   },
   {
     "date": "2028-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "929.20",
-    "principal_amount": "1050.67",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1050.67",
-    "loan_balance_amount": "221956.52"
+    "payment_amount": 1979.87,
+    "interest_amount": 929.2,
+    "principal_amount": 1050.67,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1050.67,
+    "loan_balance_amount": 221956.66
   },
   {
     "date": "2028-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "924.82",
-    "principal_amount": "1055.05",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1055.05",
-    "loan_balance_amount": "220901.47"
+    "payment_amount": 1979.87,
+    "interest_amount": 924.82,
+    "principal_amount": 1055.05,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1055.05,
+    "loan_balance_amount": 220901.61
   },
   {
     "date": "2029-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "920.42",
-    "principal_amount": "1059.45",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1059.45",
-    "loan_balance_amount": "219842.02"
+    "payment_amount": 1979.87,
+    "interest_amount": 920.42,
+    "principal_amount": 1059.44,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1059.44,
+    "loan_balance_amount": 219842.17
   },
   {
     "date": "2029-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "916.01",
-    "principal_amount": "1063.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1063.86",
-    "loan_balance_amount": "218778.16"
+    "payment_amount": 1979.87,
+    "interest_amount": 916.01,
+    "principal_amount": 1063.86,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1063.86,
+    "loan_balance_amount": 218778.31
   },
   {
     "date": "2029-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "911.58",
-    "principal_amount": "1068.29",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1068.29",
-    "loan_balance_amount": "217709.87"
+    "payment_amount": 1979.87,
+    "interest_amount": 911.58,
+    "principal_amount": 1068.29,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1068.29,
+    "loan_balance_amount": 217710.02
   },
   {
     "date": "2029-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "907.12",
-    "principal_amount": "1072.75",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1072.75",
-    "loan_balance_amount": "216637.12"
+    "payment_amount": 1979.87,
+    "interest_amount": 907.13,
+    "principal_amount": 1072.74,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1072.74,
+    "loan_balance_amount": 216637.28
   },
   {
     "date": "2029-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "902.65",
-    "principal_amount": "1077.22",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1077.22",
-    "loan_balance_amount": "215559.90"
+    "payment_amount": 1979.87,
+    "interest_amount": 902.66,
+    "principal_amount": 1077.21,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1077.21,
+    "loan_balance_amount": 215560.07
   },
   {
     "date": "2029-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "898.17",
-    "principal_amount": "1081.70",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1081.70",
-    "loan_balance_amount": "214478.20"
+    "payment_amount": 1979.87,
+    "interest_amount": 898.17,
+    "principal_amount": 1081.7,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1081.7,
+    "loan_balance_amount": 214478.37
   },
   {
     "date": "2029-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "893.66",
-    "principal_amount": "1086.21",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1086.21",
-    "loan_balance_amount": "213391.99"
+    "payment_amount": 1979.87,
+    "interest_amount": 893.66,
+    "principal_amount": 1086.21,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1086.21,
+    "loan_balance_amount": 213392.16
   },
   {
     "date": "2029-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "889.13",
-    "principal_amount": "1090.74",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1090.74",
-    "loan_balance_amount": "212301.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 889.13,
+    "principal_amount": 1090.73,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1090.73,
+    "loan_balance_amount": 212301.43
   },
   {
     "date": "2029-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "884.59",
-    "principal_amount": "1095.28",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1095.28",
-    "loan_balance_amount": "211205.97"
+    "payment_amount": 1979.87,
+    "interest_amount": 884.59,
+    "principal_amount": 1095.28,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1095.28,
+    "loan_balance_amount": 211206.15
   },
   {
     "date": "2029-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "880.02",
-    "principal_amount": "1099.85",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1099.85",
-    "loan_balance_amount": "210106.12"
+    "payment_amount": 1979.87,
+    "interest_amount": 880.03,
+    "principal_amount": 1099.84,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1099.84,
+    "loan_balance_amount": 210106.31
   },
   {
     "date": "2029-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "875.44",
-    "principal_amount": "1104.43",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1104.43",
-    "loan_balance_amount": "209001.69"
+    "payment_amount": 1979.87,
+    "interest_amount": 875.44,
+    "principal_amount": 1104.42,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1104.42,
+    "loan_balance_amount": 209001.89
   },
   {
     "date": "2029-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "870.84",
-    "principal_amount": "1109.03",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1109.03",
-    "loan_balance_amount": "207892.66"
+    "payment_amount": 1979.87,
+    "interest_amount": 870.84,
+    "principal_amount": 1109.03,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1109.03,
+    "loan_balance_amount": 207892.86
   },
   {
     "date": "2030-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "866.22",
-    "principal_amount": "1113.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1113.65",
-    "loan_balance_amount": "206779.01"
+    "payment_amount": 1979.87,
+    "interest_amount": 866.22,
+    "principal_amount": 1113.65,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1113.65,
+    "loan_balance_amount": 206779.21
   },
   {
     "date": "2030-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "861.58",
-    "principal_amount": "1118.29",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1118.29",
-    "loan_balance_amount": "205660.72"
+    "payment_amount": 1979.87,
+    "interest_amount": 861.58,
+    "principal_amount": 1118.29,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1118.29,
+    "loan_balance_amount": 205660.92
   },
   {
     "date": "2030-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "856.92",
-    "principal_amount": "1122.95",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1122.95",
-    "loan_balance_amount": "204537.77"
+    "payment_amount": 1979.87,
+    "interest_amount": 856.92,
+    "principal_amount": 1122.95,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1122.95,
+    "loan_balance_amount": 204537.97
   },
   {
     "date": "2030-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "852.24",
-    "principal_amount": "1127.63",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1127.63",
-    "loan_balance_amount": "203410.14"
+    "payment_amount": 1979.87,
+    "interest_amount": 852.24,
+    "principal_amount": 1127.63,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1127.63,
+    "loan_balance_amount": 203410.34
   },
   {
     "date": "2030-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "847.54",
-    "principal_amount": "1132.33",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1132.33",
-    "loan_balance_amount": "202277.81"
+    "payment_amount": 1979.87,
+    "interest_amount": 847.54,
+    "principal_amount": 1132.32,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1132.32,
+    "loan_balance_amount": 202278.02
   },
   {
     "date": "2030-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "842.82",
-    "principal_amount": "1137.05",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1137.05",
-    "loan_balance_amount": "201140.76"
+    "payment_amount": 1979.87,
+    "interest_amount": 842.83,
+    "principal_amount": 1137.04,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1137.04,
+    "loan_balance_amount": 201140.98
   },
   {
     "date": "2030-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "838.09",
-    "principal_amount": "1141.78",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1141.78",
-    "loan_balance_amount": "199998.98"
+    "payment_amount": 1979.87,
+    "interest_amount": 838.09,
+    "principal_amount": 1141.78,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1141.78,
+    "loan_balance_amount": 199999.2
   },
   {
     "date": "2030-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "833.33",
-    "principal_amount": "1146.54",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1146.54",
-    "loan_balance_amount": "198852.44"
+    "payment_amount": 1979.87,
+    "interest_amount": 833.33,
+    "principal_amount": 1146.54,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1146.54,
+    "loan_balance_amount": 198852.66
   },
   {
     "date": "2030-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "828.55",
-    "principal_amount": "1151.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1151.32",
-    "loan_balance_amount": "197701.12"
+    "payment_amount": 1979.87,
+    "interest_amount": 828.55,
+    "principal_amount": 1151.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1151.31,
+    "loan_balance_amount": 197701.35
   },
   {
     "date": "2030-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "823.75",
-    "principal_amount": "1156.12",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1156.12",
-    "loan_balance_amount": "196545.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 823.76,
+    "principal_amount": 1156.11,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1156.11,
+    "loan_balance_amount": 196545.24
   },
   {
     "date": "2030-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "818.94",
-    "principal_amount": "1160.93",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1160.93",
-    "loan_balance_amount": "195384.07"
+    "payment_amount": 1979.87,
+    "interest_amount": 818.94,
+    "principal_amount": 1160.93,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1160.93,
+    "loan_balance_amount": 195384.31
   },
   {
     "date": "2030-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "814.10",
-    "principal_amount": "1165.77",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1165.77",
-    "loan_balance_amount": "194218.30"
+    "payment_amount": 1979.87,
+    "interest_amount": 814.1,
+    "principal_amount": 1165.77,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1165.77,
+    "loan_balance_amount": 194218.54
   },
   {
     "date": "2031-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "809.24",
-    "principal_amount": "1170.63",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1170.63",
-    "loan_balance_amount": "193047.67"
+    "payment_amount": 1979.87,
+    "interest_amount": 809.24,
+    "principal_amount": 1170.62,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1170.62,
+    "loan_balance_amount": 193047.92
   },
   {
     "date": "2031-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "804.37",
-    "principal_amount": "1175.50",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1175.50",
-    "loan_balance_amount": "191872.17"
+    "payment_amount": 1979.87,
+    "interest_amount": 804.37,
+    "principal_amount": 1175.5,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1175.5,
+    "loan_balance_amount": 191872.42
   },
   {
     "date": "2031-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "799.47",
-    "principal_amount": "1180.40",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1180.40",
-    "loan_balance_amount": "190691.77"
+    "payment_amount": 1979.87,
+    "interest_amount": 799.47,
+    "principal_amount": 1180.4,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1180.4,
+    "loan_balance_amount": 190692.02
   },
   {
     "date": "2031-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "794.55",
-    "principal_amount": "1185.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1185.32",
-    "loan_balance_amount": "189506.45"
+    "payment_amount": 1979.87,
+    "interest_amount": 794.55,
+    "principal_amount": 1185.32,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1185.32,
+    "loan_balance_amount": 189506.7
   },
   {
     "date": "2031-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "789.61",
-    "principal_amount": "1190.26",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1190.26",
-    "loan_balance_amount": "188316.19"
+    "payment_amount": 1979.87,
+    "interest_amount": 789.61,
+    "principal_amount": 1190.26,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1190.26,
+    "loan_balance_amount": 188316.44
   },
   {
     "date": "2031-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "784.65",
-    "principal_amount": "1195.22",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1195.22",
-    "loan_balance_amount": "187120.97"
+    "payment_amount": 1979.87,
+    "interest_amount": 784.65,
+    "principal_amount": 1195.22,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1195.22,
+    "loan_balance_amount": 187121.22
   },
   {
     "date": "2031-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "779.67",
-    "principal_amount": "1200.20",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1200.20",
-    "loan_balance_amount": "185920.77"
+    "payment_amount": 1979.87,
+    "interest_amount": 779.67,
+    "principal_amount": 1200.2,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1200.2,
+    "loan_balance_amount": 185921.02
   },
   {
     "date": "2031-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "774.67",
-    "principal_amount": "1205.20",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1205.20",
-    "loan_balance_amount": "184715.57"
+    "payment_amount": 1979.87,
+    "interest_amount": 774.67,
+    "principal_amount": 1205.2,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1205.2,
+    "loan_balance_amount": 184715.82
   },
   {
     "date": "2031-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "769.65",
-    "principal_amount": "1210.22",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1210.22",
-    "loan_balance_amount": "183505.35"
+    "payment_amount": 1979.87,
+    "interest_amount": 769.65,
+    "principal_amount": 1210.22,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1210.22,
+    "loan_balance_amount": 183505.6
   },
   {
     "date": "2031-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "764.61",
-    "principal_amount": "1215.26",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1215.26",
-    "loan_balance_amount": "182290.09"
+    "payment_amount": 1979.87,
+    "interest_amount": 764.61,
+    "principal_amount": 1215.26,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1215.26,
+    "loan_balance_amount": 182290.34
   },
   {
     "date": "2031-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "759.54",
-    "principal_amount": "1220.33",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1220.33",
-    "loan_balance_amount": "181069.76"
+    "payment_amount": 1979.87,
+    "interest_amount": 759.54,
+    "principal_amount": 1220.32,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1220.32,
+    "loan_balance_amount": 181070.02
   },
   {
     "date": "2031-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "754.46",
-    "principal_amount": "1225.41",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1225.41",
-    "loan_balance_amount": "179844.35"
+    "payment_amount": 1979.87,
+    "interest_amount": 754.46,
+    "principal_amount": 1225.41,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1225.41,
+    "loan_balance_amount": 179844.61
   },
   {
     "date": "2032-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "749.35",
-    "principal_amount": "1230.52",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1230.52",
-    "loan_balance_amount": "178613.83"
+    "payment_amount": 1979.87,
+    "interest_amount": 749.35,
+    "principal_amount": 1230.51,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1230.51,
+    "loan_balance_amount": 178614.1
   },
   {
     "date": "2032-02-29T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "744.22",
-    "principal_amount": "1235.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1235.65",
-    "loan_balance_amount": "177378.18"
+    "payment_amount": 1979.87,
+    "interest_amount": 744.23,
+    "principal_amount": 1235.64,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1235.64,
+    "loan_balance_amount": 177378.46
   },
   {
     "date": "2032-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "739.08",
-    "principal_amount": "1240.79",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1240.79",
-    "loan_balance_amount": "176137.39"
+    "payment_amount": 1979.87,
+    "interest_amount": 739.08,
+    "principal_amount": 1240.79,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1240.79,
+    "loan_balance_amount": 176137.67
   },
   {
     "date": "2032-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "733.91",
-    "principal_amount": "1245.96",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1245.96",
-    "loan_balance_amount": "174891.43"
+    "payment_amount": 1979.87,
+    "interest_amount": 733.91,
+    "principal_amount": 1245.96,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1245.96,
+    "loan_balance_amount": 174891.71
   },
   {
     "date": "2032-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "728.71",
-    "principal_amount": "1251.16",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1251.16",
-    "loan_balance_amount": "173640.27"
+    "payment_amount": 1979.87,
+    "interest_amount": 728.72,
+    "principal_amount": 1251.15,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1251.15,
+    "loan_balance_amount": 173640.56
   },
   {
     "date": "2032-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "723.50",
-    "principal_amount": "1256.37",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1256.37",
-    "loan_balance_amount": "172383.90"
+    "payment_amount": 1979.87,
+    "interest_amount": 723.5,
+    "principal_amount": 1256.36,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1256.36,
+    "loan_balance_amount": 172384.2
   },
   {
     "date": "2032-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "718.27",
-    "principal_amount": "1261.60",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1261.60",
-    "loan_balance_amount": "171122.30"
+    "payment_amount": 1979.87,
+    "interest_amount": 718.27,
+    "principal_amount": 1261.6,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1261.6,
+    "loan_balance_amount": 171122.6
   },
   {
     "date": "2032-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "713.01",
-    "principal_amount": "1266.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1266.86",
-    "loan_balance_amount": "169855.44"
+    "payment_amount": 1979.87,
+    "interest_amount": 713.01,
+    "principal_amount": 1266.86,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1266.86,
+    "loan_balance_amount": 169855.74
   },
   {
     "date": "2032-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "707.73",
-    "principal_amount": "1272.14",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1272.14",
-    "loan_balance_amount": "168583.30"
+    "payment_amount": 1979.87,
+    "interest_amount": 707.73,
+    "principal_amount": 1272.13,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1272.13,
+    "loan_balance_amount": 168583.61
   },
   {
     "date": "2032-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "702.43",
-    "principal_amount": "1277.44",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1277.44",
-    "loan_balance_amount": "167305.86"
+    "payment_amount": 1979.87,
+    "interest_amount": 702.43,
+    "principal_amount": 1277.44,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1277.44,
+    "loan_balance_amount": 167306.17
   },
   {
     "date": "2032-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "697.11",
-    "principal_amount": "1282.76",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1282.76",
-    "loan_balance_amount": "166023.10"
+    "payment_amount": 1979.87,
+    "interest_amount": 697.11,
+    "principal_amount": 1282.76,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1282.76,
+    "loan_balance_amount": 166023.41
   },
   {
     "date": "2032-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "691.76",
-    "principal_amount": "1288.11",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1288.11",
-    "loan_balance_amount": "164734.99"
+    "payment_amount": 1979.87,
+    "interest_amount": 691.76,
+    "principal_amount": 1288.1,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1288.1,
+    "loan_balance_amount": 164735.31
   },
   {
     "date": "2033-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "686.40",
-    "principal_amount": "1293.47",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1293.47",
-    "loan_balance_amount": "163441.52"
+    "payment_amount": 1979.87,
+    "interest_amount": 686.4,
+    "principal_amount": 1293.47,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1293.47,
+    "loan_balance_amount": 163441.84
   },
   {
     "date": "2033-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "681.01",
-    "principal_amount": "1298.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1298.86",
-    "loan_balance_amount": "162142.66"
+    "payment_amount": 1979.87,
+    "interest_amount": 681.01,
+    "principal_amount": 1298.86,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1298.86,
+    "loan_balance_amount": 162142.98
   },
   {
     "date": "2033-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "675.59",
-    "principal_amount": "1304.28",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1304.28",
-    "loan_balance_amount": "160838.38"
+    "payment_amount": 1979.87,
+    "interest_amount": 675.6,
+    "principal_amount": 1304.27,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1304.27,
+    "loan_balance_amount": 160838.71
   },
   {
     "date": "2033-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "670.16",
-    "principal_amount": "1309.71",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1309.71",
-    "loan_balance_amount": "159528.67"
+    "payment_amount": 1979.87,
+    "interest_amount": 670.16,
+    "principal_amount": 1309.71,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1309.71,
+    "loan_balance_amount": 159529.0
   },
   {
     "date": "2033-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "664.70",
-    "principal_amount": "1315.17",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1315.17",
-    "loan_balance_amount": "158213.50"
+    "payment_amount": 1979.87,
+    "interest_amount": 664.7,
+    "principal_amount": 1315.16,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1315.16,
+    "loan_balance_amount": 158213.84
   },
   {
     "date": "2033-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "659.22",
-    "principal_amount": "1320.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1320.65",
-    "loan_balance_amount": "156892.85"
+    "payment_amount": 1979.87,
+    "interest_amount": 659.22,
+    "principal_amount": 1320.64,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1320.64,
+    "loan_balance_amount": 156893.2
   },
   {
     "date": "2033-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "653.72",
-    "principal_amount": "1326.15",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1326.15",
-    "loan_balance_amount": "155566.70"
+    "payment_amount": 1979.87,
+    "interest_amount": 653.72,
+    "principal_amount": 1326.15,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1326.15,
+    "loan_balance_amount": 155567.05
   },
   {
     "date": "2033-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "648.19",
-    "principal_amount": "1331.68",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1331.68",
-    "loan_balance_amount": "154235.02"
+    "payment_amount": 1979.87,
+    "interest_amount": 648.2,
+    "principal_amount": 1331.67,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1331.67,
+    "loan_balance_amount": 154235.38
   },
   {
     "date": "2033-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "642.65",
-    "principal_amount": "1337.22",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1337.22",
-    "loan_balance_amount": "152897.80"
+    "payment_amount": 1979.87,
+    "interest_amount": 642.65,
+    "principal_amount": 1337.22,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1337.22,
+    "loan_balance_amount": 152898.16
   },
   {
     "date": "2033-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "637.07",
-    "principal_amount": "1342.80",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1342.80",
-    "loan_balance_amount": "151555.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 637.08,
+    "principal_amount": 1342.79,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1342.79,
+    "loan_balance_amount": 151555.37
   },
   {
     "date": "2033-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "631.48",
-    "principal_amount": "1348.39",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1348.39",
-    "loan_balance_amount": "150206.61"
+    "payment_amount": 1979.87,
+    "interest_amount": 631.48,
+    "principal_amount": 1348.39,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1348.39,
+    "loan_balance_amount": 150206.98
   },
   {
     "date": "2033-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "625.86",
-    "principal_amount": "1354.01",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1354.01",
-    "loan_balance_amount": "148852.60"
+    "payment_amount": 1979.87,
+    "interest_amount": 625.86,
+    "principal_amount": 1354.0,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1354.0,
+    "loan_balance_amount": 148852.98
   },
   {
     "date": "2034-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "620.22",
-    "principal_amount": "1359.65",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1359.65",
-    "loan_balance_amount": "147492.95"
+    "payment_amount": 1979.87,
+    "interest_amount": 620.22,
+    "principal_amount": 1359.65,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1359.65,
+    "loan_balance_amount": 147493.33
   },
   {
     "date": "2034-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "614.55",
-    "principal_amount": "1365.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1365.32",
-    "loan_balance_amount": "146127.63"
+    "payment_amount": 1979.87,
+    "interest_amount": 614.56,
+    "principal_amount": 1365.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1365.31,
+    "loan_balance_amount": 146128.02
   },
   {
     "date": "2034-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "608.87",
-    "principal_amount": "1371.00",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1371.00",
-    "loan_balance_amount": "144756.63"
+    "payment_amount": 1979.87,
+    "interest_amount": 608.87,
+    "principal_amount": 1371.0,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1371.0,
+    "loan_balance_amount": 144757.02
   },
   {
     "date": "2034-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "603.15",
-    "principal_amount": "1376.72",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1376.72",
-    "loan_balance_amount": "143379.91"
+    "payment_amount": 1979.87,
+    "interest_amount": 603.15,
+    "principal_amount": 1376.71,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1376.71,
+    "loan_balance_amount": 143380.31
   },
   {
     "date": "2034-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "597.42",
-    "principal_amount": "1382.45",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1382.45",
-    "loan_balance_amount": "141997.46"
+    "payment_amount": 1979.87,
+    "interest_amount": 597.42,
+    "principal_amount": 1382.45,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1382.45,
+    "loan_balance_amount": 141997.86
   },
   {
     "date": "2034-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "591.66",
-    "principal_amount": "1388.21",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1388.21",
-    "loan_balance_amount": "140609.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 591.66,
+    "principal_amount": 1388.21,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1388.21,
+    "loan_balance_amount": 140609.65
   },
   {
     "date": "2034-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "585.87",
-    "principal_amount": "1394.00",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1394.00",
-    "loan_balance_amount": "139215.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 585.87,
+    "principal_amount": 1393.99,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1393.99,
+    "loan_balance_amount": 139215.66
   },
   {
     "date": "2034-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "580.06",
-    "principal_amount": "1399.81",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1399.81",
-    "loan_balance_amount": "137815.44"
+    "payment_amount": 1979.87,
+    "interest_amount": 580.07,
+    "principal_amount": 1399.8,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1399.8,
+    "loan_balance_amount": 137815.86
   },
   {
     "date": "2034-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "574.23",
-    "principal_amount": "1405.64",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1405.64",
-    "loan_balance_amount": "136409.80"
+    "payment_amount": 1979.87,
+    "interest_amount": 574.23,
+    "principal_amount": 1405.63,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1405.63,
+    "loan_balance_amount": 136410.23
   },
   {
     "date": "2034-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "568.37",
-    "principal_amount": "1411.50",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1411.50",
-    "loan_balance_amount": "134998.30"
+    "payment_amount": 1979.87,
+    "interest_amount": 568.38,
+    "principal_amount": 1411.49,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1411.49,
+    "loan_balance_amount": 134998.74
   },
   {
     "date": "2034-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "562.49",
-    "principal_amount": "1417.38",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1417.38",
-    "loan_balance_amount": "133580.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 562.49,
+    "principal_amount": 1417.37,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1417.37,
+    "loan_balance_amount": 133581.37
   },
   {
     "date": "2034-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "556.59",
-    "principal_amount": "1423.28",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1423.28",
-    "loan_balance_amount": "132157.64"
+    "payment_amount": 1979.87,
+    "interest_amount": 556.59,
+    "principal_amount": 1423.28,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1423.28,
+    "loan_balance_amount": 132158.09
   },
   {
     "date": "2035-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "550.66",
-    "principal_amount": "1429.21",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1429.21",
-    "loan_balance_amount": "130728.43"
+    "payment_amount": 1979.87,
+    "interest_amount": 550.66,
+    "principal_amount": 1429.21,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1429.21,
+    "loan_balance_amount": 130728.88
   },
   {
     "date": "2035-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "544.70",
-    "principal_amount": "1435.17",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1435.17",
-    "loan_balance_amount": "129293.26"
+    "payment_amount": 1979.87,
+    "interest_amount": 544.7,
+    "principal_amount": 1435.16,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1435.16,
+    "loan_balance_amount": 129293.72
   },
   {
     "date": "2035-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "538.72",
-    "principal_amount": "1441.15",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1441.15",
-    "loan_balance_amount": "127852.11"
+    "payment_amount": 1979.87,
+    "interest_amount": 538.72,
+    "principal_amount": 1441.14,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1441.14,
+    "loan_balance_amount": 127852.58
   },
   {
     "date": "2035-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "532.72",
-    "principal_amount": "1447.15",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1447.15",
-    "loan_balance_amount": "126404.96"
+    "payment_amount": 1979.87,
+    "interest_amount": 532.72,
+    "principal_amount": 1447.15,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1447.15,
+    "loan_balance_amount": 126405.43
   },
   {
     "date": "2035-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "526.69",
-    "principal_amount": "1453.18",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1453.18",
-    "loan_balance_amount": "124951.78"
+    "payment_amount": 1979.87,
+    "interest_amount": 526.69,
+    "principal_amount": 1453.18,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1453.18,
+    "loan_balance_amount": 124952.25
   },
   {
     "date": "2035-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "520.63",
-    "principal_amount": "1459.24",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1459.24",
-    "loan_balance_amount": "123492.54"
+    "payment_amount": 1979.87,
+    "interest_amount": 520.63,
+    "principal_amount": 1459.23,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1459.23,
+    "loan_balance_amount": 123493.02
   },
   {
     "date": "2035-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "514.55",
-    "principal_amount": "1465.32",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1465.32",
-    "loan_balance_amount": "122027.22"
+    "payment_amount": 1979.87,
+    "interest_amount": 514.55,
+    "principal_amount": 1465.31,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1465.31,
+    "loan_balance_amount": 122027.71
   },
   {
     "date": "2035-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "508.45",
-    "principal_amount": "1471.42",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1471.42",
-    "loan_balance_amount": "120555.80"
+    "payment_amount": 1979.87,
+    "interest_amount": 508.45,
+    "principal_amount": 1471.42,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1471.42,
+    "loan_balance_amount": 120556.29
   },
   {
     "date": "2035-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "502.32",
-    "principal_amount": "1477.55",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1477.55",
-    "loan_balance_amount": "119078.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 502.32,
+    "principal_amount": 1477.55,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1477.55,
+    "loan_balance_amount": 119078.74
   },
   {
     "date": "2035-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "496.16",
-    "principal_amount": "1483.71",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1483.71",
-    "loan_balance_amount": "117594.54"
+    "payment_amount": 1979.87,
+    "interest_amount": 496.16,
+    "principal_amount": 1483.71,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1483.71,
+    "loan_balance_amount": 117595.03
   },
   {
     "date": "2035-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "489.98",
-    "principal_amount": "1489.89",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1489.89",
-    "loan_balance_amount": "116104.65"
+    "payment_amount": 1979.87,
+    "interest_amount": 489.98,
+    "principal_amount": 1489.89,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1489.89,
+    "loan_balance_amount": 116105.14
   },
   {
     "date": "2035-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "483.77",
-    "principal_amount": "1496.10",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1496.10",
-    "loan_balance_amount": "114608.55"
+    "payment_amount": 1979.87,
+    "interest_amount": 483.77,
+    "principal_amount": 1496.1,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1496.1,
+    "loan_balance_amount": 114609.04
   },
   {
     "date": "2036-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "477.54",
-    "principal_amount": "1502.33",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1502.33",
-    "loan_balance_amount": "113106.22"
+    "payment_amount": 1979.87,
+    "interest_amount": 477.54,
+    "principal_amount": 1502.33,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1502.33,
+    "loan_balance_amount": 113106.71
   },
   {
     "date": "2036-02-29T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "471.28",
-    "principal_amount": "1508.59",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1508.59",
-    "loan_balance_amount": "111597.63"
+    "payment_amount": 1979.87,
+    "interest_amount": 471.28,
+    "principal_amount": 1508.59,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1508.59,
+    "loan_balance_amount": 111598.12
   },
   {
     "date": "2036-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "464.99",
-    "principal_amount": "1514.88",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1514.88",
-    "loan_balance_amount": "110082.75"
+    "payment_amount": 1979.87,
+    "interest_amount": 464.99,
+    "principal_amount": 1514.88,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1514.88,
+    "loan_balance_amount": 110083.24
   },
   {
     "date": "2036-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "458.68",
-    "principal_amount": "1521.19",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1521.19",
-    "loan_balance_amount": "108561.56"
+    "payment_amount": 1979.87,
+    "interest_amount": 458.68,
+    "principal_amount": 1521.19,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1521.19,
+    "loan_balance_amount": 108562.05
   },
   {
     "date": "2036-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "452.34",
-    "principal_amount": "1527.53",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1527.53",
-    "loan_balance_amount": "107034.03"
+    "payment_amount": 1979.87,
+    "interest_amount": 452.34,
+    "principal_amount": 1527.53,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1527.53,
+    "loan_balance_amount": 107034.52
   },
   {
     "date": "2036-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "445.98",
-    "principal_amount": "1533.89",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1533.89",
-    "loan_balance_amount": "105500.14"
+    "payment_amount": 1979.87,
+    "interest_amount": 445.98,
+    "principal_amount": 1533.89,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1533.89,
+    "loan_balance_amount": 105500.63
   },
   {
     "date": "2036-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "439.58",
-    "principal_amount": "1540.29",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1540.29",
-    "loan_balance_amount": "103959.85"
+    "payment_amount": 1979.87,
+    "interest_amount": 439.59,
+    "principal_amount": 1540.28,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1540.28,
+    "loan_balance_amount": 103960.35
   },
   {
     "date": "2036-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "433.17",
-    "principal_amount": "1546.70",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1546.70",
-    "loan_balance_amount": "102413.15"
+    "payment_amount": 1979.87,
+    "interest_amount": 433.17,
+    "principal_amount": 1546.7,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1546.7,
+    "loan_balance_amount": 102413.65
   },
   {
     "date": "2036-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "426.72",
-    "principal_amount": "1553.15",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1553.15",
-    "loan_balance_amount": "100860.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 426.72,
+    "principal_amount": 1553.14,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1553.14,
+    "loan_balance_amount": 100860.51
   },
   {
     "date": "2036-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "420.25",
-    "principal_amount": "1559.62",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1559.62",
-    "loan_balance_amount": "99300.38"
+    "payment_amount": 1979.87,
+    "interest_amount": 420.25,
+    "principal_amount": 1559.62,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1559.62,
+    "loan_balance_amount": 99300.89
   },
   {
     "date": "2036-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "413.75",
-    "principal_amount": "1566.12",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1566.12",
-    "loan_balance_amount": "97734.26"
+    "payment_amount": 1979.87,
+    "interest_amount": 413.75,
+    "principal_amount": 1566.11,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1566.11,
+    "loan_balance_amount": 97734.78
   },
   {
     "date": "2036-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "407.23",
-    "principal_amount": "1572.64",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1572.64",
-    "loan_balance_amount": "96161.62"
+    "payment_amount": 1979.87,
+    "interest_amount": 407.23,
+    "principal_amount": 1572.64,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1572.64,
+    "loan_balance_amount": 96162.14
   },
   {
     "date": "2037-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "400.67",
-    "principal_amount": "1579.20",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1579.20",
-    "loan_balance_amount": "94582.42"
+    "payment_amount": 1979.87,
+    "interest_amount": 400.68,
+    "principal_amount": 1579.19,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1579.19,
+    "loan_balance_amount": 94582.95
   },
   {
     "date": "2037-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "394.09",
-    "principal_amount": "1585.78",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1585.78",
-    "loan_balance_amount": "92996.64"
+    "payment_amount": 1979.87,
+    "interest_amount": 394.1,
+    "principal_amount": 1585.77,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1585.77,
+    "loan_balance_amount": 92997.18
   },
   {
     "date": "2037-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "387.49",
-    "principal_amount": "1592.38",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1592.38",
-    "loan_balance_amount": "91404.26"
+    "payment_amount": 1979.87,
+    "interest_amount": 387.49,
+    "principal_amount": 1592.38,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1592.38,
+    "loan_balance_amount": 91404.8
   },
   {
     "date": "2037-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "380.85",
-    "principal_amount": "1599.02",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1599.02",
-    "loan_balance_amount": "89805.24"
+    "payment_amount": 1979.87,
+    "interest_amount": 380.85,
+    "principal_amount": 1599.01,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1599.01,
+    "loan_balance_amount": 89805.79
   },
   {
     "date": "2037-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "374.19",
-    "principal_amount": "1605.68",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1605.68",
-    "loan_balance_amount": "88199.56"
+    "payment_amount": 1979.87,
+    "interest_amount": 374.19,
+    "principal_amount": 1605.68,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1605.68,
+    "loan_balance_amount": 88200.11
   },
   {
     "date": "2037-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "367.50",
-    "principal_amount": "1612.37",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1612.37",
-    "loan_balance_amount": "86587.19"
+    "payment_amount": 1979.87,
+    "interest_amount": 367.5,
+    "principal_amount": 1612.37,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1612.37,
+    "loan_balance_amount": 86587.74
   },
   {
     "date": "2037-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "360.78",
-    "principal_amount": "1619.09",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1619.09",
-    "loan_balance_amount": "84968.10"
+    "payment_amount": 1979.87,
+    "interest_amount": 360.78,
+    "principal_amount": 1619.08,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1619.08,
+    "loan_balance_amount": 84968.66
   },
   {
     "date": "2037-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "354.03",
-    "principal_amount": "1625.84",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1625.84",
-    "loan_balance_amount": "83342.26"
+    "payment_amount": 1979.87,
+    "interest_amount": 354.04,
+    "principal_amount": 1625.83,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1625.83,
+    "loan_balance_amount": 83342.83
   },
   {
     "date": "2037-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "347.26",
-    "principal_amount": "1632.61",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1632.61",
-    "loan_balance_amount": "81709.65"
+    "payment_amount": 1979.87,
+    "interest_amount": 347.26,
+    "principal_amount": 1632.61,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1632.61,
+    "loan_balance_amount": 81710.22
   },
   {
     "date": "2037-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "340.46",
-    "principal_amount": "1639.41",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1639.41",
-    "loan_balance_amount": "80070.24"
+    "payment_amount": 1979.87,
+    "interest_amount": 340.46,
+    "principal_amount": 1639.41,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1639.41,
+    "loan_balance_amount": 80070.81
   },
   {
     "date": "2037-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "333.63",
-    "principal_amount": "1646.24",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1646.24",
-    "loan_balance_amount": "78424.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 333.63,
+    "principal_amount": 1646.24,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1646.24,
+    "loan_balance_amount": 78424.57
   },
   {
     "date": "2037-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "326.77",
-    "principal_amount": "1653.10",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1653.10",
-    "loan_balance_amount": "76770.90"
+    "payment_amount": 1979.87,
+    "interest_amount": 326.77,
+    "principal_amount": 1653.1,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1653.1,
+    "loan_balance_amount": 76771.47
   },
   {
     "date": "2038-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "319.88",
-    "principal_amount": "1659.99",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1659.99",
-    "loan_balance_amount": "75110.91"
+    "payment_amount": 1979.87,
+    "interest_amount": 319.88,
+    "principal_amount": 1659.99,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1659.99,
+    "loan_balance_amount": 75111.48
   },
   {
     "date": "2038-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "312.96",
-    "principal_amount": "1666.91",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1666.91",
-    "loan_balance_amount": "73444.00"
+    "payment_amount": 1979.87,
+    "interest_amount": 312.96,
+    "principal_amount": 1666.9,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1666.9,
+    "loan_balance_amount": 73444.58
   },
   {
     "date": "2038-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "306.02",
-    "principal_amount": "1673.85",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1673.85",
-    "loan_balance_amount": "71770.15"
+    "payment_amount": 1979.87,
+    "interest_amount": 306.02,
+    "principal_amount": 1673.85,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1673.85,
+    "loan_balance_amount": 71770.73
   },
   {
     "date": "2038-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "299.04",
-    "principal_amount": "1680.83",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1680.83",
-    "loan_balance_amount": "70089.32"
+    "payment_amount": 1979.87,
+    "interest_amount": 299.04,
+    "principal_amount": 1680.82,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1680.82,
+    "loan_balance_amount": 70089.91
   },
   {
     "date": "2038-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "292.04",
-    "principal_amount": "1687.83",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1687.83",
-    "loan_balance_amount": "68401.49"
+    "payment_amount": 1979.87,
+    "interest_amount": 292.04,
+    "principal_amount": 1687.83,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1687.83,
+    "loan_balance_amount": 68402.08
   },
   {
     "date": "2038-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "285.01",
-    "principal_amount": "1694.86",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1694.86",
-    "loan_balance_amount": "66706.63"
+    "payment_amount": 1979.87,
+    "interest_amount": 285.01,
+    "principal_amount": 1694.86,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1694.86,
+    "loan_balance_amount": 66707.22
   },
   {
     "date": "2038-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "277.94",
-    "principal_amount": "1701.93",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1701.93",
-    "loan_balance_amount": "65004.70"
+    "payment_amount": 1979.87,
+    "interest_amount": 277.95,
+    "principal_amount": 1701.92,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1701.92,
+    "loan_balance_amount": 65005.3
   },
   {
     "date": "2038-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "270.85",
-    "principal_amount": "1709.02",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1709.02",
-    "loan_balance_amount": "63295.68"
+    "payment_amount": 1979.87,
+    "interest_amount": 270.86,
+    "principal_amount": 1709.01,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1709.01,
+    "loan_balance_amount": 63296.29
   },
   {
     "date": "2038-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "263.73",
-    "principal_amount": "1716.14",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1716.14",
-    "loan_balance_amount": "61579.54"
+    "payment_amount": 1979.87,
+    "interest_amount": 263.73,
+    "principal_amount": 1716.13,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1716.13,
+    "loan_balance_amount": 61580.16
   },
   {
     "date": "2038-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "256.58",
-    "principal_amount": "1723.29",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1723.29",
-    "loan_balance_amount": "59856.25"
+    "payment_amount": 1979.87,
+    "interest_amount": 256.58,
+    "principal_amount": 1723.28,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1723.28,
+    "loan_balance_amount": 59856.88
   },
   {
     "date": "2038-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "249.40",
-    "principal_amount": "1730.47",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1730.47",
-    "loan_balance_amount": "58125.78"
+    "payment_amount": 1979.87,
+    "interest_amount": 249.4,
+    "principal_amount": 1730.46,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1730.46,
+    "loan_balance_amount": 58126.42
   },
   {
     "date": "2038-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "242.19",
-    "principal_amount": "1737.68",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1737.68",
-    "loan_balance_amount": "56388.10"
+    "payment_amount": 1979.87,
+    "interest_amount": 242.19,
+    "principal_amount": 1737.67,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1737.67,
+    "loan_balance_amount": 56388.75
   },
   {
     "date": "2039-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "234.95",
-    "principal_amount": "1744.92",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1744.92",
-    "loan_balance_amount": "54643.18"
+    "payment_amount": 1979.87,
+    "interest_amount": 234.95,
+    "principal_amount": 1744.91,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1744.91,
+    "loan_balance_amount": 54643.84
   },
   {
     "date": "2039-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "227.68",
-    "principal_amount": "1752.19",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1752.19",
-    "loan_balance_amount": "52890.99"
+    "payment_amount": 1979.87,
+    "interest_amount": 227.68,
+    "principal_amount": 1752.18,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1752.18,
+    "loan_balance_amount": 52891.66
   },
   {
     "date": "2039-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "220.38",
-    "principal_amount": "1759.49",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1759.49",
-    "loan_balance_amount": "51131.50"
+    "payment_amount": 1979.87,
+    "interest_amount": 220.38,
+    "principal_amount": 1759.49,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1759.49,
+    "loan_balance_amount": 51132.17
   },
   {
     "date": "2039-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "213.05",
-    "principal_amount": "1766.82",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1766.82",
-    "loan_balance_amount": "49364.68"
+    "payment_amount": 1979.87,
+    "interest_amount": 213.05,
+    "principal_amount": 1766.82,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1766.82,
+    "loan_balance_amount": 49365.35
   },
   {
     "date": "2039-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "205.69",
-    "principal_amount": "1774.18",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1774.18",
-    "loan_balance_amount": "47590.50"
+    "payment_amount": 1979.87,
+    "interest_amount": 205.69,
+    "principal_amount": 1774.18,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1774.18,
+    "loan_balance_amount": 47591.17
   },
   {
     "date": "2039-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "198.29",
-    "principal_amount": "1781.58",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1781.58",
-    "loan_balance_amount": "45808.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 198.3,
+    "principal_amount": 1781.57,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1781.57,
+    "loan_balance_amount": 45809.6
   },
   {
     "date": "2039-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "190.87",
-    "principal_amount": "1789.00",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1789.00",
-    "loan_balance_amount": "44019.92"
+    "payment_amount": 1979.87,
+    "interest_amount": 190.87,
+    "principal_amount": 1788.99,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1788.99,
+    "loan_balance_amount": 44020.61
   },
   {
     "date": "2039-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "183.42",
-    "principal_amount": "1796.45",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1796.45",
-    "loan_balance_amount": "42223.47"
+    "payment_amount": 1979.87,
+    "interest_amount": 183.42,
+    "principal_amount": 1796.45,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1796.45,
+    "loan_balance_amount": 42224.16
   },
   {
     "date": "2039-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "175.93",
-    "principal_amount": "1803.94",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1803.94",
-    "loan_balance_amount": "40419.53"
+    "payment_amount": 1979.87,
+    "interest_amount": 175.93,
+    "principal_amount": 1803.93,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1803.93,
+    "loan_balance_amount": 40420.23
   },
   {
     "date": "2039-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "168.41",
-    "principal_amount": "1811.46",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1811.46",
-    "loan_balance_amount": "38608.07"
+    "payment_amount": 1979.87,
+    "interest_amount": 168.42,
+    "principal_amount": 1811.45,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1811.45,
+    "loan_balance_amount": 38608.78
   },
   {
     "date": "2039-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "160.87",
-    "principal_amount": "1819.00",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1819.00",
-    "loan_balance_amount": "36789.07"
+    "payment_amount": 1979.87,
+    "interest_amount": 160.87,
+    "principal_amount": 1819.0,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1819.0,
+    "loan_balance_amount": 36789.78
   },
   {
     "date": "2039-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "153.29",
-    "principal_amount": "1826.58",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1826.58",
-    "loan_balance_amount": "34962.49"
+    "payment_amount": 1979.87,
+    "interest_amount": 153.29,
+    "principal_amount": 1826.58,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1826.58,
+    "loan_balance_amount": 34963.2
   },
   {
     "date": "2040-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "145.68",
-    "principal_amount": "1834.19",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1834.19",
-    "loan_balance_amount": "33128.30"
+    "payment_amount": 1979.87,
+    "interest_amount": 145.68,
+    "principal_amount": 1834.19,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1834.19,
+    "loan_balance_amount": 33129.01
   },
   {
     "date": "2040-02-29T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "138.03",
-    "principal_amount": "1841.84",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1841.84",
-    "loan_balance_amount": "31286.46"
+    "payment_amount": 1979.87,
+    "interest_amount": 138.04,
+    "principal_amount": 1841.83,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1841.83,
+    "loan_balance_amount": 31287.18
   },
   {
     "date": "2040-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "130.36",
-    "principal_amount": "1849.51",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1849.51",
-    "loan_balance_amount": "29436.95"
+    "payment_amount": 1979.87,
+    "interest_amount": 130.36,
+    "principal_amount": 1849.5,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1849.5,
+    "loan_balance_amount": 29437.68
   },
   {
     "date": "2040-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "122.65",
-    "principal_amount": "1857.22",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1857.22",
-    "loan_balance_amount": "27579.73"
+    "payment_amount": 1979.87,
+    "interest_amount": 122.66,
+    "principal_amount": 1857.21,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1857.21,
+    "loan_balance_amount": 27580.47
   },
   {
     "date": "2040-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "114.92",
-    "principal_amount": "1864.95",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1864.95",
-    "loan_balance_amount": "25714.78"
+    "payment_amount": 1979.87,
+    "interest_amount": 114.92,
+    "principal_amount": 1864.95,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1864.95,
+    "loan_balance_amount": 25715.52
   },
   {
     "date": "2040-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "107.14",
-    "principal_amount": "1872.73",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1872.73",
-    "loan_balance_amount": "23842.05"
+    "payment_amount": 1979.87,
+    "interest_amount": 107.15,
+    "principal_amount": 1872.72,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1872.72,
+    "loan_balance_amount": 23842.8
   },
   {
     "date": "2040-07-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "99.34",
-    "principal_amount": "1880.53",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1880.53",
-    "loan_balance_amount": "21961.52"
+    "payment_amount": 1979.87,
+    "interest_amount": 99.34,
+    "principal_amount": 1880.52,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1880.52,
+    "loan_balance_amount": 21962.28
   },
   {
     "date": "2040-08-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "91.51",
-    "principal_amount": "1888.36",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1888.36",
-    "loan_balance_amount": "20073.16"
+    "payment_amount": 1979.87,
+    "interest_amount": 91.51,
+    "principal_amount": 1888.36,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1888.36,
+    "loan_balance_amount": 20073.92
   },
   {
     "date": "2040-09-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "83.64",
-    "principal_amount": "1896.23",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1896.23",
-    "loan_balance_amount": "18176.93"
+    "payment_amount": 1979.87,
+    "interest_amount": 83.64,
+    "principal_amount": 1896.23,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1896.23,
+    "loan_balance_amount": 18177.69
   },
   {
     "date": "2040-10-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "75.74",
-    "principal_amount": "1904.13",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1904.13",
-    "loan_balance_amount": "16272.80"
+    "payment_amount": 1979.87,
+    "interest_amount": 75.74,
+    "principal_amount": 1904.13,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1904.13,
+    "loan_balance_amount": 16273.56
   },
   {
     "date": "2040-11-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "67.80",
-    "principal_amount": "1912.07",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1912.07",
-    "loan_balance_amount": "14360.73"
+    "payment_amount": 1979.87,
+    "interest_amount": 67.81,
+    "principal_amount": 1912.06,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1912.06,
+    "loan_balance_amount": 14361.5
   },
   {
     "date": "2040-12-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "59.84",
-    "principal_amount": "1920.03",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1920.03",
-    "loan_balance_amount": "12440.70"
+    "payment_amount": 1979.87,
+    "interest_amount": 59.84,
+    "principal_amount": 1920.03,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1920.03,
+    "loan_balance_amount": 12441.47
   },
   {
     "date": "2041-01-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "51.84",
-    "principal_amount": "1928.03",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1928.03",
-    "loan_balance_amount": "10512.67"
+    "payment_amount": 1979.87,
+    "interest_amount": 51.84,
+    "principal_amount": 1928.03,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1928.03,
+    "loan_balance_amount": 10513.44
   },
   {
     "date": "2041-02-28T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "43.80",
-    "principal_amount": "1936.07",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1936.07",
-    "loan_balance_amount": "8576.60"
+    "payment_amount": 1979.87,
+    "interest_amount": 43.81,
+    "principal_amount": 1936.06,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1936.06,
+    "loan_balance_amount": 8577.38
   },
   {
     "date": "2041-03-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "35.74",
-    "principal_amount": "1944.13",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1944.13",
-    "loan_balance_amount": "6632.47"
+    "payment_amount": 1979.87,
+    "interest_amount": 35.74,
+    "principal_amount": 1944.13,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1944.13,
+    "loan_balance_amount": 6633.25
   },
   {
     "date": "2041-04-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "27.64",
-    "principal_amount": "1952.23",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1952.23",
-    "loan_balance_amount": "4680.24"
+    "payment_amount": 1979.87,
+    "interest_amount": 27.64,
+    "principal_amount": 1952.23,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1952.23,
+    "loan_balance_amount": 4681.02
   },
   {
     "date": "2041-05-31T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "19.50",
-    "principal_amount": "1960.37",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1960.37",
-    "loan_balance_amount": "2719.87"
+    "payment_amount": 1979.87,
+    "interest_amount": 19.5,
+    "principal_amount": 1960.36,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1960.36,
+    "loan_balance_amount": 2720.66
   },
   {
     "date": "2041-06-30T00:00:00",
-    "payment_amount": "1979.87",
-    "interest_amount": "11.33",
-    "principal_amount": "1968.54",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "1968.54",
-    "loan_balance_amount": "751.33"
+    "payment_amount": 1979.87,
+    "interest_amount": 11.34,
+    "principal_amount": 1968.53,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 1968.53,
+    "loan_balance_amount": 752.13
   },
   {
     "date": "2041-07-31T00:00:00",
-    "payment_amount": "754.46",
-    "interest_amount": "3.13",
-    "principal_amount": "751.33",
-    "special_principal_amount": "0.00",
-    "total_principal_amount": "751.33",
-    "loan_balance_amount": "0.00"
+    "payment_amount": 755.26,
+    "interest_amount": 3.13,
+    "principal_amount": 752.13,
+    "special_principal_amount": 0.0,
+    "total_principal_amount": 752.13,
+    "loan_balance_amount": 0.0
   }
 ]

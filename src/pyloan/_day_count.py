@@ -29,18 +29,12 @@ def _thirty_e_360_isda(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
 def _thirty_e_360(dt1: datetime, dt2: datetime) -> Tuple[int, int]:
     """
     Calculates the number of days using the 30E/360 convention.
-    This is method is identical to 30E/360 ISDA, except for February.
-    February is a special case; it is never adjusted and its actual
-    number of days (28 or 29) are used for calculation.
     """
     y1, m1, d1 = dt1.year, dt1.month, dt1.day
     y2, m2, d2 = dt2.year, dt2.month, dt2.day
 
-    # If the start date is the last day of the month, it is treated as the 30th.
     if d1 == 31:
         d1 = 30
-
-    # If the end date is the last day of the month, it is treated as the 30th.
     if d2 == 31:
         d2 = 30
 

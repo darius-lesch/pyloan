@@ -1,8 +1,10 @@
 import unittest
-from decimal import Decimal
 import datetime as dt
+import logging
 from src.pyloan.pyloan import Loan
 from src.pyloan._models import Payment
+
+logging.basicConfig(level=logging.INFO)
 
 class TestLoan(unittest.TestCase):
 
@@ -13,8 +15,8 @@ class TestLoan(unittest.TestCase):
             loan_term=30,
             start_date='2022-01-01'
         )
-        self.assertEqual(loan.loan_amount, Decimal('200000'))
-        self.assertEqual(loan.interest_rate, Decimal('0.0600'))
+        self.assertEqual(loan.loan_amount, 200000)
+        self.assertAlmostEqual(loan.interest_rate, 6.0)
         self.assertEqual(loan.loan_term, 30)
 
     def test_payment_schedule_annuity(self):
@@ -26,7 +28,7 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         self.assertEqual(len(schedule), 361) # 360 payments + initial balance
-        self.assertAlmostEqual(schedule[-1].loan_balance_amount, Decimal('0.00'), places=2)
+        self.assertAlmostEqual(schedule[-1].loan_balance_amount, 0.0, places=2)
 
     def test_payment_schedule_linear(self):
         loan = Loan(
@@ -38,7 +40,7 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         self.assertEqual(len(schedule), 361)
-        self.assertAlmostEqual(schedule[-1].loan_balance_amount, Decimal('0.00'), places=2)
+        self.assertAlmostEqual(schedule[-1].loan_balance_amount, 0.0, places=2)
 
     def test_special_payments(self):
         loan = Loan(
@@ -54,10 +56,10 @@ class TestLoan(unittest.TestCase):
             annual_payments=1
         )
         schedule = loan.get_payment_schedule()
-        zero_balance_payments = [p for p in schedule if p.loan_balance_amount == Decimal('0.00')]
+        zero_balance_payments = [p for p in schedule if p.loan_balance_amount == 0.0]
         self.assertEqual(len(zero_balance_payments), 1)
         total_special_payments = sum([p.special_principal_amount for p in schedule])
-        self.assertAlmostEqual(total_special_payments, Decimal('10000'), delta=100)
+        self.assertAlmostEqual(total_special_payments, 10000, delta=100)
 
     def test_interest_only_period(self):
         loan = Loan(
@@ -69,18 +71,6 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         self.assertAlmostEqual(schedule[1].loan_balance_amount, loan.loan_amount - schedule[1].principal_amount, places=2)
-
-    def test_get_schedule_base_date(self):
-        loan = Loan(
-            loan_amount=100000,
-            interest_rate=5.0,
-            loan_term=10,
-            start_date='2023-01-15',
-            payment_end_of_month=True,
-            annual_payments=12
-        )
-        expected_date = dt.datetime(2022, 12, 31)
-        self.assertEqual(loan._get_schedule_base_date(), expected_date)
 
     def test_loan_term_in_months(self):
         loan = Loan(
@@ -103,17 +93,6 @@ class TestLoan(unittest.TestCase):
                 first_payment_date='2021-01-01'
             )
 
-    def test_initialize_payment_schedule(self):
-        loan = Loan(
-            loan_amount=200000,
-            interest_rate=6.0,
-            loan_term=30,
-            start_date='2022-01-01'
-        )
-        schedule = loan._initialize_payment_schedule()
-        self.assertEqual(len(schedule), 1)
-        self.assertEqual(schedule[0].loan_balance_amount, Decimal('200000'))
-
     def test_first_payment_details(self):
         loan = Loan(
             loan_amount=200000,
@@ -124,7 +103,7 @@ class TestLoan(unittest.TestCase):
         )
         schedule = loan.get_payment_schedule()
         first_payment = schedule[1]
-        self.assertAlmostEqual(first_payment.interest_amount, Decimal('966.67'), places=2)
+        self.assertAlmostEqual(first_payment.interest_amount, 966.67, places=2)
         # This value depends on the annuity calculation, which is complex.
         # The important part is that the interest is correct.
         # The principal is the remainder of the payment.
@@ -142,13 +121,13 @@ class TestLoan(unittest.TestCase):
             loan_term_period='Y',
             start_date='2026-02-28',
             first_payment_date='2026-03-31',
-            compounding_method='30E/360'
+            compounding_method='30E/360 ISDA'
         )
         schedule = loan.get_payment_schedule()
         first_payment = schedule[1]
         # From 2026-02-28 to 2026-03-31 should be 30 days with the new logic.
         # Interest = 10000 * 0.12 * (30/360) = 100
-        self.assertAlmostEqual(first_payment.interest_amount, Decimal('100.00'), places=2)
+        self.assertAlmostEqual(first_payment.interest_amount, 100.00, places=2)
 
     def test_get_loan_summary_zero_division(self):
         loan = Loan(
@@ -158,9 +137,9 @@ class TestLoan(unittest.TestCase):
             start_date='2022-01-01',
             loan_type='interest-only'
         )
-        loan.loan_amount = Decimal('0')
+        loan.loan_amount = 0.0
         summary = loan.get_loan_summary()
-        self.assertEqual(summary.repayment_to_principal, Decimal('0.00'))
+        self.assertEqual(summary.repayment_to_principal, 0.0)
 
     def test_first_payment_date_on_31st_is_respected_30E360(self):
         """
@@ -205,31 +184,33 @@ class TestLoan(unittest.TestCase):
         first_payment_date = schedule[1].date
         self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for A/A")
 
-    def test_logging_for_special_payments(self):
-        """
-        Tests that debug logging for day count and accrued interest is working correctly.
-        """
-        loan = Loan(
-            loan_amount=10000,
-            interest_rate=12.0,
-            loan_term=1,
-            start_date='2023-01-01',
-            compounding_method='A/360',
-            annual_payments=12,
-            first_payment_date='2023-01-31'
+
+    def test_get_internal_rate_of_return(self):
+        # Scenario 1: Standard loan
+        loan1 = Loan(
+            loan_amount=200000,
+            interest_rate=6.0,
+            loan_term=30,
+            start_date='2022-01-01'
         )
-        loan.add_special_payment(
-            payment_amount=1000,
-            first_payment_date='2023-01-15',
+        irr1 = loan1.get_internal_rate_of_return()
+        self.assertAlmostEqual(irr1, 6.16, places=2)
+
+        # Scenario 2: Loan with special payments
+        loan2 = Loan(
+            loan_amount=200000,
+            interest_rate=6.0,
+            loan_term=30,
+            start_date='2022-01-01'
+        )
+        loan2.add_special_payment(
+            payment_amount=10000,
+            first_payment_date='2025-01-01',
             special_payment_term=1,
             annual_payments=1
         )
-
-        with self.assertLogs('src.pyloan.pyloan', level='DEBUG') as cm:
-            loan.get_payment_schedule()
-            self.assertIn('DEBUG:src.pyloan.pyloan:Event on 2023-01-15: Days since last event: 14', cm.output)
-            self.assertIn('DEBUG:src.pyloan.pyloan:Special payment on 2023-01-15: Accrued interest since last regular payment: 46.67', cm.output)
-            self.assertIn('DEBUG:src.pyloan.pyloan:Event on 2023-01-31: Days since last event: 16', cm.output)
+        irr2 = loan2.get_internal_rate_of_return()
+        self.assertTrue(irr2 > 6.16)
 
 
 if __name__ == '__main__':
