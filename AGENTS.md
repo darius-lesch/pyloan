@@ -52,4 +52,5 @@ For more detailed information, please refer to the documentation in the `docs/do
 * When working on new features, create a separate branch from the `develop` branch ad submit a pull request for review. Follow the `gitflow` model.
 * Use the helper modules (`_validators.py`, `_enums.py`, `_models.py`, `_day_count.py`) when adding new features or modifying existing ones.
 * Write unit tests for all new code and ensure that all tests pass before submitting a pull request.
+* Always update the `docs/docsrc/source/quickstart.rst` file with any changes that affect the user-facing examples, arguments, or functionality.
 
