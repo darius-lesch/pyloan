@@ -387,12 +387,6 @@ class Loan(object):
                 # --- ISSUE #67 PATH END ---
 
                 interest_since_last_regular_payment = Decimal('0')
-
-                if interest_only_payments_left <= 0:
-                    if self.loan_type == LoanType.ANNUITY:
-                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)
-                    else: # LINEAR
-                        principal_amount = min(regular_payment_amount, balance_bop)
                 interest_only_payments_left -= 1
 
             if is_special_day:
