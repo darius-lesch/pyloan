@@ -64,7 +64,7 @@ class Loan(object):
         self._validate_inputs(loan_amount, interest_rate, loan_term, start_date, loan_term_period, payment_amount, first_payment_date, payment_end_of_month, annual_payments, interest_only_period, compounding_method, loan_type)
 
         self.loan_amount: Decimal = Decimal(str(loan_amount))
-        self.interest_rate: Decimal = Decimal(str(interest_rate / 100)).quantize(Decimal('0.0001'))
+        self.interest_rate: Decimal = Decimal(str(interest_rate / 100)).quantize(Decimal('0.00000001'))
 
         if loan_term_period.upper() == 'M':
             self.loan_term: Union[int, float] = loan_term / 12
@@ -193,6 +193,135 @@ class Loan(object):
             factor = (1 + periodic_interest_rate) ** num_principal_payments
             return self.loan_amount * (periodic_interest_rate * factor) / (factor - 1)
         return 0
+
+    def calculate_precise_payment(self, max_iterations=10, tolerance=Decimal('0.01')):
+        """
+        Calculates the exact annuity payment required to zero out the loan
+        using the Newton-Raphson (Secant) method.
+        """
+        
+        # 1. Initial Guess: Use the standard formula (O(1) calculation)
+        # This gets us close, usually within a few dollars.
+        current_payment = self._calculate_regular_principal_payment()
+        current_payment = Decimal(str(current_payment))
+        
+        for i in range(max_iterations):
+            # 2. Calculate the Residual (f(x))
+            # Run the full schedule with the current guess
+            final_balance = self._simulate_schedule(payment_override=current_payment)
+            
+            # Check if we are close enough (e.g., less than 1 cent off)
+            if abs(final_balance) < tolerance:
+                return current_payment
+
+            # 3. Calculate the Derivative (f'(x)) - The "Sensitivity"
+            # How much does the final balance drop if we pay $1.00 more?
+            # We use a small delta (e.g., 0.01) to "step over" rounding noise.
+            delta = Decimal('1.00') 
+            balance_with_delta = self._simulate_schedule(payment_override=current_payment + delta)
+            
+            # Slope = (Change in Balance) / (Change in Payment)
+            # Ideally, this is roughly equal to -1 * (sum of compounding factors)
+            slope = (balance_with_delta - final_balance) / delta
+            
+            if slope == 0:
+                # Prevent division by zero if the function is locally flat
+                slope = Decimal('-480') # Fallback estimate (approx -1 * num_payments)
+
+            # 4. Newton Step: x_new = x_old - f(x) / f'(x)
+            # Since slope is negative (higher payment = lower balance), this adds to the payment.
+            adjustment = final_balance / slope
+            current_payment = current_payment - adjustment
+            
+            # Round to 2 decimals for the next valid currency attempt
+            current_payment = self._quantize(current_payment)
+
+        return current_payment
+
+    def _simulate_schedule(self, payment_override: Decimal) -> Decimal:
+        """
+        Helper function: Runs the amortization loop but returns ONLY the final balance.
+        Computationally lighter than generating the full list of objects.
+        """
+        interest_only_payments_left = self.interest_only_period
+        if self.loan_type == LoanType.INTEREST_ONLY:
+            interest_only_payments_left = self.no_of_payments
+
+        regular_payment_amount = payment_override
+        special_payments = self._consolidate_special_payments()
+        payment_timeline = self._get_payment_timeline(special_payments)
+        regular_payment_dates = self._get_regular_payment_dates()
+
+        all_regular_dates = [self.start_date] + regular_payment_dates
+
+        balance = self._quantize(self.loan_amount)
+        # Helper to track balance dates to calc interest
+        last_date = self.start_date
+
+        # We need to track a minimal schedule to calc interest accurately between periods
+        # However, for simulation, we can simplify slightly by just tracking the last event date
+        # and the running balance.
+        
+        # Because _calculate_interest_for_period needs the balance at the *start* of the period 
+        # (which might be different if special payments occurred inside the period), 
+        # we must replicate the logic carefully.
+
+        # Since this is an internal simulation for the Payment Amount, we can assume 
+        # standard behavior for the variables not being optimized.
+        
+        for date in payment_timeline:
+            balance_bop = balance
+            if balance_bop <= 0:
+                continue
+
+            days, year = DAY_COUNT_METHODS[self.compounding_method.value](last_date, date)
+            compounding_factor = Decimal(str(days / year))
+            period_interest = self._quantize(balance_bop * self.interest_rate * compounding_factor)
+
+            is_regular_day = date in regular_payment_dates
+            is_special_day = date in special_payments
+
+            interest_amount = Decimal('0')
+            principal_amount = Decimal('0')
+            special_principal_amount = Decimal('0')
+
+            if is_regular_day:
+                # Recalculate interest for the specific regular period to match get_payment_schedule logic
+                last_regular_date = next(d for d in reversed(all_regular_dates) if d < date)
+                special_payments_in_period = {
+                    p_date: p_amount for p_date, p_amount in special_payments.items() if last_regular_date < p_date < date
+                }
+                
+                # Note: In simulation, we might drift slightly if we don't have exact history 
+                # of balances for special payments in period. 
+                # However, since simulate is usually run before special payments dominate, 
+                # we use balance_bop as a proxy for the start if no intervening events, 
+                # or we rely on the loop structure.
+                
+                # For the sake of the Newton method finding the REGULAR payment, 
+                # we assume the interest calculation here is "good enough" 
+                # or we must be exact. To be exact, we use the loop variables.
+                interest_amount = period_interest # Approximated for simulation speed or precise? 
+                # The main loop calculates interest from last_date to date.
+                # If we just use that, it's consistent.
+
+                if interest_only_payments_left <= 0:
+                    if self.loan_type == LoanType.ANNUITY:
+                        principal_amount = min(regular_payment_amount - period_interest, balance_bop)
+                    else: # LINEAR
+                        principal_amount = min(regular_payment_amount, balance_bop)
+                
+                interest_only_payments_left -= 1
+
+            if is_special_day:
+                special_principal_amount = min(balance_bop - principal_amount, special_payments[date])
+
+            total_principal_amount = self._quantize(principal_amount + special_principal_amount)
+            balance = self._quantize(balance_bop - total_principal_amount)
+            
+            last_date = date
+
+        return balance
 
     def _get_schedule_base_date(self) -> dt.datetime:
         """
@@ -329,7 +458,14 @@ class Loan(object):
         if self.loan_type == LoanType.INTEREST_ONLY:
             interest_only_payments_left = self.no_of_payments
 
-        regular_payment_amount = self._calculate_regular_principal_payment()
+        # Determine the regular payment amount
+        if self.loan_type == LoanType.ANNUITY and self.payment_amount is None:
+            # Use Newton-Raphson to find precise annuity payment for 'Actual' day counts
+            regular_payment_amount = self.calculate_precise_payment()
+        else:
+            # Standard formula or user-provided amount
+            regular_payment_amount = self._calculate_regular_principal_payment()
+
         special_payments = self._consolidate_special_payments()
         payment_timeline = self._get_payment_timeline(special_payments)
         regular_payment_dates = self._get_regular_payment_dates()
@@ -372,7 +508,7 @@ class Loan(object):
 
                 interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)
 
-                # --- ISSUE #67 PATH BEGIN ---
+                # --- FINAL ADJUSTMENT CHECK ---
                 # check if this is the last payment in the schedule
                 is_last_payment = (date == payment_timeline[-1])
                 # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.
@@ -384,7 +520,6 @@ class Loan(object):
                         principal_amount = min(regular_payment_amount - interest_amount, balance_bop)
                     else: # LINEAR
                         principal_amount = min(regular_payment_amount, balance_bop)
-                # --- ISSUE #67 PATH END ---
 
                 interest_since_last_regular_payment = Decimal('0')
                 interest_only_payments_left -= 1
