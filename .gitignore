@@ -33,3 +33,4 @@ htmlcov/
 
 # Jupyter
 *.ipynb
+*.ipynb_checkpoints

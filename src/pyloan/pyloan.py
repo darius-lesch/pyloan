@@ -371,6 +371,21 @@ class Loan(object):
                 balance_at_period_start = next(p.loan_balance_amount for p in reversed(payment_schedule) if p.date == last_regular_date)
 
                 interest_amount = self._calculate_interest_for_period(last_regular_date, date, balance_at_period_start, special_payments_in_period)
+
+                # --- ISSUE #67 PATH BEGIN ---
+                # check if this is the last payment in the schedule
+                is_last_payment = (date == payment_timeline[-1])
+                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.
+                if is_last_payment and self.loan_type != LoanType.INTEREST_ONLY:
+                    principal_amount = balance_bop
+                elif interest_only_payments_left <= 0:
+                    # Standard amortization logic for non-final payments
+                    if self.loan_type == LoanType.ANNUITY:
+                        principal_amount = min(regular_payment_amount - interest_amount, balance_bop)
+                    else: # LINEAR
+                        principal_amount = min(regular_payment_amount, balance_bop)
+                # --- ISSUE #67 PATH END ---
+
                 interest_since_last_regular_payment = Decimal('0')
 
                 if interest_only_payments_left <= 0:
