@@ -511,8 +511,10 @@ class Loan(object):
                 # --- FINAL ADJUSTMENT CHECK ---
                 # check if this is the last payment in the schedule
                 is_last_payment = (date == payment_timeline[-1])
-                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan.
-                if is_last_payment and self.loan_type != LoanType.INTEREST_ONLY:
+                # Only force the balance to 0 if it is the last payment AND NOT an Interest Only loan,
+                # AND NOT an explicitly sized Annuity loan.
+                if (is_last_payment and self.loan_type != LoanType.INTEREST_ONLY
+                        and not (self.loan_type == LoanType.ANNUITY and self.payment_amount is not None)):
                     principal_amount = balance_bop
                 elif interest_only_payments_left <= 0:
                     # Standard amortization logic for non-final payments
