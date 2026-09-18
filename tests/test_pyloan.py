@@ -205,6 +205,30 @@ class TestLoan(unittest.TestCase):
         first_payment_date = schedule[1].date
         self.assertEqual(first_payment_date, dt.datetime(2025, 10, 31), "Date should be 10-31 for A/A")
 
+    def test_explicit_annuity_residual_balance(self):
+        """
+        Tests that explicitly sized annuities do not force a balloon payment
+        on the final date, allowing a residual balance to remain.
+        """
+        loan = Loan(
+            loan_amount=1000,
+            interest_rate=12.0,
+            loan_term=2,
+            loan_term_period='M',
+            start_date='2026-01-01',
+            payment_end_of_month=False,
+            payment_amount=100
+        )
+        schedule = loan.get_payment_schedule()
+
+        # Index 0 is the initial state, index 1 is period 1, index 2 is the final period
+        final_payment = schedule[2]
+
+        self.assertAlmostEqual(final_payment.payment_amount, Decimal('100.00'), places=2)
+        self.assertAlmostEqual(final_payment.interest_amount, Decimal('9.10'), places=2)
+        self.assertAlmostEqual(final_payment.principal_amount, Decimal('90.90'), places=2)
+        self.assertAlmostEqual(final_payment.loan_balance_amount, Decimal('819.10'), places=2)
+
     def test_logging_for_special_payments(self):
         """
         Tests that debug logging for day count and accrued interest is working correctly.
